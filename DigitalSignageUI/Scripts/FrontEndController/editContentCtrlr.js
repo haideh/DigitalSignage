@@ -1,5 +1,44 @@
-﻿function editContentCtrlr($scope, httpRequest) {
+﻿function editContentCtrlr($scope,$rootScope, httpRequest) {
+    $scope.setPosition = function (itemList, positionType) {
 
+        switch (positionType) {
+            case 1: {//Image
+                $scope.sliderImageList = itemList;
+                break;
+            }
+            case 2: {//Video
+                setTimeout(function () {
+                    $scope.runPlayer(itemList);
+                }, 2000)
+                break;
+            }
+            case 3: {//Text
+                $scope.sliderTextList = itemList;
+                break;
+            }
+            case 4: {//weather
+
+                $scope.weatherFun();
+                break;
+            }
+            case 5: {//time
+
+                $scope.show_time();
+                $scope.showDate();
+                break;
+            }
+            case 0: {//none
+                break;
+            }
+            default: {
+                break;
+            }
+        };
+
+        setTimeout(function () {
+            $scope.slider($scope.sliderImageList);
+        }, 1000);
+    };
 
     $scope.selectWidget = function (packageInfo,mode ) {
         
@@ -23,7 +62,7 @@
         $scope.selectedWidgetPackage = packageInfo;
     };
     $scope.saveWidget = function (position, contentId, adId) {
-        
+
         var obj = new Object();
         obj.position = position;
         obj.ad_id = adId;
@@ -34,10 +73,17 @@
         var resultList = new Array();
 
         httpRequest.post(service_editContentAds, obj, function (data) {
-            console.log("Success");
         });
+        location.href = "/Edit/EditContent?contentId=" + contentId;
+      
     };
+
+  
+    $rootScope.$on("loadWidgetEvt", function (event, args) {
+        $scope.loadWidgetInfo();
+    });
     $scope.loadWidgetInfo = function () {
+        
         $scope.viewWidgtData = [];
         $scope.resultWidgetList = [];
         var resultList = new Array();

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* UI/UX: RohanIT.ir */
 /* طراحی رابط و تجربه کاربری فن آوری اطلاعات روهان */
 /*darken($gray, 8)*/
@@ -7262,7 +7262,7 @@ p {
   margin: 0px;
   padding: 0px; }
 
-#weather {
+.weather{
   display: block;
   position: relative;
   width: 320px;
@@ -7288,7 +7288,7 @@ i {
   line-height: 1.0;
   text-transform: none; }
 
-#weather .wi {
+.weather .wi {
   color: #FFFFFF;
   height: 120px;
   min-height: 120px;
@@ -7302,7 +7302,7 @@ i {
   padding: 0px;
   padding-top: 25px; }
 
-#weather .cw {
+.weather .cw {
   color: #FFFFFF;
   height: 120px;
   min-height: 120px;
@@ -7315,7 +7315,7 @@ i {
   padding: 0px;
   padding-top: 25px; }
 
-#weather .cc {
+.weather .cc {
   height: 120px;
   min-height: 120px;
   max-height: 120px;
@@ -7326,18 +7326,18 @@ i {
   margin: 0px 0 0 15px;
   padding: 0px; }
 
-#weather ul {
+.weather ul {
   margin: 0;
   padding: 0; }
 
-#weather li {
+.weather li {
   color: #FFFFFF;
   background: rgba(255, 255, 255, 0.15);
   padding: 4px;
   display: inline-block;
   border-radius: 4px; }
 
-#weather .currently {
+.weather .currently {
   margin: 0 4px; }
 
 .marquee {

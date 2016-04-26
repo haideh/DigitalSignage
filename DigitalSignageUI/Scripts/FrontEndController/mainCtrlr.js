@@ -16,7 +16,8 @@ function mainCtrlr($scope) {
         i = d.getMinutes(); i = (i < 10) ? "0" + i : i;
         s = d.getSeconds(); s = (s < 10) ? "0" + s : s;
         setTimeout(function () {
-            document.getElementById('show_time_1').innerHTML = H + ":" + i;
+            angular.element('.show_time_1').html(H + ":" + i);
+      //      document.getElementById('show_time_1').innerHTML = H + ":" + i;
         }, 10);
         setTimeout(function () { $scope.show_time() }, 1000);/* 1 sec */
     };
@@ -24,7 +25,8 @@ function mainCtrlr($scope) {
 
         var _date = showdate();
         setTimeout(function () {
-            document.getElementById('date').innerHTML = _date;
+            angular.element('.date').html(_date);
+            //document.getElementById('date').innerHTML = _date;
         }, 10);
         //$(".txtDate").text(_date);
     }
@@ -35,54 +37,16 @@ function mainCtrlr($scope) {
             unit: 'c',
             success: function (weather) {
                 html = '<span class="wi"><i class="wi-' + weather.code + '"></i></span><span class="cw">' + weather.temp + '</span><span class="cc">' + '&deg;' + weather.units.temp + '</span>';
-
-                $("#weather").html(html);
+                angular.element(".weather").html(html);
+               // $("div[data-Id='weather']").html(html);
             },
             error: function (error) {
-                $("#weather").html('<p>' + error + '</p>');
+                angular.element(".weather").html('<p>' + error + '</p>');
+            //    $("#weather").html('<p>' + error + '</p>');
             }
         });
     };
-    $scope.setPosition = function (itemList, positionType) {
-
-        switch (positionType) {
-            case 1: {//Image
-                $scope.sliderImageList = itemList;
-                break;
-            }
-            case 2: {//Video
-                setTimeout(function () {
-                    $scope.runPlayer(itemList);
-                }, 2000)
-                break;
-            }
-            case 3: {//Text
-                $scope.sliderTextList = itemList;
-                break;
-            }
-            case 4: {//weather
-
-                $scope.weatherFun();
-                break;
-            }
-            case 5: {//time
-
-                $scope.show_time();
-                $scope.showDate();
-                break;
-            }
-            case 0: {//none
-                break;
-            }
-            default: {
-                break;
-            }
-        };
-
-        setTimeout(function () {
-            $scope.slider($scope.sliderImageList);
-        }, 1000);
-    };
+ 
 
 
     $scope.load();
@@ -95,8 +59,8 @@ function showContentCtrlr($scope, httpRequest) {
 
 //------------------------------------editContentCtrlr-----------------------------//
 application.controller('editContentCtrlr', editContentCtrlr);
-function editContentCtrlr($scope, httpRequest) {
-    editContentCtrlr($scope, httpRequest);
+function editContentCtrlr($scope,$rootScope, httpRequest) {
+    editContentCtrlr($scope,$rootScope, httpRequest);
 };
 //------------------------------------editContentSelectorCtrlr-----------------------------//
 application.controller('editContentSelectorCtrlr', editContentSelectorCtrlr);
@@ -105,6 +69,6 @@ function editContentSelectorCtrlr($scope, httpRequest) {
 };
 //------------------------------------editContentTempCtrlr_1-----------------------------//
 application.controller('editContentTempCtrlr_1', editContentTempCtrlr_1);
-function editContentTempCtrlr_1($scope) {
-    editContentTempCtrlr_1($scope);
+function editContentTempCtrlr_1($scope, $rootScope) {
+    editContentTempCtrlr_1($scope, $rootScope);
 };

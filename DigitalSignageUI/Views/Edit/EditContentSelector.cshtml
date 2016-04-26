@@ -9,7 +9,7 @@
     <input class="positionInp" type="hidden" value="@ViewBag.position" />
 
 
-    @if ((string)ViewBag.type == "1" || (string)ViewBag.type == "2")
+    @if ((string)ViewBag.type == "1" || (string)ViewBag.type == "2"|| (string)ViewBag.type == "6")
     {
         Html.RenderPartial("~/Views/Edit/SliderSelectorEdit.cshtml");
     }
@@ -17,8 +17,5 @@
     {
         Html.RenderPartial("~/Views/Edit/TextSelectorEdit.cshtml");
     }
-    @if ((string)ViewBag.type == "4" || (string)ViewBag.type == "5")
-    {
-        Html.RenderPartial("~/Views/Edit/WidgetsSelectorEdit.cshtml");
-    }
+   
 </div>
