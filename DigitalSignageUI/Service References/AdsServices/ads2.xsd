@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+  <xs:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" />
+  <xs:element name="saveAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="AdsInfo" nillable="true" type="q1:AdsInfoWTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="saveAdsResult" nillable="true" type="q2:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="deleteAdsResult" nillable="true" type="q3:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteAdsItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteAdsItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="deleteAdsItemResult" nillable="true" type="q4:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ad_id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="editAdsResult" nillable="true" type="q5:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q6:AdsInfoWTO" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q7:PagingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataOnAdsResult" nillable="true" type="q8:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnAdsItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q9:AdsIemInfoWTO" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q10:PagingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnAdsItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataOnAdsItemResult" nillable="true" type="q11:ResultMessageOfArrayOfAdsIemInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTVLives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q12:LiveTVInfoWTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q13:PagingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTVLivesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataOnTVLivesResult" nillable="true" type="q14:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAdsWithItemDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAdsWithItemDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getAdsWithItemDetailResult" nillable="true" type="q15:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWidgetAdsWithItemDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWidgetAdsWithItemDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getWidgetAdsWithItemDetailResult" nillable="true" type="q16:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="contents" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:14985/Services/contents.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/contents.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/contents.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/contents.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Icontents_getNewContentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNewContentId" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_getNewContentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNewContentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_addContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:addContent" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_addContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:editContentOption" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editContentOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentOptionLive_InputMessage">
+    <wsdl:part name="parameters" element="tns:editContentOptionLive" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentOptionLive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editContentOptionLiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_deleteContents_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteContents" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_deleteContents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteContentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:editContentAds" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_editContentAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editContentAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchContentsWithAdsItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentsWithAdsItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchContentsWithAdsItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentsWithAdsItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_loadContentsWithAdsItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadContentsWithAdsItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_loadContentsWithAdsItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadContentsWithAdsItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_loadLiveContentsAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadLiveContentsAds" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_loadLiveContentsAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadLiveContentsAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_getContentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getContentList" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_getContentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getContentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchDataContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataContent" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchDataContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchDataContentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataContentType" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchDataContentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataContentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchContentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentId" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_searchContentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Icontents">
+    <wsdl:operation name="getNewContentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/getNewContentId" message="tns:Icontents_getNewContentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/getNewContentIdResponse" message="tns:Icontents_getNewContentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/addContent" message="tns:Icontents_addContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/addContentResponse" message="tns:Icontents_addContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editContentOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/editContentOption" message="tns:Icontents_editContentOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/editContentOptionResponse" message="tns:Icontents_editContentOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editContentOptionLive">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/editContentOptionLive" message="tns:Icontents_editContentOptionLive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/editContentOptionLiveResponse" message="tns:Icontents_editContentOptionLive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteContents">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/deleteContents" message="tns:Icontents_deleteContents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/deleteContentsResponse" message="tns:Icontents_deleteContents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editContentAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/editContentAds" message="tns:Icontents_editContentAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/editContentAdsResponse" message="tns:Icontents_editContentAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchContentsWithAdsItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/searchContentsWithAdsItemDetail" message="tns:Icontents_searchContentsWithAdsItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/searchContentsWithAdsItemDetailResponse" message="tns:Icontents_searchContentsWithAdsItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadContentsWithAdsItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail" message="tns:Icontents_loadContentsWithAdsItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetailResponse" message="tns:Icontents_loadContentsWithAdsItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadLiveContentsAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/loadLiveContentsAds" message="tns:Icontents_loadLiveContentsAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/loadLiveContentsAdsResponse" message="tns:Icontents_loadLiveContentsAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getContentList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/getContentList" message="tns:Icontents_getContentList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/getContentListResponse" message="tns:Icontents_getContentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/searchDataContent" message="tns:Icontents_searchDataContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/searchDataContentResponse" message="tns:Icontents_searchDataContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataContentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/searchDataContentType" message="tns:Icontents_searchDataContentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/searchDataContentTypeResponse" message="tns:Icontents_searchDataContentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchContentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/searchContentId" message="tns:Icontents_searchContentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/searchContentIdResponse" message="tns:Icontents_searchContentId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Icontents" type="tns:Icontents">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getNewContentId">
+      <soap:operation soapAction="http://tempuri.org/Icontents/getNewContentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContent">
+      <soap:operation soapAction="http://tempuri.org/Icontents/addContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editContentOption">
+      <soap:operation soapAction="http://tempuri.org/Icontents/editContentOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editContentOptionLive">
+      <soap:operation soapAction="http://tempuri.org/Icontents/editContentOptionLive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteContents">
+      <soap:operation soapAction="http://tempuri.org/Icontents/deleteContents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editContentAds">
+      <soap:operation soapAction="http://tempuri.org/Icontents/editContentAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchContentsWithAdsItemDetail">
+      <soap:operation soapAction="http://tempuri.org/Icontents/searchContentsWithAdsItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadContentsWithAdsItemDetail">
+      <soap:operation soapAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadLiveContentsAds">
+      <soap:operation soapAction="http://tempuri.org/Icontents/loadLiveContentsAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContentList">
+      <soap:operation soapAction="http://tempuri.org/Icontents/getContentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataContent">
+      <soap:operation soapAction="http://tempuri.org/Icontents/searchDataContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataContentType">
+      <soap:operation soapAction="http://tempuri.org/Icontents/searchDataContentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchContentId">
+      <soap:operation soapAction="http://tempuri.org/Icontents/searchContentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="contents">
+    <wsdl:port name="BasicHttpBinding_Icontents" binding="tns:BasicHttpBinding_Icontents">
+      <soap:address location="http://localhost:14985/Services/contents.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

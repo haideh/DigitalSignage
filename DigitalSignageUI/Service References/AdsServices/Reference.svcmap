@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aa972dee-248f-4bec-b0e5-f270ce3b0679" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/ads.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ads.xsd" MetadataType="Schema" ID="257c9406-2a55-445c-b640-b18825ab75f1" SourceId="1" SourceUrl="http://localhost:14985/Services/ads.svc?xsd=xsd1" />
+    <MetadataFile FileName="ads1.xsd" MetadataType="Schema" ID="3c4db8dc-cd18-457d-a99a-023450232df5" SourceId="1" SourceUrl="http://localhost:14985/Services/ads.svc?xsd=xsd3" />
+    <MetadataFile FileName="ads.wsdl" MetadataType="Wsdl" ID="cae612d0-adf1-4531-94a2-8546ad6b703e" SourceId="1" SourceUrl="http://localhost:14985/Services/ads.svc?wsdl" />
+    <MetadataFile FileName="ads2.xsd" MetadataType="Schema" ID="87fbdf6d-c9a5-421b-9466-23f0de477311" SourceId="1" SourceUrl="http://localhost:14985/Services/ads.svc?xsd=xsd0" />
+    <MetadataFile FileName="ads3.xsd" MetadataType="Schema" ID="66d9679f-9975-4f2f-b211-4ff3cfb0fffa" SourceId="1" SourceUrl="http://localhost:14985/Services/ads.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="tvs" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Itvs_addTV_InputMessage">
+    <wsdl:part name="parameters" element="tns:addTV" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_addTV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_editTV_InputMessage">
+    <wsdl:part name="parameters" element="tns:editTV" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_editTV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_addCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCategory" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_addCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_deleteTVS_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTVS" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_deleteTVS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteTVSResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_deleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_deleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_isDirty_InputMessage">
+    <wsdl:part name="parameters" element="tns:isDirty" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_isDirty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isDirtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_recordSecondPlayed_InputMessage">
+    <wsdl:part name="parameters" element="tns:recordSecondPlayed" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_recordSecondPlayed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recordSecondPlayedResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_searchDataOnTvCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTvCategories" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_searchDataOnTvCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTvCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_searchDataOnTvs_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTvs" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_searchDataOnTvs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTvsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_getTvContentWithIp_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTvContentWithIp" />
+  </wsdl:message>
+  <wsdl:message name="Itvs_getTvContentWithIp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTvContentWithIpResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Itvs">
+    <wsdl:operation name="addTV">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/addTV" message="tns:Itvs_addTV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/addTVResponse" message="tns:Itvs_addTV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editTV">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/editTV" message="tns:Itvs_editTV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/editTVResponse" message="tns:Itvs_editTV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/addCategory" message="tns:Itvs_addCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/addCategoryResponse" message="tns:Itvs_addCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTVS">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/deleteTVS" message="tns:Itvs_deleteTVS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/deleteTVSResponse" message="tns:Itvs_deleteTVS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/deleteCategory" message="tns:Itvs_deleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/deleteCategoryResponse" message="tns:Itvs_deleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isDirty">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/isDirty" message="tns:Itvs_isDirty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/isDirtyResponse" message="tns:Itvs_isDirty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recordSecondPlayed">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/recordSecondPlayed" message="tns:Itvs_recordSecondPlayed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/recordSecondPlayedResponse" message="tns:Itvs_recordSecondPlayed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTvCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/searchDataOnTvCategories" message="tns:Itvs_searchDataOnTvCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/searchDataOnTvCategoriesResponse" message="tns:Itvs_searchDataOnTvCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTvs">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/searchDataOnTvs" message="tns:Itvs_searchDataOnTvs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/searchDataOnTvsResponse" message="tns:Itvs_searchDataOnTvs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTvContentWithIp">
+      <wsdl:input wsaw:Action="http://tempuri.org/Itvs/getTvContentWithIp" message="tns:Itvs_getTvContentWithIp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Itvs/getTvContentWithIpResponse" message="tns:Itvs_getTvContentWithIp_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Itvs" type="tns:Itvs">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addTV">
+      <soap:operation soapAction="http://tempuri.org/Itvs/addTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editTV">
+      <soap:operation soapAction="http://tempuri.org/Itvs/editTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCategory">
+      <soap:operation soapAction="http://tempuri.org/Itvs/addCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTVS">
+      <soap:operation soapAction="http://tempuri.org/Itvs/deleteTVS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <soap:operation soapAction="http://tempuri.org/Itvs/deleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isDirty">
+      <soap:operation soapAction="http://tempuri.org/Itvs/isDirty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recordSecondPlayed">
+      <soap:operation soapAction="http://tempuri.org/Itvs/recordSecondPlayed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTvCategories">
+      <soap:operation soapAction="http://tempuri.org/Itvs/searchDataOnTvCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTvs">
+      <soap:operation soapAction="http://tempuri.org/Itvs/searchDataOnTvs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTvContentWithIp">
+      <soap:operation soapAction="http://tempuri.org/Itvs/getTvContentWithIp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="tvs">
+    <wsdl:port name="BasicHttpBinding_Itvs" binding="tns:BasicHttpBinding_Itvs">
+      <soap:address location="http://localhost:14985/Services/tvs.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

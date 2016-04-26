@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7da056ad-b778-4fe7-bd8c-80aa70d56164" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/tvs.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="tvs.xsd" MetadataType="Schema" ID="7de91a8c-cab0-4e2b-b897-c732073722de" SourceId="1" SourceUrl="http://localhost:14985/Services/tvs.svc?xsd=xsd0" />
+    <MetadataFile FileName="tvs1.xsd" MetadataType="Schema" ID="c0508ba2-f4f8-42a7-9435-8159746ca8c8" SourceId="1" SourceUrl="http://localhost:14985/Services/tvs.svc?xsd=xsd2" />
+    <MetadataFile FileName="tvs2.xsd" MetadataType="Schema" ID="b184123f-0a2b-4282-819a-2d64a895184f" SourceId="1" SourceUrl="http://localhost:14985/Services/tvs.svc?xsd=xsd1" />
+    <MetadataFile FileName="tvs.wsdl" MetadataType="Wsdl" ID="1edb4b48-beb8-4bf0-9b17-996298e5a1af" SourceId="1" SourceUrl="http://localhost:14985/Services/tvs.svc?wsdl" />
+    <MetadataFile FileName="tvs3.xsd" MetadataType="Schema" ID="c0ef917c-3722-4791-b0cc-79b339719d58" SourceId="1" SourceUrl="http://localhost:14985/Services/tvs.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

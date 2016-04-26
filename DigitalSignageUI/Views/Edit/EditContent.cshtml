@@ -1,0 +1,20 @@
+﻿
+@model DigitalSignageUI.Models.Entity.ContentInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout_tvShow.cshtml";
+}
+
+<script src="~/Scripts/FrontEndController/editContentCtrlr.js"></script>
+<script src="~/Scripts/FrontEndController/editContentTempCtrlr_1.js"></script>
+
+<div ng-controller="editContentCtrlr">
+    <div class="fullHD" id="EditContent" ng-controller="editContentTempCtrlr_1">
+
+        <input class="contentIdInp" type="hidden" value="@Model.content_id" />
+        @Html.Partial("~/Views/Edit/EditContent_Type1.cshtml")
+
+       
+    </div>
+    
+</div>

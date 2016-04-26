@@ -1,0 +1,19 @@
+﻿@model DigitalSignageUI.Models.Entity.EditContentTemplateInfo
+
+
+@if (Model.content_ad_id != 0)
+{
+    <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 1, position = Model.position })">Edit</a>
+}
+
+
+<div class="widgetSlider">
+    <div class="coin-slider">
+        <img ng-repeat="x in sliderImageList" id="{{x.id}}"
+             data-id="{{x.id}}" data-interval="{{x.interval}}" data-content_ad_id="{{x.content_ad_id}}" data-ad_title="{{x.title}}"
+             src="{{imageSource}}{{x.file_name}}">
+    </div>
+</div>
+
+
+

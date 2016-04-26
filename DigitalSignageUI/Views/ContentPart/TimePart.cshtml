@@ -1,0 +1,19 @@
+﻿
+@model DigitalSignageUI.Models.Entity.EditContentTemplateInfo
+
+ @if (Model.content_ad_id != 0)
+ {
+        <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 4, position = Model.position })">Edit</a>
+    }
+
+
+
+<div class="widgetTimeDate">
+    <div id="show_time_1" class="txtTime">
+
+    </div>
+    <div id="date" class="txtDate">
+
+    </div>
+
+</div>

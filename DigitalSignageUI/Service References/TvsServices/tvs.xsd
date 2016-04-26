@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+  <xs:import schemaLocation="http://localhost:14985/Services/tvs.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" />
+  <xs:element name="addTV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="tvsInfo" nillable="true" type="q1:TvsInfoWTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addTVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="addTVResult" nillable="true" type="q2:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editTV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="tvsInfo" nillable="true" type="q3:TvsInfoWTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editTVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="editTVResult" nillable="true" type="q4:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="tvCategoreisInfo" nillable="true" type="q5:TvCategoreisInfoWTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="addCategoryResult" nillable="true" type="q6:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteTVS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteTVSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="deleteTVSResult" nillable="true" type="q7:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="deleteCategoryResult" nillable="true" type="q8:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isDirty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tv_id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isDirtyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="isDirtyResult" nillable="true" type="q9:ResultMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recordSecondPlayed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content_ad_id" type="xs:long" />
+        <xs:element minOccurs="0" name="tv_id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recordSecondPlayedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="recordSecondPlayedResult" nillable="true" type="q10:ResultMessageOfboolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTvCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q11:TvCategoreisInfoWTO" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q12:PagingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTvCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataOnTvCategoriesResult" nillable="true" type="q13:ResultMessageOfArrayOfTvCategoreisInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTvs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q14:TvsInfoWTO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q15:PagingInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchDataOnTvsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataOnTvsResult" nillable="true" type="q16:ResultMessageOfArrayOfTvsInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTvContentWithIp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTvContentWithIpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getTvContentWithIpResult" nillable="true" type="q17:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

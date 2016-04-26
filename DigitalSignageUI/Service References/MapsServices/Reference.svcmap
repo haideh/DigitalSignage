@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7f45c792-2e85-43e4-b1db-07275852e3c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/maps.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="maps.wsdl" MetadataType="Wsdl" ID="981483fe-3e7b-452c-b63b-8c7b47b02d73" SourceId="1" SourceUrl="http://localhost:14985/Services/maps.svc?wsdl" />
+    <MetadataFile FileName="maps.xsd" MetadataType="Schema" ID="02096030-5f80-48e5-95c2-ff4d652e9926" SourceId="1" SourceUrl="http://localhost:14985/Services/maps.svc?xsd=xsd0" />
+    <MetadataFile FileName="maps1.xsd" MetadataType="Schema" ID="78b9d2bc-edb8-4300-b70d-1e3cd472fa88" SourceId="1" SourceUrl="http://localhost:14985/Services/maps.svc?xsd=xsd1" />
+    <MetadataFile FileName="maps2.xsd" MetadataType="Schema" ID="32db7edd-0d58-4a20-8094-7145f16e295e" SourceId="1" SourceUrl="http://localhost:14985/Services/maps.svc?xsd=xsd2" />
+    <MetadataFile FileName="maps3.xsd" MetadataType="Schema" ID="72bbbc27-8ce5-4b9e-a094-d32e6d0161be" SourceId="1" SourceUrl="http://localhost:14985/Services/maps.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

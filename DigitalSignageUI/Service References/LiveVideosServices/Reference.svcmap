@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0cedfb7d-b167-465a-8317-91d16b5362f1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/liveVideos.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="liveVideos.xsd" MetadataType="Schema" ID="b056b4e9-d8c2-499d-855c-2d0ba35ae119" SourceId="1" SourceUrl="http://localhost:14985/Services/liveVideos.svc?xsd=xsd2" />
+    <MetadataFile FileName="liveVideos1.xsd" MetadataType="Schema" ID="ebee5a96-9660-4930-be9d-ed41fa3e9611" SourceId="1" SourceUrl="http://localhost:14985/Services/liveVideos.svc?xsd=xsd3" />
+    <MetadataFile FileName="liveVideos2.xsd" MetadataType="Schema" ID="fa9e4a8f-23a8-411d-bc30-177ba8b65bce" SourceId="1" SourceUrl="http://localhost:14985/Services/liveVideos.svc?xsd=xsd0" />
+    <MetadataFile FileName="liveVideos.wsdl" MetadataType="Wsdl" ID="c8bb8565-b4a0-4885-a129-c4b5c1d6a279" SourceId="1" SourceUrl="http://localhost:14985/Services/liveVideos.svc?wsdl" />
+    <MetadataFile FileName="liveVideos3.xsd" MetadataType="Schema" ID="a208eaec-d488-4747-9273-68d75d00a0d8" SourceId="1" SourceUrl="http://localhost:14985/Services/liveVideos.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

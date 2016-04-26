@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ads" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+      <xsd:import schemaLocation="http://localhost:14985/Services/ads.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Iads_saveAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveAds" />
+  </wsdl:message>
+  <wsdl:message name="Iads_saveAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_deleteAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAds" />
+  </wsdl:message>
+  <wsdl:message name="Iads_deleteAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_deleteAdsItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAdsItem" />
+  </wsdl:message>
+  <wsdl:message name="Iads_deleteAdsItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteAdsItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_editAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:editAds" />
+  </wsdl:message>
+  <wsdl:message name="Iads_editAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnAds" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnAdsItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnAdsItem" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnAdsItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnAdsItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnTVLives_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTVLives" />
+  </wsdl:message>
+  <wsdl:message name="Iads_searchDataOnTVLives_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchDataOnTVLivesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_getAdsWithItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAdsWithItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="Iads_getAdsWithItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAdsWithItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_getWidgetAdsWithItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWidgetAdsWithItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="Iads_getWidgetAdsWithItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWidgetAdsWithItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Iads">
+    <wsdl:operation name="saveAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/saveAds" message="tns:Iads_saveAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/saveAdsResponse" message="tns:Iads_saveAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/deleteAds" message="tns:Iads_deleteAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/deleteAdsResponse" message="tns:Iads_deleteAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdsItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/deleteAdsItem" message="tns:Iads_deleteAdsItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/deleteAdsItemResponse" message="tns:Iads_deleteAdsItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="editAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/editAds" message="tns:Iads_editAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/editAdsResponse" message="tns:Iads_editAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/searchDataOnAds" message="tns:Iads_searchDataOnAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/searchDataOnAdsResponse" message="tns:Iads_searchDataOnAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnAdsItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/searchDataOnAdsItem" message="tns:Iads_searchDataOnAdsItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/searchDataOnAdsItemResponse" message="tns:Iads_searchDataOnAdsItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTVLives">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/searchDataOnTVLives" message="tns:Iads_searchDataOnTVLives_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/searchDataOnTVLivesResponse" message="tns:Iads_searchDataOnTVLives_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAdsWithItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/getAdsWithItemDetail" message="tns:Iads_getAdsWithItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/getAdsWithItemDetailResponse" message="tns:Iads_getAdsWithItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWidgetAdsWithItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/getWidgetAdsWithItemDetail" message="tns:Iads_getWidgetAdsWithItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/getWidgetAdsWithItemDetailResponse" message="tns:Iads_getWidgetAdsWithItemDetail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Iads" type="tns:Iads">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="saveAds">
+      <soap:operation soapAction="http://tempuri.org/Iads/saveAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAds">
+      <soap:operation soapAction="http://tempuri.org/Iads/deleteAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdsItem">
+      <soap:operation soapAction="http://tempuri.org/Iads/deleteAdsItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editAds">
+      <soap:operation soapAction="http://tempuri.org/Iads/editAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnAds">
+      <soap:operation soapAction="http://tempuri.org/Iads/searchDataOnAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnAdsItem">
+      <soap:operation soapAction="http://tempuri.org/Iads/searchDataOnAdsItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchDataOnTVLives">
+      <soap:operation soapAction="http://tempuri.org/Iads/searchDataOnTVLives" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAdsWithItemDetail">
+      <soap:operation soapAction="http://tempuri.org/Iads/getAdsWithItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWidgetAdsWithItemDetail">
+      <soap:operation soapAction="http://tempuri.org/Iads/getWidgetAdsWithItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ads">
+    <wsdl:port name="BasicHttpBinding_Iads" binding="tns:BasicHttpBinding_Iads">
+      <soap:address location="http://localhost:14985/Services/ads.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9ab8a2b0-71b1-4b6f-b4b3-4a58ef0a27ac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/alarms.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="alarms.wsdl" MetadataType="Wsdl" ID="eefbff22-b3db-4032-b0f5-18f095bfa8f7" SourceId="1" SourceUrl="http://localhost:14985/Services/alarms.svc?wsdl" />
+    <MetadataFile FileName="alarms.xsd" MetadataType="Schema" ID="86517b37-5b8f-4f6a-8c99-adac3b6fb991" SourceId="1" SourceUrl="http://localhost:14985/Services/alarms.svc?xsd=xsd3" />
+    <MetadataFile FileName="alarms1.xsd" MetadataType="Schema" ID="be23def1-e668-4b2c-af6b-ce78933c402e" SourceId="1" SourceUrl="http://localhost:14985/Services/alarms.svc?xsd=xsd0" />
+    <MetadataFile FileName="alarms2.xsd" MetadataType="Schema" ID="1bd2e331-be31-40c0-934d-b0493575f765" SourceId="1" SourceUrl="http://localhost:14985/Services/alarms.svc?xsd=xsd1" />
+    <MetadataFile FileName="alarms3.xsd" MetadataType="Schema" ID="662a1ead-5874-41df-81c8-527441d0befc" SourceId="1" SourceUrl="http://localhost:14985/Services/alarms.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
