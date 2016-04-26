@@ -221,7 +221,6 @@
     <Content Include="Scripts\FrontEndController\editContentCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentTempCtrlr_1.js" />
     <Content Include="Scripts\util\toolTipAction.js" />
-    <Content Include="Skins\CSS_tvShow\css\index.html" />
     <Content Include="Skins\CSS_tvShow\css\screen.css" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.13.min.js" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.16.swf" />
