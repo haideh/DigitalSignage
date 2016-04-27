@@ -8,7 +8,7 @@
 
 <div class="fullHD" id="ShowContent" ng-controller="showContentCtrlr">
    
-    <input id="contentIdInp" type="hidden" value="@Model.content_id" />
+    <input class="contentIdInp" type="hidden" value="@Model.content_id" />
     @Html.Partial("~/Views/Show/ShowContent_Type1.cshtml")
 
     @*<a  data-id="0" href="@Url.Action("EditContent", "Edit", new {contentId= Model.content_id })">Edit</a>*@ 

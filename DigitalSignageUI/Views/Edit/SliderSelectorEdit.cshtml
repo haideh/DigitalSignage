@@ -18,6 +18,7 @@
                 <div ng-repeat="x in resultList" data-id="{{x.id}}" data-title="{{x.title}}" ng-click="clearSelectPackageInf()" class="packageItem serach-result">
                     <div class="packageItemPreview">
                             <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
+                            <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
                             <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div> 
                     </div>
                     <div class="packageItemDivider">
@@ -42,10 +43,12 @@
             <div id="itemSelect" class="rowSelectContent">
                 <div ng-repeat="x in resultAdsContentList" data-id="{{x.id}}" data-title="{{x.title}}" class="packageItem" ng-click="selectPackageInf(x)">
                     <div class="packageItemPreview">
-                        <img  ng-repeat="detail in x.itemList" ng-if="detail.file_name!=''" src="{{packageImageSource}}{{detail.file_name}}" alt="">
+                        <img  ng-repeat="detail in x.itemList" ng-if="x.type == '1'" src="{{packageImageSource}}{{detail.file_name}}" alt="">
+                        <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
+                        <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div> 
                     </div>
                     <div class="packageItemDivider">
-                        <a class="btnToggleTime packageItemBtnSetting"  ng-click="showAdsInf()"><span class="icon" data-icon="&#xe019;"></span></a>
+                        @*<a class="btnToggleTime packageItemBtnSetting"  ng-click="showAdsInf()"><span class="icon" data-icon="&#xe019;"></span></a>*@
                         <a class="packageItemBtnDelete" ng-click="addOrRemAdsInList(x , 'remove')"><span class="icon" data-icon="&#xe0da;"></span></a>
                         <div class="packageItemTitle">
                             <span class="icon" data-icon="&#xe256;"></span>&nbsp;
@@ -55,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <div class="panelToggle rowSelectHeader" style="display: none;">
+        <div class="panelToggle rowSelectHeader" >
             <div class="editPackageTitle">
                 3.
                 تنظیم مدت زمان نمایش
@@ -67,7 +70,7 @@
                 <input class="inputTxt" type="number" placeholder="زمان بر حسب دقیقه" ng-model="selectedPackage.interval">
             </div>
             <div class="editPackageBtnPlaceSmall">
-                <a class="editPackageBtnSmall" ng-click="editPackageTime()"><span class="icon" data-icon="&#xe042;"></span></a>
+                @*<a class="editPackageBtnSmall" ng-click="editPackageTime()"><span class="icon" data-icon="&#xe042;"></span></a>*@
             </div>
         </div>
 

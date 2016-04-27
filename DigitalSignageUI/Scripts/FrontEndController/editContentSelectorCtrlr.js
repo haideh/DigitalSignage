@@ -17,14 +17,6 @@
                 contentObj.interval = $scope.viewData[adsIndex].interval;
                 contentObj.companyId = $scope.viewData[adsIndex].companyId;
 
-                if (type == 'ads') {
-                    var adsObj = new Object();
-                    adsObj.id = contentObj.id;
-                    adsObj.interval = contentObj.interval;
-
-                    $scope.adsList.push(adsObj);
-                }
-
                 var contenDetailObjList = new Array();
                 for (var adsitemIndex = 0; adsitemIndex < $scope.viewData[adsIndex].itemList.length; adsitemIndex++) {
                     var contenDetailObj = new Object();
@@ -38,7 +30,9 @@
                 if (contentObj.type == '2') {
                     $scope.runPlayer(contenDetailObjList);
                 }
+
                 contentObj.itemList = contenDetailObjList;
+
                 resultList.push(contentObj);
             }
         });
@@ -46,13 +40,14 @@
         return resultList;
     };
 
-    $scope.loadAdsList = function () {
+    $scope.loadAdsList = function () {//all
 
         $scope.resultList = [];
         var dataObj = new Object();
         dataObj.type = $scope.type;
 
         $scope.resultList = $scope.adsItemDetailListCreator(service_loadAdsItemListWithType, dataObj, 'ads');
+
     };
 
 
@@ -95,21 +90,21 @@
                 $scope.resultAdsContentList.splice(index, 1);
 
 
-                $(".panelToggle").css("display", "none");
+                //$(".panelToggle").css("display", "none");
                 break;
             }
         }
     };
 
     $scope.showAdsInf = function () {
-        $(".panelToggle").css("display", "block");
+        // $(".panelToggle").css("display", "block");
     }
 
     $scope.editPackageTime = function () {
         var index = $scope.resultAdsContentList.indexOf($scope.selectedPackage);
         $scope.resultAdsContentList[index].interval = $scope.selectedPackage.interval;
         $scope.clearSelectPackageInf();
-        $(".panelToggle").css("display", "none");
+        //  $(".panelToggle").css("display", "none");
     }
 
     $scope.saveAdsItemPackage = function () {
@@ -117,6 +112,7 @@
 
         obj.position = $(".positionInp").val();
         obj.content_id = $(".contentIdInp").val();
+        obj.interval = $scope.selectedPackage.interval;
         obj.adsItemList = new Array();
         obj.adsItemList = $scope.resultAdsContentList;
         debugger
@@ -140,7 +136,7 @@
         $scope.selectedPackage = [];
         $scope.adsList = [];
 
-        $scope.loadAdsList();
+        $scope.loadAdsList();//all
         $scope.loadContentAdsList();
 
     }

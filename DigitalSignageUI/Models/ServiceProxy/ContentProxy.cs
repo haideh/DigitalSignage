@@ -216,7 +216,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                 ResultMessage<string> serviceResult;
 
 
-                serviceResult = clientProxy.editContentAds(ContentMapper.MapTo(contentOptionInfo));
+                serviceResult = clientProxy.saveContentAds(ContentMapper.MapTo(contentOptionInfo));
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:

@@ -622,3 +622,7 @@ sinageAutocomplte = function (containerCls , inputID) {
     }
 }
 
+
+//remove item from array
+//var index = $scope.resultList.indexOf(selectedAds);
+//$scope.resultList.splice(index, 1);
