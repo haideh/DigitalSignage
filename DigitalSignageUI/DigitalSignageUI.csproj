@@ -45,16 +45,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ariaban.Parser.HTML">
-      <HintPath>..\..\..\DigitalSignageWebservices\DigitalServices\bin\Ariaban.Parser.HTML.dll</HintPath>
+      <HintPath>..\..\..\DigitalSignageUI\DigitalSignageUI\bin\Ariaban.Parser.HTML.dll</HintPath>
     </Reference>
     <Reference Include="Aryaban.Engine">
-      <HintPath>..\..\..\DigitalSignageWebservices\DigitalServices\bin\Aryaban.Engine.dll</HintPath>
+      <HintPath>..\..\..\DigitalSignageUI\DigitalSignageUI\bin\Aryaban.Engine.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper">
-      <HintPath>..\..\..\..\..\..\OtherPrj\LastICT_Code\PRJ_ICT_94\Tabadol\Neww\TabadolServices\TabadolServices\bin\AutoMapper.dll</HintPath>
+      <HintPath>..\..\..\DigitalSignageUI\DigitalSignageUI\bin\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Ciloci.Flee">
-      <HintPath>..\..\..\DigitalSignageWebservices\DigitalServices\bin\Ciloci.Flee.dll</HintPath>
+      <HintPath>..\..\..\DigitalSignageUI\DigitalSignageUI\bin\Ciloci.Flee.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
