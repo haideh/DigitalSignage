@@ -19,7 +19,7 @@ application.factory('httpRequest', ['$http', function ($http) {
 		    }
 		    else if (data.indexOf("MOHAJER_MAINPAGE") != -1) {
 		        freeCatch();
-		        location.href = "login.html";
+		        //location.href = "aa.html";
 		        return;
 		    }
 
@@ -42,7 +42,7 @@ application.factory('httpRequest', ['$http', function ($http) {
 		    }
 		    else if (data.indexOf("MOHAJER_MAINPAGE") != -1) {
 		        freeCatch();
-		        location.href = "login.html";
+		       // location.href = "aa.html";
 		        return;
 		    }
 		}, function (err) {
@@ -73,7 +73,7 @@ application.factory('httpRequest', ['$http', function ($http) {
                 }
                 else if (data.indexOf("MOHAJER_MAINPAGE")) {
                     //freeCatch();
-                    location.href = "login.html";
+                   // location.href = "aa.html";
                     return;
                 } else {
                     //	Loader.setLoader(false);
@@ -126,7 +126,7 @@ application.factory('httpRequest', ['$http', function ($http) {
 	            }
 	            else if (data.indexOf("MOHAJER_MAINPAGE")) {
 	                freeCatch();
-	                location.href = "login.html";
+	              //  location.href = "aa.html";
 	                return;
 	            } else {
 	                //	Loader.setLoader(false);

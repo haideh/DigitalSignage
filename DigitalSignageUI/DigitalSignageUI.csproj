@@ -525,7 +525,6 @@
     <Content Include="Skins\CSS_tvShow\fonts\uicon.eot" />
     <Content Include="Skins\CSS_tvShow\fonts\uicon.ttf" />
     <Content Include="Skins\CSS_tvShow\fonts\uicon.woff" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\ContentPart\VideoPart.cshtml" />
     <Content Include="Views\ContentPart\ImagePart.cshtml" />
     <Content Include="Views\ContentPart\TextPart.cshtml" />
@@ -537,7 +536,6 @@
     <Content Include="Views\Edit\EditContentSelector.cshtml" />
     <Content Include="Views\Edit\SliderSelectorEdit.cshtml" />
     <Content Include="Views\Edit\TextSelectorEdit.cshtml" />
-    <Content Include="Views\Edit\WidgetsSelectorEdit.cshtml" />
     <Content Include="Skins\CSS_tvShow\video\SampleVideo_1280x720.webm" />
   </ItemGroup>
   <ItemGroup>

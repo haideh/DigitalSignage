@@ -1,5 +1,44 @@
 ﻿function showContentCtrlr($scope, httpRequest) {
+    $scope.setPosition = function (itemList, positionType) {
 
+        switch (positionType) {
+            case 1: {//Image
+                $scope.sliderImageList = itemList;
+                break;
+            }
+            case 2: {//Video
+                setTimeout(function () {
+                    $scope.runPlayer(itemList);
+                }, 2000)
+                break;
+            }
+            case 3: {//Text
+                $scope.sliderTextList = itemList;
+                break;
+            }
+            case 4: {//weather
+
+                $scope.weatherFun();
+                break;
+            }
+            case 5: {//time
+
+                $scope.show_time();
+                $scope.showDate();
+                break;
+            }
+            case 0: {//none
+                break;
+            }
+            default: {
+                break;
+            }
+        };
+
+        setTimeout(function () {
+            $scope.slider($scope.sliderImageList);
+        }, 1000);
+    };
 
     $scope.load = function () {
     

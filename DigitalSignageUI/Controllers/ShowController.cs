@@ -93,9 +93,5 @@ namespace DigitalSignageUI.Controllers
             result.Data = contentList;
             return result;
         }
-
-
-
-
     }
 }

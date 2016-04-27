@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace DigitalSignageUI.Controllers
 {
@@ -79,7 +80,7 @@ namespace DigitalSignageUI.Controllers
 
             if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 return RedirectToAction("Error", "Error");
-            return View();
+            return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = contentOptionInfo.content_id.ToString() }));
         }
     }
 }
