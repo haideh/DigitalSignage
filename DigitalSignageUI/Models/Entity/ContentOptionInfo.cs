@@ -21,6 +21,7 @@ namespace DigitalSignageUI.Models.Entity
         public int secondViewed { get; set; }
         public long companyId { get; set; }
         public string companyName { get; set; }
+        public List<AdsInfo> adsItemList { get; set; }
 
     }
 }
