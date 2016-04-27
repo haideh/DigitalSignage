@@ -453,10 +453,7 @@
     <Content Include="Skins\CSS_tvShow\script\jquery.transit.min.js" />
     <Content Include="Skins\CSS_tvShow\script\modernizr.js" />
     <Content Include="Skins\CSS_tvShow\script\pdate.min.js" />
-    <Content Include="Skins\CSS_tvShow\slide\food01.jpg" />
-    <Content Include="Skins\CSS_tvShow\slide\food02.jpg" />
-    <Content Include="Skins\CSS_tvShow\slide\food03.jpg" />
-    <Content Include="Skins\CSS_tvShow\slide\index.html" />
+    <Content Include="Skins\CSS_tvShow\slide\flux.min.js" />
     <Content Include="Skins\CSS_tvShow\video\index.html" />
     <Content Include="Skins\CSS_tvShow\video\SampleVideo_1280x720.mp4" />
     <Content Include="Web.config">

@@ -1,5 +1,4 @@
 ﻿function editContentTempCtrlr_1($scope, $rootScope) {
-    $scope.weatherWidget = '';
     $scope.load = function () {
     };
     $scope.load();
@@ -56,17 +55,10 @@
 
 
     $scope.WeatherWidget = function (that , wPosi) {
-        
         if($scope.btnTVCAEditDis(wPosi , 'widget') == 'btnTVCAEdit'){
-            $scope.weatherWidget = widModalID;
             $rootScope.$emit("loadWidgetEvt", {});
             $(that.target).attr('href', '#WeatherWidget_' + wPosi);
         }
-        else {
-            $scope.weatherWidget = "";
-        }
-
-        return $scope.weatherWidget;
     };
 
 }

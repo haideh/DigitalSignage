@@ -129,9 +129,9 @@
     $scope.runPlayer = function (itemList) {
         var videoArr = new Array();
         for (var iVideo = 0 ; iVideo < itemList.length ; iVideo++) {
-            videoArr.push(videoSource+itemList[iVideo].file_name);
+            videoArr.push(videoSource + itemList[iVideo].file_name);
         }
-      
+
 
         $f(".flowplayerVideo", flowPlayerSWF, {
 
@@ -151,26 +151,77 @@
 
         });
 
+
+        //url = rtmpSource + rtmpStreamName;
+        //var simulateiDeviceFlag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        //if (simulateiDeviceFlag)
+        //    url = androidUrlSource + androidStreamName;
+
+        //// some code..
+        //var player = $f(".flowplayerVideo", flowPlayerSWF, {
+        //    clip: {
+        //        //    url: androidUrlSource + androidStreamName,
+        //        url: url,
+        //        ipadUrl: iosUrlSource + iosStreamName,
+        //        scaling: 'full',
+        //        provider: 'rtmp',
+        //        live: true,
+        //        autoPlay: true,
+        //        accelerated: true,
+        //        autoBuffering: true,
+        //        // use smil and bwcheck when resolving the clip URL
+        //        //      urlResolvers: ['smil', 'bwcheck']
+        //    },
+        //    play: { opacity: 0 },
+
+        //    plugins: {
+        //        // the SMIL plugin reads in and parses the SMIL, and provides
+        //        // the bitrates info to the bw detection plugin
+        //        //        smil: { url: 'flowplayer.smil-3.2.9.swf' },
+        //        // bandwidth check plugin
+        //        bwcheck: {
+        //            url: bwChkSource,
+        //            // HDDN uses Wowza servers
+        //            serverType: 'wowza',
+        //            // we use dynamic switching, the appropriate bitrate is switched on the fly
+        //            dynamic: true,
+        //            netConnectionUrl: rtmpSource,
+        //        },
+
+        //        rtmp: {
+        //            url: rtmpFlowSwf,
+        //            netConnectionUrl: rtmpSource
+        //        },
+        //        canvas: {
+        //            backgroundGradient: 'none'
+        //        }
+        //    }
+        //}).ipad({ simulateiDevice: simulateiDeviceFlag });
+
+
+
     };
 
     $scope.slider = function (imageList) {
         $scope.sliderImageList = imageList;
-         //imageList[0].interval
+        var transitionsArray = new Array();
+        //transitionsArray.push('bars','blinds','blocks','blocks2','concentric','slide','warp','zip','bars3d','blinds3d','cube','tiles3d','turn');
+        transitionsArray.push('bars', 'blinds', 'blocks', 'blocks2', 'concentric', 'slide', 'warp', 'zip', 'bars3d', 'blinds3d', 'cube', 'tiles3d', 'turn');
+        var dlayArr = new Array();
+        dlayArr.push(1000, 2000, 3000, 4000, 1000);
+        if (!flux.browser.supportsTransitions)
+            alert("Flux Slider requires a browser that supports CSS3 transitions");
+        window.f = new flux.slider('.coin-slider', {
+            pagination: false,
+            //controls: true,
+            captions: false,
+            transitions: transitionsArray,
+            width: 320,
+            height: 300
+            //   delay: 2000
+        });
+        //$('.coin-slider').coinslider({ width: 320, height: 300, navigation: false});
 
-        //var transitionsArray = new Array();
-        ////transitionsArray.push('bars','blinds','blocks','blocks2','concentric','slide','warp','zip','bars3d','blinds3d','cube','tiles3d','turn');
-        //transitionsArray.push('bars3d','blinds3d');
-        //if(!flux.browser.supportsTransitions)
-        //    alert("Flux Slider requires a browser that supports CSS3 transitions");
-        //window.f = new flux.slider('#slider', {
-        //    pagination: false,
-        //    //controls: true,
-        //    captions: true,
-        //    transitions: transitionsArray,
-        //    // delay:5000
-        //});
-
-        $('.coin-slider').coinslider({ width: 320, height: 300, navigation: false, delay: 3000, spw: 4, sph: 4 });
     }
 
    
