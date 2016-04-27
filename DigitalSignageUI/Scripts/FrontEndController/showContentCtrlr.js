@@ -45,7 +45,7 @@
         $scope.contentId = '';
       
         var dataObj = new Object();
-        dataObj.content_id = $("#contentIdInp").val();
+        dataObj.content_id = $(".contentIdInp").val();
 
 
         $scope.viewData = [];

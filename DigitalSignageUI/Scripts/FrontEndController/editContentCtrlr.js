@@ -61,16 +61,14 @@
         }
         $scope.selectedWidgetPackage = packageInfo;
     };
-    $scope.saveWidget = function (position, contentId, adId) {
+    $scope.saveWidget = function (position, contentId, packageInfo) {
 
         var obj = new Object();
         obj.position = position;
-        obj.ad_id = adId;
         obj.content_id = contentId;
-        obj.companyId = 1;
-
-        $scope.viewData = [];
-        var resultList = new Array();
+        obj.adsItemList = new Array();
+        obj.adsItemList.push(packageInfo);
+        
 
         httpRequest.post(service_editContentAds, obj, function (data) {
         });
@@ -91,6 +89,7 @@
         httpRequest.post(service_loadWidgetAdsItemListWithType, "", function (data) {
 
             $scope.viewWidgtData = data.resultSet;
+            debugger
             for (var adsIndex = 0; adsIndex < $scope.viewWidgtData.length; adsIndex++) {
                 var contentObj = new Object();
                 contentObj.id = $scope.viewWidgtData[adsIndex].id;
@@ -99,6 +98,7 @@
                 contentObj.type = $scope.viewWidgtData[adsIndex].type;
                 contentObj.shuffle = $scope.viewWidgtData[adsIndex].shuffle;
                 contentObj.interval = $scope.viewWidgtData[adsIndex].interval;
+                contentObj.companyId = $scope.viewWidgtData[adsIndex].companyId;
 
                 var contenDetailObjList = new Array();
                 for (var adsitemIndex = 0; adsitemIndex < $scope.viewWidgtData[adsIndex].itemList.length; adsitemIndex++) {

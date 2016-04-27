@@ -59,9 +59,32 @@ namespace DigitalSignageUI.Models.Mapper
         internal static ContentOptionInfoWTO MapTo(ContentOptionInfo content)
         {
             AutoMapper.Mapper.CreateMap<ContentOptionInfo, ContentOptionInfoWTO>();
+
+            List<AdsInfoWTO> listItem = new List<AdsInfoWTO>();
+
+
+            foreach (AdsInfo c in content.adsItemList)
+            {
+                listItem.Add(MapTo(c));
+            }
+
             ContentOptionInfoWTO wto = AutoMapper.Mapper.Map<ContentOptionInfo, ContentOptionInfoWTO>(content);
+            wto.adsItemList = listItem.ToArray();
 
             return wto;
+
+        }
+
+        internal static ContentOptionInfoWTO[] MapTo(List<ContentOptionInfo> content)
+        {
+            List<ContentOptionInfoWTO> wtos = new List<ContentOptionInfoWTO>();
+
+            foreach (var item in content)
+            {
+                wtos.Add((MapTo(item)));
+            }
+
+            return wtos.ToArray();
 
         }
 
@@ -102,7 +125,24 @@ namespace DigitalSignageUI.Models.Mapper
         internal static AdsInfoWTO MapTo(AdsInfo ads)
         {
             AutoMapper.Mapper.CreateMap<AdsInfo, AdsInfoWTO>();
+
+
+            List<AdsIemInfoWTO> listItem = new List<AdsIemInfoWTO>();
+
+            foreach (AdsIemInfo c in ads.itemList)
+            {
+                listItem.Add(MapTo(c));
+            }
+
             AdsInfoWTO wto = AutoMapper.Mapper.Map<AdsInfo, AdsInfoWTO>(ads);
+            wto.itemList = listItem.ToArray();
+            return wto;
+        }
+
+        internal static AdsIemInfoWTO MapTo(AdsIemInfo ads)
+        {
+            AutoMapper.Mapper.CreateMap<AdsIemInfo, AdsIemInfoWTO>();
+            AdsIemInfoWTO wto = AutoMapper.Mapper.Map<AdsIemInfo, AdsIemInfoWTO>(ads);
 
             return wto;
         }
