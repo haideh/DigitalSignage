@@ -23,6 +23,7 @@
   <xs:complexType name="ContentOptionInfoWTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="ad_id" type="xs:long" />
+      <xs:element minOccurs="0" name="adsItemList" nillable="true" type="tns:ArrayOfAdsInfoWTO" />
       <xs:element minOccurs="0" name="companyId" type="xs:long" />
       <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="content_id" type="xs:long" />

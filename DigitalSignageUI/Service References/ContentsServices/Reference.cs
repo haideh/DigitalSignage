@@ -295,6 +295,9 @@ namespace DigitalSignageUI.ContentsServices {
         private long ad_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private DigitalSignageUI.ContentsServices.AdsInfoWTO[] adsItemListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long companyIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -349,6 +352,19 @@ namespace DigitalSignageUI.ContentsServices {
                 if ((this.ad_idField.Equals(value) != true)) {
                     this.ad_idField = value;
                     this.RaisePropertyChanged("ad_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DigitalSignageUI.ContentsServices.AdsInfoWTO[] adsItemList {
+            get {
+                return this.adsItemListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.adsItemListField, value) != true)) {
+                    this.adsItemListField = value;
+                    this.RaisePropertyChanged("adsItemList");
                 }
             }
         }
@@ -1607,11 +1623,11 @@ namespace DigitalSignageUI.ContentsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/deleteContents", ReplyAction="http://tempuri.org/Icontents/deleteContentsResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteContentsAsync(long id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/editContentAds", ReplyAction="http://tempuri.org/Icontents/editContentAdsResponse")]
-        Aryaban.Engine.Core.WebService.ResultMessage<string> editContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/saveContentAds", ReplyAction="http://tempuri.org/Icontents/saveContentAdsResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> saveContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/editContentAds", ReplyAction="http://tempuri.org/Icontents/editContentAdsResponse")]
-        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editContentAdsAsync(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/saveContentAds", ReplyAction="http://tempuri.org/Icontents/saveContentAdsResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> saveContentAdsAsync(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/searchContentsWithAdsItemDetail", ReplyAction="http://tempuri.org/Icontents/searchContentsWithAdsItemDetailResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]> searchContentsWithAdsItemDetail(string type, long content_id, int position);
@@ -1723,12 +1739,12 @@ namespace DigitalSignageUI.ContentsServices {
             return base.Channel.deleteContentsAsync(id);
         }
         
-        public Aryaban.Engine.Core.WebService.ResultMessage<string> editContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo) {
-            return base.Channel.editContentAds(contentOptionInfo);
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> saveContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo) {
+            return base.Channel.saveContentAds(contentOptionInfo);
         }
         
-        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editContentAdsAsync(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo) {
-            return base.Channel.editContentAdsAsync(contentOptionInfo);
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> saveContentAdsAsync(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo) {
+            return base.Channel.saveContentAdsAsync(contentOptionInfo);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]> searchContentsWithAdsItemDetail(string type, long content_id, int position) {

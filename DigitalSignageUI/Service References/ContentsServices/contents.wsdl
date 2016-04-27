@@ -38,11 +38,11 @@
   <wsdl:message name="Icontents_deleteContents_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteContentsResponse" />
   </wsdl:message>
-  <wsdl:message name="Icontents_editContentAds_InputMessage">
-    <wsdl:part name="parameters" element="tns:editContentAds" />
+  <wsdl:message name="Icontents_saveContentAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveContentAds" />
   </wsdl:message>
-  <wsdl:message name="Icontents_editContentAds_OutputMessage">
-    <wsdl:part name="parameters" element="tns:editContentAdsResponse" />
+  <wsdl:message name="Icontents_saveContentAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveContentAdsResponse" />
   </wsdl:message>
   <wsdl:message name="Icontents_searchContentsWithAdsItemDetail_InputMessage">
     <wsdl:part name="parameters" element="tns:searchContentsWithAdsItemDetail" />
@@ -107,9 +107,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/deleteContents" message="tns:Icontents_deleteContents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Icontents/deleteContentsResponse" message="tns:Icontents_deleteContents_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="editContentAds">
-      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/editContentAds" message="tns:Icontents_editContentAds_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/editContentAdsResponse" message="tns:Icontents_editContentAds_OutputMessage" />
+    <wsdl:operation name="saveContentAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/saveContentAds" message="tns:Icontents_saveContentAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/saveContentAdsResponse" message="tns:Icontents_saveContentAds_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="searchContentsWithAdsItemDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/searchContentsWithAdsItemDetail" message="tns:Icontents_searchContentsWithAdsItemDetail_InputMessage" />
@@ -187,8 +187,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="editContentAds">
-      <soap:operation soapAction="http://tempuri.org/Icontents/editContentAds" style="document" />
+    <wsdl:operation name="saveContentAds">
+      <soap:operation soapAction="http://tempuri.org/Icontents/saveContentAds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

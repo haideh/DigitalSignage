@@ -70,17 +70,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="editContentAds">
+  <xs:element name="saveContentAds">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="contentOptionInfo" nillable="true" type="q9:ContentOptionInfoWTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="editContentAdsResponse">
+  <xs:element name="saveContentAdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="editContentAdsResult" nillable="true" type="q10:ResultMessageOfstring" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="saveContentAdsResult" nillable="true" type="q10:ResultMessageOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
