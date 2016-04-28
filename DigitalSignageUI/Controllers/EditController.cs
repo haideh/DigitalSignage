@@ -29,10 +29,10 @@ namespace DigitalSignageUI.Controllers
 
 
         [HttpPost]
-        public ActionResult loadAdsListWithType(long type)
+        public ActionResult loadAdsListWithType(long type, string contentId, string position)
         {
             AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadAdsItemListWithType(type, 1);
+            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadAdsItemListWithType(type, 1, contentId, position);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 //Redirect To Error Page
@@ -81,6 +81,17 @@ namespace DigitalSignageUI.Controllers
             if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 return RedirectToAction("Error", "Error");
             return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = contentOptionInfo.content_id.ToString() }));
+        }
+
+        [HttpPost]
+        public ActionResult deleteContentAds(long content_id, int position)
+        {
+            ContentProxy serviceProxy = new ContentProxy();
+            ResultMessage<string> contentAds = serviceProxy.deleteContentAds(content_id, position);
+
+            if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                return RedirectToAction("Error", "Error");
+            return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = content_id.ToString() }));
         }
     }
 }

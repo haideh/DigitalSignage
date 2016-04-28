@@ -11,7 +11,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
 {
     public class ContentProxy
     {
-        public ResultMessage<List<AdsInfo>> loadContentsWithAdsItemDetail(long content_id)
+        public ResultMessage<List<AdsInfo>> loadContent(long content_id)
         {
             
             List<AdsInfo> listContentInfo = new List<AdsInfo>();
@@ -254,5 +254,53 @@ namespace DigitalSignageUI.Models.ServiceProxy
 
             }
         }
+
+        public ResultMessage<string> deleteContentAds(long contentId, int position)
+        {
+            List<ContentOptionInfo> listContentInfo = new List<ContentOptionInfo>();
+            using (IcontentsClient clientProxy = new IcontentsClient())
+            {
+                ResultMessage<string> serviceResult;
+
+
+                serviceResult = clientProxy.deleteContentsAsdWithPosition( contentId,  position);
+                switch (serviceResult.result.status)
+                {
+                    case Result.state.error:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.error,
+                                message = serviceResult.result.message
+                            }
+                        };
+                        break;
+                    case Result.state.success:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.success,
+                            }
+                        };
+                        break;
+                    default:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                            }
+                        };
+                        break;
+                }
+
+            }
+        }
+        
     }
 }

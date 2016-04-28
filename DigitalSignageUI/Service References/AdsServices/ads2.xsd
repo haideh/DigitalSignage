@@ -110,6 +110,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="companyId" type="xs:long" />
+        <xs:element minOccurs="0" name="content_id" type="xs:long" />
+        <xs:element minOccurs="0" name="position" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

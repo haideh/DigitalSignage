@@ -3,7 +3,8 @@
    @if (Model.content_ad_id != 0)
    {
         <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 2, position = Model.position })">Edit</a>
-    }
+        <a ng-click="deleteContentAds(@Model.content_ad_id,@Model.position)">del</a>
+   }
 
 
     <div class="flowplayerVideo widgetVideo" id="player"></div>

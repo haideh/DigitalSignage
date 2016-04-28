@@ -1199,6 +1199,7 @@ function ajaxGet(actionUrl, data, success, fail) {//khodayari
 }
 
 function convertObjectToJSON(obj) {
+    debugger
 	if (!obj)
 		return "{}";
 	var newObj = new Object();

@@ -1,4 +1,4 @@
-﻿function editContentSelectorCtrlr($scope, httpRequest) {
+﻿function editContentSelectorCtrlr($scope,$rootScope, httpRequest) {
 
     $scope.adsItemDetailListCreator = function (serviceName, dataObj, type) {
         $scope.viewData = [];
@@ -45,6 +45,8 @@
         $scope.resultList = [];
         var dataObj = new Object();
         dataObj.type = $scope.type;
+        dataObj.contentId = $scope.contentId;
+        dataObj.position = $scope.position;
 
         $scope.resultList = $scope.adsItemDetailListCreator(service_loadAdsItemListWithType, dataObj, 'ads');
 
@@ -61,6 +63,87 @@
 
         $scope.resultAdsContentList = $scope.adsItemDetailListCreator(service_loadContentAdsListWithPoition, dataObj, 'content');
     };
+
+    //Widget
+    $scope.selectWidget = function (packageInfo, mode) {
+
+        switch (mode) {
+            case 'timeMode': {
+                $scope.timeSelect = 'select';
+                $scope.weatherSelect = '';
+
+                break;
+            }
+            case 'weatherMode': {
+                $scope.timeSelect = '';
+                $scope.weatherSelect = 'select';
+                break;
+            }
+            default: {
+                break;
+            }
+
+        }
+        $scope.selectedWidgetPackage = packageInfo;
+    };
+    $scope.saveWidget = function (packageInfo) {
+
+        var obj = new Object();
+        obj.position = $(".positionInp").val();
+        obj.content_id = $(".contentIdInp").val();
+
+        obj.adsItemList = new Array();
+        obj.adsItemList.push(packageInfo);
+        
+        debugger
+        httpRequest.post(service_editContentAds, obj, function (data) {
+        });
+        location.href = "/Edit/EditContent?contentId=" + obj.content_id;
+
+    };
+
+    $rootScope.$on("loadWidgetEvt", function (event, args) {
+        $scope.loadWidgetInfo();
+    });
+    $scope.loadWidgetInfo = function () {
+
+        $scope.viewWidgtData = [];
+        $scope.resultWidgetList = [];
+        var resultList = new Array();
+
+        httpRequest.post(service_loadWidgetAdsItemListWithType, "", function (data) {
+
+            $scope.viewWidgtData = data.resultSet;
+            debugger
+            for (var adsIndex = 0; adsIndex < $scope.viewWidgtData.length; adsIndex++) {
+                var contentObj = new Object();
+                contentObj.id = $scope.viewWidgtData[adsIndex].id;
+                contentObj.max_minutes = $scope.viewWidgtData[adsIndex].max_minutes;
+                contentObj.title = $scope.viewWidgtData[adsIndex].title;
+                contentObj.type = $scope.viewWidgtData[adsIndex].type;
+                contentObj.shuffle = $scope.viewWidgtData[adsIndex].shuffle;
+                contentObj.interval = $scope.viewWidgtData[adsIndex].interval;
+                contentObj.companyId = $scope.viewWidgtData[adsIndex].companyId;
+
+                var contenDetailObjList = new Array();
+                for (var adsitemIndex = 0; adsitemIndex < $scope.viewWidgtData[adsIndex].itemList.length; adsitemIndex++) {
+                    var contenDetailObj = new Object();
+                    contenDetailObj.adsItemTitle = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].title;
+                    contenDetailObj.adsItemType = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].type;
+                    contenDetailObj.file_name = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].file_name;
+                    contenDetailObjList.push(contenDetailObj);
+                }
+                contentObj.itemList = contenDetailObjList;
+                resultList.push(contentObj);
+            }
+        });
+        $scope.resultWidgetList = resultList
+
+    };
+
+    //End Widget
+
+
 
     $scope.selectPackageInf = function (packageInf) {
         $scope.selectedPackage = packageInf;
@@ -124,7 +207,10 @@
         });
         location.href = "/Edit/EditContent?contentId=" + obj.content_id;
     }
-
+    $scope.cancelSaveAds=function()
+    {
+        location.href = "/Edit/EditContent?contentId=" + $(".contentIdInp").val();
+    }
     $scope.load = function () {
 
         $scope.contentId = '';
@@ -139,6 +225,8 @@
         $scope.loadAdsList();//all
         $scope.loadContentAdsList();
 
+        $scope.loadWidgetInfo();
+
     }
     $scope.load();
 
@@ -149,78 +237,6 @@
 
     $scope.runPlayer = function (itemList) {
 
-        var videoArr = new Array();
-        for (var iVideo = 0 ; iVideo < itemList.length ; iVideo++) {
-            videoArr.push(videoSource + itemList[iVideo].file_name);
-        }
-
-
-        $f(".flowplayerVideo", flowPlayerSWF, {
-
-            clip: {
-                url: videoSource + itemList[0].file_name,
-                scaling: "fit",
-                //duration: 10,
-                onBeforeFinish: function (clip) {
-                    // return false on last clip
-                    return clip.index < this.getPlaylist().length - 1;
-                }
-            },
-            playlist: videoArr,
-            plugins: {
-                controls: { playlist: true }
-            }
-
-        });
-
-
-        //url = rtmpSource + rtmpStreamName;
-        //var simulateiDeviceFlag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        //if (simulateiDeviceFlag)
-        //    url = androidUrlSource + androidStreamName;
-
-        //// some code..
-        //var player = $f(".flowplayerVideo", flowPlayerSWF, {
-        //    clip: {
-        //        //    url: androidUrlSource + androidStreamName,
-        //        url: url,
-        //        ipadUrl: iosUrlSource + iosStreamName,
-        //        scaling: 'full',
-        //        provider: 'rtmp',
-        //        live: true,
-        //        autoPlay: true,
-        //        accelerated: true,
-        //        autoBuffering: true,
-        //        // use smil and bwcheck when resolving the clip URL
-        //        //      urlResolvers: ['smil', 'bwcheck']
-        //    },
-        //    play: { opacity: 0 },
-
-        //    plugins: {
-        //        // the SMIL plugin reads in and parses the SMIL, and provides
-        //        // the bitrates info to the bw detection plugin
-        //        //        smil: { url: 'flowplayer.smil-3.2.9.swf' },
-        //        // bandwidth check plugin
-        //        bwcheck: {
-        //            url: bwChkSource,
-        //            // HDDN uses Wowza servers
-        //            serverType: 'wowza',
-        //            // we use dynamic switching, the appropriate bitrate is switched on the fly
-        //            dynamic: true,
-        //            netConnectionUrl: rtmpSource,
-        //        },
-
-        //        rtmp: {
-        //            url: rtmpFlowSwf,
-        //            netConnectionUrl: rtmpSource
-        //        },
-        //        canvas: {
-        //            backgroundGradient: 'none'
-        //        }
-        //    }
-        //}).ipad({ simulateiDevice: simulateiDeviceFlag });
-
-
-
+        runPlayer(itemList);
     };
 }

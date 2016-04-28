@@ -70,17 +70,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="deleteContentsAsdWithPosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+        <xs:element minOccurs="0" name="position" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteContentsAsdWithPositionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="deleteContentsAsdWithPositionResult" nillable="true" type="q9:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="saveContentAds">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="contentOptionInfo" nillable="true" type="q9:ContentOptionInfoWTO" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="contentOptionInfo" nillable="true" type="q10:ContentOptionInfoWTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="saveContentAdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="saveContentAdsResult" nillable="true" type="q10:ResultMessageOfstring" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="saveContentAdsResult" nillable="true" type="q11:ResultMessageOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -96,7 +111,7 @@
   <xs:element name="searchContentsWithAdsItemDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchContentsWithAdsItemDetailResult" nillable="true" type="q11:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchContentsWithAdsItemDetailResult" nillable="true" type="q12:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -110,7 +125,7 @@
   <xs:element name="loadContentsWithAdsItemDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadContentsWithAdsItemDetailResult" nillable="true" type="q12:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadContentsWithAdsItemDetailResult" nillable="true" type="q13:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -124,52 +139,52 @@
   <xs:element name="loadLiveContentsAdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadLiveContentsAdsResult" nillable="true" type="q13:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadLiveContentsAdsResult" nillable="true" type="q14:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getContentList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q14:ContentInfoWTO" />
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q15:PagingInfo" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q15:ContentInfoWTO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q16:PagingInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getContentListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getContentListResult" nillable="true" type="q16:ResultMessageOfArrayOfContentInfoWTONurSmnnE" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getContentListResult" nillable="true" type="q17:ResultMessageOfArrayOfContentInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="searchDataContent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q17:ContentInfoWTO" />
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q18:PagingInfo" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q18:ContentInfoWTO" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q19:PagingInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="searchDataContentResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataContentResult" nillable="true" type="q19:ResultMessageOfArrayOfContentInfoWTONurSmnnE" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataContentResult" nillable="true" type="q20:ResultMessageOfArrayOfContentInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="searchDataContentType">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q20:ContentTypeWTO" />
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q21:PagingInfo" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="filter" nillable="true" type="q21:ContentTypeWTO" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="paging" nillable="true" type="q22:PagingInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="searchDataContentTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataContentTypeResult" nillable="true" type="q22:ResultMessageOfArrayOfContentTypeWTONurSmnnE" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchDataContentTypeResult" nillable="true" type="q23:ResultMessageOfArrayOfContentTypeWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,7 +199,7 @@
   <xs:element name="searchContentIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchContentIdResult" nillable="true" type="q23:ResultMessageOfContentInfoWTONurSmnnE" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchContentIdResult" nillable="true" type="q24:ResultMessageOfContentInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

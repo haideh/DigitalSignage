@@ -83,7 +83,7 @@ namespace DigitalSignageUI.Controllers
         public ActionResult loadContent(long content_id)
         {
             ContentProxy serviceProxy = new ContentProxy();
-            ResultMessage<List<AdsInfo>> contentList = serviceProxy.loadContentsWithAdsItemDetail(content_id);
+            ResultMessage<List<AdsInfo>> contentList = serviceProxy.loadContent(content_id);
 
             if (contentList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 //Redirect To Error Page

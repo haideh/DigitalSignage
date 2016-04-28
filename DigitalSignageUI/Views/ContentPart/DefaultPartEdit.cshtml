@@ -7,7 +7,8 @@
 
     </div>
     <div class="menuEdit">
-        <a ng-click="WeatherWidget($event , @Model.position )" class="{{btnTVCAEditDis(@Model.position , 'widget')}}"><span class="icon" data-icon="&#xe02f;"></span></a>
+        @*<a ng-click="WeatherWidget($event , @Model.position )" class="{{btnTVCAEditDis(@Model.position , 'widget')}}"><span class="icon" data-icon="&#xe02f;"></span></a>*@
+        <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 4, position = Model.position })" class="{{btnTVCAEditDis(@Model.position , 'widget')}}"><span class="icon" data-icon="&#xe02f;"></span></a>
         <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 1, position = Model.position })" class="{{btnTVCAEditDis(@Model.position , 'slider')}}"><span class="icon" data-icon="&#xe05d;"></span></a>
         <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 2, position = Model.position })" class="{{btnTVCAEditDis(@Model.position , 'video')}}"><span class="icon" data-icon="&#xe0a5;"></span></a>
         <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 6, position = Model.position })" class="{{btnTVCAEditDis(@Model.position , 'tv')}}"><span class="icon" data-icon="&#xe0b4;"></span></a>
@@ -16,7 +17,7 @@
 
 </div>
 
-<div id="modalWidgetAdd01" class="modalCustom large remodal" data-remodal-id="WeatherWidget_@Model.position">
+@*<div  class="modalCustom large remodal" data-remodal-id="WeatherWidget_@Model.position">
     <div class="modalCustomContent">
 
         <div class="modalTitle">
@@ -46,11 +47,11 @@
 
         <div class="modalBtnPlace">
             <a class="btnTVCAEditOk" ng-click="saveWidget(@Model.position,@Model.content_ad_id,selectedWidgetPackage)"><span class="icon" data-icon="&#xe042;"></span></a>
-            @*<a  class="remodal-close"><span class="icon" data-icon="&#xe036;"></span></a>*@
+           
         </div>
 
     </div>
-</div>
+</div>*@
 
 
 

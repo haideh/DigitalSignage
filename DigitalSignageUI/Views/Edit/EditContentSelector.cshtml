@@ -9,13 +9,16 @@
     <input class="positionInp" type="hidden" value="@ViewBag.position" />
 
 
-    @if ((string)ViewBag.type == "1" || (string)ViewBag.type == "2"|| (string)ViewBag.type == "6")
+    @if ((string)ViewBag.type == "1" || (string)ViewBag.type == "2" || (string)ViewBag.type == "3")
     {
         Html.RenderPartial("~/Views/Edit/SliderSelectorEdit.cshtml");
     }
-    @if ((string)ViewBag.type == "3")
+    @if ((string)ViewBag.type == "4")
     {
-        Html.RenderPartial("~/Views/Edit/SliderSelectorEdit.cshtml");
+        Html.RenderPartial("~/Views/Edit/WidgetSelectorEdit.cshtml");
     }
-   
+    @if ((string)ViewBag.type == "6")
+    {
+        Html.RenderPartial("~/Views/Edit/TVSelectorEdit.cshtml");
+    }
 </div>

@@ -216,15 +216,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\config.txt" />
+    <Content Include="data\icon_tv\1.gif" />
+    <Content Include="data\icon_tv\10.gif" />
+    <Content Include="data\icon_tv\11.gif" />
+    <Content Include="data\icon_tv\12 %281%29.gif" />
+    <Content Include="data\icon_tv\12.gif" />
+    <Content Include="data\icon_tv\13.gif" />
+    <Content Include="data\icon_tv\14.gif" />
+    <Content Include="data\icon_tv\15.gif" />
+    <Content Include="data\icon_tv\17.gif" />
+    <Content Include="data\icon_tv\18.gif" />
+    <Content Include="data\icon_tv\19.gif" />
+    <Content Include="data\icon_tv\2.gif" />
+    <Content Include="data\icon_tv\3.gif" />
+    <Content Include="data\icon_tv\4.gif" />
+    <Content Include="data\icon_tv\5.gif" />
+    <Content Include="data\icon_tv\6.gif" />
+    <Content Include="data\icon_tv\7.gif" />
+    <Content Include="data\icon_tv\8.gif" />
+    <Content Include="data\icon_tv\9.gif" />
+    <Content Include="General\thumbnail.aspx" />
+    <Content Include="General\thumbnail_box.aspx" />
+    <Content Include="General\thumbnail_width.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\FrontEndController\editContentSelectorCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentTempCtrlr_1.js" />
+    <Content Include="Scripts\util\player.js" />
     <Content Include="Scripts\util\toolTipAction.js" />
     <Content Include="Skins\CSS_tvShow\css\screen.css" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.13.min.js" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.16.swf" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.18.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.bwcheck-3.2.13.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.bwcheck_httpstreaming-3.2.13.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.content-3.2.9.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.controls-3.2.11.min.js" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.controls-3.2.15.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.f4m-3.2.9.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.httpstreaming-3.2.10.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.httpstreaminghls-live-3.2.15.swf" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.ipad-3.2.12.min.js" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.min.js" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.rtmp-3.2.12.swf" />
     <Content Include="Scripts\FrontEndController\mainCtrlr.js" />
@@ -400,6 +432,7 @@
     <Content Include="Skins\CSS_tvShow\css\coin-slider-styles.css" />
     <Content Include="Skins\CSS_tvShow\css\uicon.css" />
     <Content Include="Skins\CSS_tvShow\css\wi.css" />
+    <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.smil-3.2.9.swf" />
     <Content Include="Skins\CSS_tvShow\fonts\artill_clean_icons-webfont.svg" />
     <Content Include="Skins\CSS_tvShow\fonts\BYEKAN.svg" />
     <Content Include="Skins\CSS_tvShow\fonts\index.html" />
@@ -531,8 +564,9 @@
     <Content Include="Views\ContentPart\DefaultPartEdit.cshtml" />
     <Content Include="Views\Edit\EditContentSelector.cshtml" />
     <Content Include="Views\Edit\SliderSelectorEdit.cshtml" />
-    <Content Include="Views\Edit\TextSelectorEdit.cshtml" />
+    <Content Include="Views\Edit\WidgetSelectorEdit.cshtml" />
     <Content Include="Skins\CSS_tvShow\video\SampleVideo_1280x720.webm" />
+    <Content Include="Views\Edit\TVSelectorEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

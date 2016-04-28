@@ -64,8 +64,8 @@ function editContentCtrlr($scope,$rootScope, httpRequest) {
 };
 //------------------------------------editContentSelectorCtrlr-----------------------------//
 application.controller('editContentSelectorCtrlr', editContentSelectorCtrlr);
-function editContentSelectorCtrlr($scope, httpRequest) {
-    editContentSelectorCtrlr($scope, httpRequest);
+function editContentSelectorCtrlr($scope,$rootScope, httpRequest) {
+    editContentSelectorCtrlr($scope, $rootScope,httpRequest);
 };
 //------------------------------------editContentTempCtrlr_1-----------------------------//
 application.controller('editContentTempCtrlr_1', editContentTempCtrlr_1);

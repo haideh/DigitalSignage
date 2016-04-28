@@ -1623,6 +1623,12 @@ namespace DigitalSignageUI.ContentsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/deleteContents", ReplyAction="http://tempuri.org/Icontents/deleteContentsResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteContentsAsync(long id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/deleteContentsAsdWithPosition", ReplyAction="http://tempuri.org/Icontents/deleteContentsAsdWithPositionResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> deleteContentsAsdWithPosition(long contentId, int position);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/deleteContentsAsdWithPosition", ReplyAction="http://tempuri.org/Icontents/deleteContentsAsdWithPositionResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteContentsAsdWithPositionAsync(long contentId, int position);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/saveContentAds", ReplyAction="http://tempuri.org/Icontents/saveContentAdsResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<string> saveContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo);
         
@@ -1737,6 +1743,14 @@ namespace DigitalSignageUI.ContentsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteContentsAsync(long id) {
             return base.Channel.deleteContentsAsync(id);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> deleteContentsAsdWithPosition(long contentId, int position) {
+            return base.Channel.deleteContentsAsdWithPosition(contentId, position);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteContentsAsdWithPositionAsync(long contentId, int position) {
+            return base.Channel.deleteContentsAsdWithPositionAsync(contentId, position);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<string> saveContentAds(DigitalSignageUI.ContentsServices.ContentOptionInfoWTO contentOptionInfo) {

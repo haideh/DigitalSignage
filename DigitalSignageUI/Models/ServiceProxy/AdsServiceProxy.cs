@@ -11,7 +11,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
 {
     public class AdsServiceProxy
     {
-        public ResultMessage<List<AdsInfo>> loadAdsItemListWithType(long AdsType,long companyId)
+        public ResultMessage<List<AdsInfo>> loadAdsItemListWithType(long AdsType,long companyId, string contentId, string position)
         {
 
             List<AdsInfo> listContentInfo = new List<AdsInfo>();
@@ -19,7 +19,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             {
                 ResultMessage<AdsInfoWTO[]> serviceResult;
 
-                serviceResult = clientProxy.getAdsWithItemDetail(AdsType.ToString(),companyId);
+                serviceResult = clientProxy.getAdsWithItemDetail(AdsType.ToString(),companyId ,Convert.ToInt64( contentId), Convert.ToInt32(position));
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:

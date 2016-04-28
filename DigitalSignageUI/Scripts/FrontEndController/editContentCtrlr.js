@@ -40,81 +40,20 @@
         }, 1000);
     };
 
-    $scope.selectWidget = function (packageInfo,mode ) {
-        
-        switch (mode) {
-            case 'timeMode': {
-                $scope.timeSelect = 'select';
-                $scope.weatherSelect = '';
-
-                break;
-            }
-            case 'weatherMode': {
-                $scope.timeSelect = '';
-                $scope.weatherSelect = 'select';
-                break;
-            }
-            default: {
-                break;
-            }
-               
-        }
-        $scope.selectedWidgetPackage = packageInfo;
-    };
-    $scope.saveWidget = function (position, contentId, packageInfo) {
-
+    $scope.deleteContentAds=function(contentId,position)
+    {
         var obj = new Object();
         obj.position = position;
         obj.content_id = contentId;
-        obj.adsItemList = new Array();
-        obj.adsItemList.push(packageInfo);
-        
 
-        httpRequest.post(service_editContentAds, obj, function (data) {
+        debugger
+        httpRequest.post(service_deleteContentAds, obj, function (data) {
+          
         });
+
         location.href = "/Edit/EditContent?contentId=" + contentId;
-      
-    };
-
-  
-    $rootScope.$on("loadWidgetEvt", function (event, args) {
-        $scope.loadWidgetInfo();
-    });
-    $scope.loadWidgetInfo = function () {
         
-        $scope.viewWidgtData = [];
-        $scope.resultWidgetList = [];
-        var resultList = new Array();
-
-        httpRequest.post(service_loadWidgetAdsItemListWithType, "", function (data) {
-
-            $scope.viewWidgtData = data.resultSet;
-            debugger
-            for (var adsIndex = 0; adsIndex < $scope.viewWidgtData.length; adsIndex++) {
-                var contentObj = new Object();
-                contentObj.id = $scope.viewWidgtData[adsIndex].id;
-                contentObj.max_minutes = $scope.viewWidgtData[adsIndex].max_minutes;
-                contentObj.title = $scope.viewWidgtData[adsIndex].title;
-                contentObj.type = $scope.viewWidgtData[adsIndex].type;
-                contentObj.shuffle = $scope.viewWidgtData[adsIndex].shuffle;
-                contentObj.interval = $scope.viewWidgtData[adsIndex].interval;
-                contentObj.companyId = $scope.viewWidgtData[adsIndex].companyId;
-
-                var contenDetailObjList = new Array();
-                for (var adsitemIndex = 0; adsitemIndex < $scope.viewWidgtData[adsIndex].itemList.length; adsitemIndex++) {
-                    var contenDetailObj = new Object();
-                    contenDetailObj.adsItemTitle = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].title;
-                    contenDetailObj.adsItemType = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].type;
-                    contenDetailObj.file_name = $scope.viewWidgtData[adsIndex].itemList[adsitemIndex].file_name;
-                    contenDetailObjList.push(contenDetailObj);
-                }
-                contentObj.itemList = contenDetailObjList;
-                resultList.push(contentObj);
-            }
-        });
-        $scope.resultWidgetList = resultList
-
-    };
+    }
     $scope.load = function () {
         
         $scope.timeSelect = '';

@@ -127,78 +127,7 @@
     $scope.load();
 
     $scope.runPlayer = function (itemList) {
-        var videoArr = new Array();
-        for (var iVideo = 0 ; iVideo < itemList.length ; iVideo++) {
-            videoArr.push(videoSource + itemList[iVideo].file_name);
-        }
-
-
-        $f(".flowplayerVideo", flowPlayerSWF, {
-
-            clip: {
-                url: videoSource + itemList[0].file_name,
-                scaling: "fit",
-                //duration: 10,
-                onBeforeFinish: function (clip) {
-                    // return false on last clip
-                    return clip.index < this.getPlaylist().length - 1;
-                }
-            },
-            playlist: videoArr,
-            plugins: {
-                controls: { playlist: true }
-            }
-
-        });
-
-
-        //url = rtmpSource + rtmpStreamName;
-        //var simulateiDeviceFlag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        //if (simulateiDeviceFlag)
-        //    url = androidUrlSource + androidStreamName;
-
-        //// some code..
-        //var player = $f(".flowplayerVideo", flowPlayerSWF, {
-        //    clip: {
-        //        //    url: androidUrlSource + androidStreamName,
-        //        url: url,
-        //        ipadUrl: iosUrlSource + iosStreamName,
-        //        scaling: 'full',
-        //        provider: 'rtmp',
-        //        live: true,
-        //        autoPlay: true,
-        //        accelerated: true,
-        //        autoBuffering: true,
-        //        // use smil and bwcheck when resolving the clip URL
-        //        //      urlResolvers: ['smil', 'bwcheck']
-        //    },
-        //    play: { opacity: 0 },
-
-        //    plugins: {
-        //        // the SMIL plugin reads in and parses the SMIL, and provides
-        //        // the bitrates info to the bw detection plugin
-        //        //        smil: { url: 'flowplayer.smil-3.2.9.swf' },
-        //        // bandwidth check plugin
-        //        bwcheck: {
-        //            url: bwChkSource,
-        //            // HDDN uses Wowza servers
-        //            serverType: 'wowza',
-        //            // we use dynamic switching, the appropriate bitrate is switched on the fly
-        //            dynamic: true,
-        //            netConnectionUrl: rtmpSource,
-        //        },
-
-        //        rtmp: {
-        //            url: rtmpFlowSwf,
-        //            netConnectionUrl: rtmpSource
-        //        },
-        //        canvas: {
-        //            backgroundGradient: 'none'
-        //        }
-        //    }
-        //}).ipad({ simulateiDevice: simulateiDeviceFlag });
-
-
+       runPlayer(itemList);
 
     };
 

@@ -38,6 +38,12 @@
   <wsdl:message name="Icontents_deleteContents_OutputMessage">
     <wsdl:part name="parameters" element="tns:deleteContentsResponse" />
   </wsdl:message>
+  <wsdl:message name="Icontents_deleteContentsAsdWithPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteContentsAsdWithPosition" />
+  </wsdl:message>
+  <wsdl:message name="Icontents_deleteContentsAsdWithPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteContentsAsdWithPositionResponse" />
+  </wsdl:message>
   <wsdl:message name="Icontents_saveContentAds_InputMessage">
     <wsdl:part name="parameters" element="tns:saveContentAds" />
   </wsdl:message>
@@ -106,6 +112,10 @@
     <wsdl:operation name="deleteContents">
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/deleteContents" message="tns:Icontents_deleteContents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Icontents/deleteContentsResponse" message="tns:Icontents_deleteContents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteContentsAsdWithPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/deleteContentsAsdWithPosition" message="tns:Icontents_deleteContentsAsdWithPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/deleteContentsAsdWithPositionResponse" message="tns:Icontents_deleteContentsAsdWithPosition_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="saveContentAds">
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/saveContentAds" message="tns:Icontents_saveContentAds_InputMessage" />
@@ -180,6 +190,15 @@
     </wsdl:operation>
     <wsdl:operation name="deleteContents">
       <soap:operation soapAction="http://tempuri.org/Icontents/deleteContents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteContentsAsdWithPosition">
+      <soap:operation soapAction="http://tempuri.org/Icontents/deleteContentsAsdWithPosition" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

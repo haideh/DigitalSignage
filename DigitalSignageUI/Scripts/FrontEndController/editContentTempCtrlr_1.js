@@ -54,10 +54,12 @@
     };
 
 
-    $scope.WeatherWidget = function (that , wPosi) {
-        if($scope.btnTVCAEditDis(wPosi , 'widget') == 'btnTVCAEdit'){
+    $scope.WeatherWidget = function (that, wPosi) {
+        debugger
+        if ($scope.btnTVCAEditDis(wPosi, 'widget') == 'btnTVCAEdit') {
             $rootScope.$emit("loadWidgetEvt", {});
             $(that.target).attr('href', '#WeatherWidget_' + wPosi);
+
         }
     };
 
