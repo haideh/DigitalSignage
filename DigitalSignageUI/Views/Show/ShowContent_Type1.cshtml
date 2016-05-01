@@ -21,7 +21,7 @@
             <div data-position="1" class="colAArowA" ng-if="Posi1 == 1">
                 @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
-            <div data-position="1" class="colAArowA" ng-if="Posi1 == 2">
+            <div data-position="1" class="colAArowA" ng-if="Posi1 == 2 || Posi1 == 6">
                 @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
             <div data-position="1" class="colAArowA" ng-if="Posi1 == 3">
@@ -39,7 +39,7 @@
             <div data-position="3" class="colAArowB" ng-if="Posi3 == 1">
                 @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
-            <div data-position="3" class="colAArowB" ng-if="Posi3 == 2">
+            <div data-position="3" class="colAArowB" ng-if="Posi3 == 2 || Posi3 == 6">
                 @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
             <div data-position="3" class="colAArowB" ng-if="Posi3 == 3">
@@ -58,7 +58,7 @@
             <div data-position="2" class="colAArowC" ng-if="Posi2 == 1">
                 @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
-            <div data-position="2" class="colAArowC" ng-if="Posi2 == 2">
+            <div data-position="2" class="colAArowC" ng-if="Posi2 == 2 || Posi2 == 6">
                 @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
             </div>
             <div data-position="2" class="colAArowC" ng-if="Posi2 == 3">
@@ -77,7 +77,7 @@
         <div data-position="5" class="colAB" ng-if="Posi5 == 1">
             @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
         </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 2">
+        <div data-position="5" class="colAB" ng-if="Posi5 == 2 || Posi5 == 6">
             @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
         </div>
         <div data-position="5" class="colAB" ng-if="Posi5 == 3">
@@ -97,7 +97,7 @@
     <div class="rowB" data-position="4" ng-if="Posi4 == 1">
         @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
     </div>
-    <div class="rowB" data-position="4" ng-if="Posi4 == 2">
+    <div class="rowB" data-position="4" ng-if="Posi4 == 2 || Posi4 == 6">
         @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { content_ad_id = 0 })
     </div>
     <div class="rowB" data-position="4" ng-if="Posi4 == 3">

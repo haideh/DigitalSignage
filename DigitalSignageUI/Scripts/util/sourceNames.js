@@ -17,7 +17,7 @@ packageImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx
 packageLiveImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/';
 
 
-androidUrlSource = "http://192.168.88.20:1935/vod/mp4:sample.mp4";
+androidUrlSource = "http://192.168.88.20:1935/mediacache/mp4:http/sample.mp4";//vod
 androidStreamName = "/manifest.f4m";
 
 iosUrlSource = "http://192.168.88.20:1935/vod/mp4:sample.mp4";
@@ -25,10 +25,11 @@ iosStreamName = "/playlist.m3u8";
 
 
 rtmpSource = "rtmp://192.168.88.20:1935/vod";
-rtmpStreamName = "/sample.mp4";
+//rtmpSource = 'rtmp://192.168.88.20:1935/mediacache';//vod'
+//rtmpStreamName = "/mp4:http/sample.mp4";
 
-rtmpSourceVod = "rtmp://192.168.88.20:1935/vod/";
-rtmpStreamNameVod = "mp4:sample.mp4";
+rtmpSourceVod = "rtmp://192.168.88.20:1935/mediacache";
+rtmpStreamNameVod = "/mp4:http/sample.mp4";
 
 flowPlayerSWF = "/Skins/CSS_tvShow/flowPlayer/flowplayer-3.2.18.swf";
 bwChkSource = "/Skins/CSS_tvShow/flowPlayer/flowplayer.bwcheck-3.2.13.swf";

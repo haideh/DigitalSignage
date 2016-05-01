@@ -44,5 +44,13 @@ namespace DigitalSignageUI.Models.Entity
         public int position { get; set; }
         public long companyId { get; set; }
         public string companyName { get; set; }
+
+        public int nameId { get; set; }
+
+        public string url { get; set; }
+
+        public string description { get; set; }
+
+        public string channel { get; set; }
     }
 }

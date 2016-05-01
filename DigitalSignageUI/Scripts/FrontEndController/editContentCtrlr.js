@@ -12,6 +12,12 @@
                 }, 2000)
                 break;
             }
+            case 6: {//live
+                setTimeout(function () {
+                    $scope.runPlayer(itemList);
+                }, 2000)
+                break;
+            }
             case 3: {//Text
                 $scope.sliderTextList = itemList;
                 break;
@@ -85,7 +91,7 @@
             $scope.viewData = data.resultSet;
             for (var posi = 0; posi < $scope.viewData.length; posi++) {
                 $scope.posi = $scope.viewData[posi].position;
-
+ debugger
                 for (var img_i = 0; img_i < $scope.viewData[posi].itemList.length; img_i++) {
                     var contentObj = new Object();
 
@@ -97,6 +103,7 @@
                     contentObj.description = $scope.viewData[posi].itemList[img_i].description;
                     contentObj.file_name = $scope.viewData[posi].itemList[img_i].file_name;
 
+                   
                     if ($scope.viewData[posi].position == 5) {
                         $scope.viewDataPosition_5.push(contentObj);
                         //Postion Value
