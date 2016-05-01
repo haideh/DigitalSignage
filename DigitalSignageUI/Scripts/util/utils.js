@@ -622,7 +622,41 @@ sinageAutocomplte = function (containerCls , inputID) {
     }
 }
 
-
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+}
 //remove item from array
 //var index = $scope.resultList.indexOf(selectedAds);
 //$scope.resultList.splice(index, 1);
+
+//application.directive('fileread', function ($compile) {
+
+//    var getTemplate = function (file) {
+//        return '<img src="' + file + '" style="height:36px; width:40px;" />'
+//    }
+//    return {
+//        scope: {
+//            fileread: "="
+//        },
+//        link: function (scope, element, attrs) {
+//            element.bind("change", function (changeEvent) {
+//                scope.$apply(function () {
+//                    debugger
+//                    scope.fileread = changeEvent.target.files[0];
+//                    var fileReader = new FileReader();
+//                    fileReader.onload = function (e) {
+//                        var el = $compile(getTemplate(e.target.result))(scope);
+//                        $("#fileContainet").append(el);
+//                    }
+//                    fileReader.readAsDataURL(scope.fileread);
+//                });
+//            });
+//        }
+//    };
+//});

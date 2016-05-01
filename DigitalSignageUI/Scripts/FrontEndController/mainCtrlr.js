@@ -72,3 +72,13 @@ application.controller('editContentTempCtrlr_1', editContentTempCtrlr_1);
 function editContentTempCtrlr_1($scope, $rootScope) {
     editContentTempCtrlr_1($scope, $rootScope);
 };
+//------------------------------------adsCtrlr-----------------------------//
+application.controller('adsCtrlr', adsCtrlr);
+function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
+    adsCtrlr($scope, $compile, httpRequest, UploadFile);
+};
+//------------------------------------adsListCtrlr-----------------------------//
+application.controller('adsListCtrlr', adsListCtrlr);
+function adsListCtrlr($scope, httpRequest) {
+    adsListCtrlr($scope, httpRequest);
+};

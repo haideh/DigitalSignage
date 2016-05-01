@@ -136,4 +136,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getAllAdsWithItemDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAdsWithItemDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getAllAdsWithItemDetailResult" nillable="true" type="q17:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stream" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="UploadFileResult" nillable="true" type="q18:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

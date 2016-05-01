@@ -1,0 +1,91 @@
+﻿
+<script src="~/Scripts/FrontEndController/adsCtrlr.js"></script>
+@{
+    Layout = "~/Views/Shared/_Layout_tvShow.cshtml";
+}
+<div class="row" style="width:800px;" ng-controller="adsCtrlr">
+    <fieldset>
+        <label> نام تبلیغ</label>
+        <input type="text" id="search" ng-model="adsInfo.title" placeholder="نام تبلیغ" />
+    </fieldset>
+    <fieldset>
+        <div class="row">
+            <label> نوع </label>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                <input id="Radio1" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="1" checked>
+                <label>عکس</label>
+            </div>
+            <div class="large-4 columns">
+                <input id="Radio2" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="2">
+                <label>فیلم</label>
+            </div>
+            <div class="large-3 columns">
+                <input id="Radio3" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="3">
+                <label>متن</label>
+            </div>
+            @*<div class="large-3 columns" ng-app="">
+                    <input id="Radio4" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="4">
+                    <label>فید</label>
+                </div>*@
+        </div>
+    </fieldset>
+    <!--Select Image-->
+    <fieldset style="min-height:200px;" ng-show="showImage == '1'">
+        <legend>انتخاب تصاویر برای بارگزاری</legend>
+        <div class="row" style="padding-top:5px;">
+            <div class="large-4 large-centered columns">
+                <input type="file" fileread="fileread" id="myFile" accept="image/*" />
+                <div id="fileContainet"></div>
+            </div>
+        </div>
+    </fieldset>
+    <!--Select Video-->
+    <fieldset style="min-height:200px;" ng-show="showImage == '2'">
+        <legend>انتخاب ویدئو برای بارگزاری</legend>
+        <div class="row" style="padding-top:5px;">
+            <div class="large-4 large-centered columns">
+                <input type="file" fileread="fileread" id="myVideo" accept="video/*" />
+                <div id="fileVideoContainet"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-10 large-centered columns" id="preview-videos"></div>
+        </div>
+    </fieldset>
+
+    <!--Select Text-->
+    <fieldset ng-show="showImage == '3'">
+        <legend>ورود اطلاعات متنی تبلیغات</legend>
+        <div class="row">
+            <label class="txtLabel">متن </label>
+            <input type="text" id="data-adTitle" class="txtLabel" ng-model="adsInfo.adItemTitle" placeholder="نام و یا عنوان تبلیغات متنی">
+        </div>
+        <div class="row" id="showText">
+            @*<label id=""></label>*@
+        </div>
+
+        <input type="button" id="addText" ng-click="addText(adsInfo.adItemTitle)"/>
+    </fieldset>
+
+
+    <!--Select Feed-->
+    @*<fieldset ng-show="showImage == '4'">
+            <legend>ورود آدرس فید مورد نظر</legend>
+            <div class="row">
+                <label class="txtLabel">عنوان فید</label>
+                <input type="text" class="txtLabel" id="data-feedTitle" ng-model="adsInfo.adItemFeedTitle" placeholder="نام و یا عنوان جدول">
+            </div>
+            <div class="row">
+                <label class="txtLabel">آدرس فید</label>
+                <input type="text" class="txtLabel" id="data-feedUrl" ng-model="adsInfo.adItemFeedUrl" placeholder=" مثال
+                       http//cbi.ir/NonRefExRatesRss.aspx ">
+            </div>
+        </fieldset>*@
+    <input type="button" ng-click="saveAds();" value="ذخیره و اتمام ساخت پکیج" />
+
+
+</div>
+

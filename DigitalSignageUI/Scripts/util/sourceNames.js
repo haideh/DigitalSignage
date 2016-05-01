@@ -10,6 +10,10 @@ service_loadLiveVedio = "/edit/loadLiveVedio";
 service_loadLiveVedioContentWithPosition = "/edit/loadLiveVedioContentWithPosition";
 service_loadContentLiveVedio = "/edit/loadContentLiveVedio";
 
+service_addAds = "/ads/saveAds";
+service_uploadFile = "/ads/uploadFile";
+service_adsList = "/ads/getAdsList";
+
 
 videoSource = 'http://192.168.88.233/Modules/DigitalSignage/data/ads/movies/';
 imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';

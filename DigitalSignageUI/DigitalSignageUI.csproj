@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdsController.cs" />
     <Compile Include="Controllers\EditController.cs" />
     <Compile Include="Controllers\ShowController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -241,6 +242,8 @@
     <Content Include="General\thumbnail_box.aspx" />
     <Content Include="General\thumbnail_width.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\FrontEndController\adsCtrlr.js" />
+    <Content Include="Scripts\FrontEndController\adsListCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentSelectorCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentTempCtrlr_1.js" />
@@ -569,6 +572,8 @@
     <Content Include="Views\Edit\WidgetSelectorEdit.cshtml" />
     <Content Include="Skins\CSS_tvShow\video\SampleVideo_1280x720.webm" />
     <Content Include="Views\Edit\TVSelectorEdit.cshtml" />
+    <Content Include="Views\Ads\AdsList.cshtml" />
+    <Content Include="Views\Ads\AdsManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

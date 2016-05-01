@@ -1,0 +1,31 @@
+﻿<script src="~/Scripts/FrontEndController/adsListCtrlr.js"></script>
+
+@{
+    Layout = "~/Views/Shared/_Layout_tvShow.cshtml";
+}
+
+    <div class="editPackagePage" ng-controller="adsListCtrlr">
+        <div class="editPackageContent">
+
+            <div class="rowSelectA">
+                <div id="itemList" class="rowSelectContent">
+                    <div ng-repeat="x in resultAdsList" data-id="{{x.id}}" data-title="{{x.title}}" class="packageItem serach-result">
+                        <div class="packageItemPreview">
+                            <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
+                            <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
+                            <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
+                        </div>
+                        <div class="packageItemDivider">
+                            <a class="packageItemBtnAdd"><span class="icon" data-icon="&#xe05b;"></span></a>
+                            <div class="packageItemTitle">
+                                {{x.title}} - 0 دقیقه از {{x.max_minutes}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

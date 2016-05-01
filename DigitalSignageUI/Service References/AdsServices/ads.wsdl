@@ -62,6 +62,18 @@
   <wsdl:message name="Iads_getWidgetAdsWithItemDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:getWidgetAdsWithItemDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="Iads_getAllAdsWithItemDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAdsWithItemDetail" />
+  </wsdl:message>
+  <wsdl:message name="Iads_getAllAdsWithItemDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAdsWithItemDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Iads_UploadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="Iads_UploadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
   <wsdl:portType name="Iads">
     <wsdl:operation name="saveAds">
       <wsdl:input wsaw:Action="http://tempuri.org/Iads/saveAds" message="tns:Iads_saveAds_InputMessage" />
@@ -98,6 +110,14 @@
     <wsdl:operation name="getWidgetAdsWithItemDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/Iads/getWidgetAdsWithItemDetail" message="tns:Iads_getWidgetAdsWithItemDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Iads/getWidgetAdsWithItemDetailResponse" message="tns:Iads_getWidgetAdsWithItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAdsWithItemDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/getAllAdsWithItemDetail" message="tns:Iads_getAllAdsWithItemDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/getAllAdsWithItemDetailResponse" message="tns:Iads_getAllAdsWithItemDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/UploadFile" message="tns:Iads_UploadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/UploadFileResponse" message="tns:Iads_UploadFile_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_Iads" type="tns:Iads">
@@ -176,6 +196,24 @@
     </wsdl:operation>
     <wsdl:operation name="getWidgetAdsWithItemDetail">
       <soap:operation soapAction="http://tempuri.org/Iads/getWidgetAdsWithItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAdsWithItemDetail">
+      <soap:operation soapAction="http://tempuri.org/Iads/getAllAdsWithItemDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/Iads/UploadFile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

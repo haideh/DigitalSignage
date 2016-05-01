@@ -52,5 +52,7 @@ namespace DigitalSignageUI.Models.Entity
         public string description { get; set; }
 
         public string channel { get; set; }
+        public byte[] inputStream { get; set; }
+
     }
 }

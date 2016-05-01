@@ -41,6 +41,9 @@ namespace DigitalSignageUI.AdsServices {
         private string adItemVedioFileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string channelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long companyIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -50,7 +53,13 @@ namespace DigitalSignageUI.AdsServices {
         private long content_ad_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] inputStreamField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int intervalField;
@@ -60,6 +69,9 @@ namespace DigitalSignageUI.AdsServices {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int max_minutesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int nameIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int passed_minutesField;
@@ -78,6 +90,9 @@ namespace DigitalSignageUI.AdsServices {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string urlField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -168,6 +183,19 @@ namespace DigitalSignageUI.AdsServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string channel {
+            get {
+                return this.channelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.channelField, value) != true)) {
+                    this.channelField = value;
+                    this.RaisePropertyChanged("channel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long companyId {
             get {
                 return this.companyIdField;
@@ -207,6 +235,19 @@ namespace DigitalSignageUI.AdsServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long id {
             get {
                 return this.idField;
@@ -215,6 +256,19 @@ namespace DigitalSignageUI.AdsServices {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] inputStream {
+            get {
+                return this.inputStreamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.inputStreamField, value) != true)) {
+                    this.inputStreamField = value;
+                    this.RaisePropertyChanged("inputStream");
                 }
             }
         }
@@ -254,6 +308,19 @@ namespace DigitalSignageUI.AdsServices {
                 if ((this.max_minutesField.Equals(value) != true)) {
                     this.max_minutesField = value;
                     this.RaisePropertyChanged("max_minutes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int nameId {
+            get {
+                return this.nameIdField;
+            }
+            set {
+                if ((this.nameIdField.Equals(value) != true)) {
+                    this.nameIdField = value;
+                    this.RaisePropertyChanged("nameId");
                 }
             }
         }
@@ -332,6 +399,19 @@ namespace DigitalSignageUI.AdsServices {
                 if ((this.typeField.Equals(value) != true)) {
                     this.typeField = value;
                     this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.urlField, value) != true)) {
+                    this.urlField = value;
+                    this.RaisePropertyChanged("url");
                 }
             }
         }
@@ -720,6 +800,9 @@ namespace DigitalSignageUI.AdsServices {
         private int intervalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int nameIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int positionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -831,6 +914,19 @@ namespace DigitalSignageUI.AdsServices {
                 if ((this.intervalField.Equals(value) != true)) {
                     this.intervalField = value;
                     this.RaisePropertyChanged("interval");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int nameId {
+            get {
+                return this.nameIdField;
+            }
+            set {
+                if ((this.nameIdField.Equals(value) != true)) {
+                    this.nameIdField = value;
+                    this.RaisePropertyChanged("nameId");
                 }
             }
         }
@@ -967,6 +1063,18 @@ namespace DigitalSignageUI.AdsServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/getWidgetAdsWithItemDetail", ReplyAction="http://tempuri.org/Iads/getWidgetAdsWithItemDetailResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]>> getWidgetAdsWithItemDetailAsync(long companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/getAllAdsWithItemDetail", ReplyAction="http://tempuri.org/Iads/getAllAdsWithItemDetailResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]> getAllAdsWithItemDetail(long companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/getAllAdsWithItemDetail", ReplyAction="http://tempuri.org/Iads/getAllAdsWithItemDetailResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]>> getAllAdsWithItemDetailAsync(long companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/UploadFile", ReplyAction="http://tempuri.org/Iads/UploadFileResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> UploadFile(byte[] stream, string filename);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/UploadFile", ReplyAction="http://tempuri.org/Iads/UploadFileResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> UploadFileAsync(byte[] stream, string filename);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1066,6 +1174,22 @@ namespace DigitalSignageUI.AdsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]>> getWidgetAdsWithItemDetailAsync(long companyId) {
             return base.Channel.getWidgetAdsWithItemDetailAsync(companyId);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]> getAllAdsWithItemDetail(long companyId) {
+            return base.Channel.getAllAdsWithItemDetail(companyId);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]>> getAllAdsWithItemDetailAsync(long companyId) {
+            return base.Channel.getAllAdsWithItemDetailAsync(companyId);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> UploadFile(byte[] stream, string filename) {
+            return base.Channel.UploadFile(stream, filename);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> UploadFileAsync(byte[] stream, string filename) {
+            return base.Channel.UploadFileAsync(stream, filename);
         }
     }
 }

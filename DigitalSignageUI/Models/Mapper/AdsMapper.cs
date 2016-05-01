@@ -44,11 +44,28 @@ namespace DigitalSignageUI.Models.Mapper
         internal static AdsInfoWTO MapTo(AdsInfo ads)
         {
             AutoMapper.Mapper.CreateMap<AdsInfo, AdsInfoWTO>();
+            List<AdsIemInfoWTO> listItem = new List<AdsIemInfoWTO>();
+            if (ads.itemList != null)
+            {
+                foreach (AdsIemInfo c in ads.itemList)
+                {
+                    listItem.Add(MapTo(c));
+                }
+            }
             AdsInfoWTO wto = AutoMapper.Mapper.Map<AdsInfo, AdsInfoWTO>(ads);
+            if (ads.itemList != null)
+            {
+                wto.itemList = listItem.ToArray();
+            }
+            return wto;
+        }
+        internal static AdsIemInfoWTO MapTo(AdsIemInfo ads)
+        {
+            AutoMapper.Mapper.CreateMap<AdsIemInfo, AdsIemInfoWTO>();
+            AdsIemInfoWTO wto = AutoMapper.Mapper.Map<AdsIemInfo, AdsIemInfoWTO>(ads);
 
             return wto;
         }
-
 
         internal static AdsIemInfo MapFrom(AdsIemInfoWTO adsItem)
         {
