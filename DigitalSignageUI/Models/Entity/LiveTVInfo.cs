@@ -19,5 +19,6 @@ namespace DigitalSignageUI.Models.Entity
         public long content_ad_id { get; set; }
         public long companyId { get; set; }
         public string companyName { get; set; }
+        public int nameId { get; set; }
     }
 }

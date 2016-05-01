@@ -62,12 +62,6 @@
   <wsdl:message name="Icontents_loadContentsWithAdsItemDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:loadContentsWithAdsItemDetailResponse" />
   </wsdl:message>
-  <wsdl:message name="Icontents_loadLiveContentsAds_InputMessage">
-    <wsdl:part name="parameters" element="tns:loadLiveContentsAds" />
-  </wsdl:message>
-  <wsdl:message name="Icontents_loadLiveContentsAds_OutputMessage">
-    <wsdl:part name="parameters" element="tns:loadLiveContentsAdsResponse" />
-  </wsdl:message>
   <wsdl:message name="Icontents_getContentList_InputMessage">
     <wsdl:part name="parameters" element="tns:getContentList" />
   </wsdl:message>
@@ -128,10 +122,6 @@
     <wsdl:operation name="loadContentsWithAdsItemDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail" message="tns:Icontents_loadContentsWithAdsItemDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetailResponse" message="tns:Icontents_loadContentsWithAdsItemDetail_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="loadLiveContentsAds">
-      <wsdl:input wsaw:Action="http://tempuri.org/Icontents/loadLiveContentsAds" message="tns:Icontents_loadLiveContentsAds_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/Icontents/loadLiveContentsAdsResponse" message="tns:Icontents_loadLiveContentsAds_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getContentList">
       <wsdl:input wsaw:Action="http://tempuri.org/Icontents/getContentList" message="tns:Icontents_getContentList_InputMessage" />
@@ -226,15 +216,6 @@
     </wsdl:operation>
     <wsdl:operation name="loadContentsWithAdsItemDetail">
       <soap:operation soapAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="loadLiveContentsAds">
-      <soap:operation soapAction="http://tempuri.org/Icontents/loadLiveContentsAds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -14,16 +14,73 @@
   <wsdl:message name="IliveVideos_addLiveVideo_OutputMessage">
     <wsdl:part name="parameters" element="tns:addLiveVideoResponse" />
   </wsdl:message>
+  <wsdl:message name="IliveVideos_loadLiveContentsAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadLiveContentsAds" />
+  </wsdl:message>
+  <wsdl:message name="IliveVideos_loadLiveContentsAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadLiveContentsAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IliveVideos_loadLivesTvAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadLivesTvAds" />
+  </wsdl:message>
+  <wsdl:message name="IliveVideos_loadLivesTvAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadLivesTvAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IliveVideos_searchContentsWithLiveItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentsWithLiveItem" />
+  </wsdl:message>
+  <wsdl:message name="IliveVideos_searchContentsWithLiveItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchContentsWithLiveItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="IliveVideos">
     <wsdl:operation name="addLiveVideo">
       <wsdl:input wsaw:Action="http://tempuri.org/IliveVideos/addLiveVideo" message="tns:IliveVideos_addLiveVideo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IliveVideos/addLiveVideoResponse" message="tns:IliveVideos_addLiveVideo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadLiveContentsAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IliveVideos/loadLiveContentsAds" message="tns:IliveVideos_loadLiveContentsAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IliveVideos/loadLiveContentsAdsResponse" message="tns:IliveVideos_loadLiveContentsAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadLivesTvAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IliveVideos/loadLivesTvAds" message="tns:IliveVideos_loadLivesTvAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IliveVideos/loadLivesTvAdsResponse" message="tns:IliveVideos_loadLivesTvAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchContentsWithLiveItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IliveVideos/searchContentsWithLiveItem" message="tns:IliveVideos_searchContentsWithLiveItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IliveVideos/searchContentsWithLiveItemResponse" message="tns:IliveVideos_searchContentsWithLiveItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IliveVideos" type="tns:IliveVideos">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="addLiveVideo">
       <soap:operation soapAction="http://tempuri.org/IliveVideos/addLiveVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadLiveContentsAds">
+      <soap:operation soapAction="http://tempuri.org/IliveVideos/loadLiveContentsAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadLivesTvAds">
+      <soap:operation soapAction="http://tempuri.org/IliveVideos/loadLivesTvAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchContentsWithLiveItem">
+      <soap:operation soapAction="http://tempuri.org/IliveVideos/searchContentsWithLiveItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

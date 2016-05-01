@@ -171,6 +171,7 @@
     <Compile Include="Models\Mapper\StoreMapper.cs" />
     <Compile Include="Models\Mapper\TvMapper.cs" />
     <Compile Include="Models\ServiceProxy\AdsServiceProxy.cs" />
+    <Compile Include="Models\ServiceProxy\LiveServiceProxy.cs" />
     <Compile Include="Models\ServiceProxy\ContentProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\AdsServices\Reference.cs">
@@ -228,6 +229,7 @@
     <Content Include="data\icon_tv\18.gif" />
     <Content Include="data\icon_tv\19.gif" />
     <Content Include="data\icon_tv\2.gif" />
+    <Content Include="data\icon_tv\20.gif" />
     <Content Include="data\icon_tv\3.gif" />
     <Content Include="data\icon_tv\4.gif" />
     <Content Include="data\icon_tv\5.gif" />
@@ -338,11 +340,11 @@
     <Content Include="Service References\ContentsServices\DigitalSignageUI.ContentsServices.ContentTypeWTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\ContentsServices\DigitalSignageUI.ContentsServices.LiveTVInfoWTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\LiveVideosServices\configuration91.svcinfo" />
     <None Include="Service References\LiveVideosServices\configuration.svcinfo" />
+    <Content Include="Service References\LiveVideosServices\DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\LiveVideosServices\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

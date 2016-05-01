@@ -9,6 +9,7 @@
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
       <xs:element minOccurs="0" name="interval" type="xs:int" />
+      <xs:element minOccurs="0" name="nameId" type="xs:int" />
       <xs:element minOccurs="0" name="position" type="xs:int" />
       <xs:element minOccurs="0" name="status" type="xs:int" />
       <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
@@ -17,4 +18,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="LiveTVInfoWTO" nillable="true" type="tns:LiveTVInfoWTO" />
+  <xs:complexType name="ArrayOfLiveTVInfoWTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiveTVInfoWTO" nillable="true" type="tns:LiveTVInfoWTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiveTVInfoWTO" nillable="true" type="tns:ArrayOfLiveTVInfoWTO" />
 </xs:schema>

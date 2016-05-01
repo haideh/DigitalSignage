@@ -36,6 +36,7 @@
       <xs:element minOccurs="0" name="second" type="xs:int" />
       <xs:element minOccurs="0" name="secondViewed" type="xs:int" />
       <xs:element minOccurs="0" name="shuffle" type="xs:int" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ContentOptionInfoWTO" nillable="true" type="tns:ContentOptionInfoWTO" />
@@ -91,29 +92,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdsIemInfoWTO" nillable="true" type="tns:AdsIemInfoWTO" />
-  <xs:complexType name="ArrayOfLiveTVInfoWTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiveTVInfoWTO" nillable="true" type="tns:LiveTVInfoWTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLiveTVInfoWTO" nillable="true" type="tns:ArrayOfLiveTVInfoWTO" />
-  <xs:complexType name="LiveTVInfoWTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="channel" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="companyId" type="xs:long" />
-      <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="content_ad_id" type="xs:long" />
-      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="id" type="xs:long" />
-      <xs:element minOccurs="0" name="interval" type="xs:int" />
-      <xs:element minOccurs="0" name="position" type="xs:int" />
-      <xs:element minOccurs="0" name="status" type="xs:int" />
-      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="type" type="xs:int" />
-      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="LiveTVInfoWTO" nillable="true" type="tns:LiveTVInfoWTO" />
   <xs:complexType name="PagingInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="orderLst" nillable="true" type="tns:ArrayOfOrderInfo" />

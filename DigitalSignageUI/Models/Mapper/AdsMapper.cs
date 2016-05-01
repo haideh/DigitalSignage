@@ -25,15 +25,19 @@ namespace DigitalSignageUI.Models.Mapper
         {
             AutoMapper.Mapper.CreateMap<AdsInfoWTO, AdsInfo>();
             List<AdsIemInfo> listItem = new List<AdsIemInfo>();
-
-            foreach (AdsIemInfoWTO c in ads.itemList)
+            if (ads.itemList != null)
             {
-                listItem.Add(MapFrom(c));
+                foreach (AdsIemInfoWTO c in ads.itemList)
+                {
+                    listItem.Add(MapFrom(c));
+                }
             }
-
             AutoMapper.Mapper.CreateMap<AdsInfoWTO, AdsInfo>();
             AdsInfo wto = AutoMapper.Mapper.Map<AdsInfoWTO, AdsInfo>(ads);
-            wto.itemList = listItem;
+            if (ads.itemList != null)
+            {
+                wto.itemList = listItem;
+            }
             return wto;
         }
 

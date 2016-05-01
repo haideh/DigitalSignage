@@ -16,4 +16,49 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="loadLiveContentsAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content_id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadLiveContentsAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadLiveContentsAdsResult" nillable="true" type="q3:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadLivesTvAds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content_id" type="xs:long" />
+        <xs:element minOccurs="0" name="companyId" type="xs:long" />
+        <xs:element minOccurs="0" name="position" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadLivesTvAdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="loadLivesTvAdsResult" nillable="true" type="q4:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchContentsWithLiveItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content_id" type="xs:long" />
+        <xs:element minOccurs="0" name="position" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchContentsWithLiveItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="searchContentsWithLiveItemResult" nillable="true" type="q5:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

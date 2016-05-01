@@ -52,7 +52,7 @@ application.factory('httpRequest', ['$http', function ($http) {
 
     };
     service.post = function (url, data, success, error) {
-        debugger
+        
         $http({
             url: url,
             method: "POST",

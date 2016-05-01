@@ -9,6 +9,7 @@ namespace DigitalSignageUI.Models.Entity
     {
   
         public long id { get; set; }
+        public int type { get; set; }
         public long content_id { get; set; }
         public int position { get; set; }
         public int second { get; set; }

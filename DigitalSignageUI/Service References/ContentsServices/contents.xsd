@@ -60,20 +60,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfArrayOfAdsInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfAdsInfoWTONurSmnnE" />
-  <xs:complexType name="ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="ResultMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfLiveTVInfoWTO" Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q2:ArrayOfLiveTVInfoWTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfLiveTVInfoWTONurSmnnE" />
   <xs:complexType name="ResultMessageOfArrayOfContentInfoWTONurSmnnE">
     <xs:annotation>
       <xs:appinfo>
@@ -84,7 +70,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q3:ArrayOfContentInfoWTO" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q2:ArrayOfContentInfoWTO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfArrayOfContentInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfContentInfoWTONurSmnnE" />
@@ -98,7 +84,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q4:ArrayOfContentTypeWTO" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q3:ArrayOfContentTypeWTO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfArrayOfContentTypeWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfContentTypeWTONurSmnnE" />
@@ -112,7 +98,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q5:ContentInfoWTO" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q4:ContentInfoWTO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfContentInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfContentInfoWTONurSmnnE" />

@@ -1,4 +1,5 @@
-﻿using DigitalSignageUI.AdsServices;
+﻿
+using DigitalSignageUI.LiveVideosServices;
 using DigitalSignageUI.Models.Entity;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,19 @@ namespace DigitalSignageUI.Models.Mapper
 
             return contentList;
         }
+
+        internal static LiveTVInfoWTO[] MapTo(List<LiveTVInfo> content)
+        {
+            List<LiveTVInfoWTO> wtos = new List<LiveTVInfoWTO>();
+
+            foreach (var item in content)
+            {
+                wtos.Add((MapTo(item)));
+            }
+
+            return wtos.ToArray();
+
+        } 
         internal static LiveTVInfo MapFrom(LiveTVInfoWTO liveVideo)
         {
             AutoMapper.Mapper.CreateMap<LiveTVInfoWTO, LiveTVInfo>();

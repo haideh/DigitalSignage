@@ -44,6 +44,9 @@ namespace DigitalSignageUI.LiveVideosServices {
         private int intervalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int nameIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int positionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -160,6 +163,19 @@ namespace DigitalSignageUI.LiveVideosServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int nameId {
+            get {
+                return this.nameIdField;
+            }
+            set {
+                if ((this.nameIdField.Equals(value) != true)) {
+                    this.nameIdField = value;
+                    this.RaisePropertyChanged("nameId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int position {
             get {
                 return this.positionField;
@@ -243,6 +259,24 @@ namespace DigitalSignageUI.LiveVideosServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/addLiveVideo", ReplyAction="http://tempuri.org/IliveVideos/addLiveVideoResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> addLiveVideoAsync(DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO videos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/loadLiveContentsAds", ReplyAction="http://tempuri.org/IliveVideos/loadLiveContentsAdsResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> loadLiveContentsAds(long content_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/loadLiveContentsAds", ReplyAction="http://tempuri.org/IliveVideos/loadLiveContentsAdsResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> loadLiveContentsAdsAsync(long content_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/loadLivesTvAds", ReplyAction="http://tempuri.org/IliveVideos/loadLivesTvAdsResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> loadLivesTvAds(long content_id, long companyId, int position);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/loadLivesTvAds", ReplyAction="http://tempuri.org/IliveVideos/loadLivesTvAdsResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> loadLivesTvAdsAsync(long content_id, long companyId, int position);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/searchContentsWithLiveItem", ReplyAction="http://tempuri.org/IliveVideos/searchContentsWithLiveItemResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> searchContentsWithLiveItem(long content_id, int position);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IliveVideos/searchContentsWithLiveItem", ReplyAction="http://tempuri.org/IliveVideos/searchContentsWithLiveItemResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> searchContentsWithLiveItemAsync(long content_id, int position);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -278,6 +312,30 @@ namespace DigitalSignageUI.LiveVideosServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> addLiveVideoAsync(DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO videos) {
             return base.Channel.addLiveVideoAsync(videos);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> loadLiveContentsAds(long content_id) {
+            return base.Channel.loadLiveContentsAds(content_id);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> loadLiveContentsAdsAsync(long content_id) {
+            return base.Channel.loadLiveContentsAdsAsync(content_id);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> loadLivesTvAds(long content_id, long companyId, int position) {
+            return base.Channel.loadLivesTvAds(content_id, companyId, position);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> loadLivesTvAdsAsync(long content_id, long companyId, int position) {
+            return base.Channel.loadLivesTvAdsAsync(content_id, companyId, position);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]> searchContentsWithLiveItem(long content_id, int position) {
+            return base.Channel.searchContentsWithLiveItem(content_id, position);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.LiveVideosServices.LiveTVInfoWTO[]>> searchContentsWithLiveItemAsync(long content_id, int position) {
+            return base.Channel.searchContentsWithLiveItemAsync(content_id, position);
         }
     }
 }

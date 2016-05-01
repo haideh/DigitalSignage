@@ -1,86 +1,82 @@
-﻿div class="editPackagePage">
-<div class="editPackageContent">
+﻿<div class="editPackagePage">
+    <div class="editPackageContent">
 
-    <div class="rowSelectHeader">
-        <div class="editPackageTitle">
-            1.
-            لیست تمامی پکیج های ساخته شده جهت انتخاب
-        </div>
-        <div class="editPackageSearchPlace">
-            <input class="editPackageInputSearch" style="width:250px" type="text" id="search" placeholder="جستجوی نام پکیج" ng-keyup="keyUpImageList()" />
-            @*<a class="editPackageBtnSearch" ng-click="keyUpImageList()"><span class="icon" data-icon="&#xe0b7;"></span></a>*@
-        </div>
-    </div>
-
-    <div class="rowSelectA">
-        <div id="itemList" class="rowSelectContent">
-            <div ng-repeat="x in resultList" data-id="{{x.id}}" data-title="{{x.title}}" ng-click="clearSelectPackageInf()" class="packageItem serach-result">
-                <div class="packageItemPreview">
-                    <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageLiveImageSource}}{{detail.file_name}}">
-                    <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
-                    <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
-                </div>
-                <div class="packageItemDivider">
-                    <a class="packageItemBtnAdd" ng-click="addOrRemAdsInList(x , 'add')"><span class="icon" data-icon="&#xe05b;"></span></a>
-                    <div class="packageItemTitle">
-                        {{x.title}} - 0 دقیقه از {{x.max_minutes}}
-                    </div>
-
-                </div>
+        <div class="rowSelectHeader">
+            <div class="editPackageTitle">
+                1.
+                لیست تمامی پکیج های زنده جهت انتخاب
+            </div>
+            <div class="editPackageSearchPlace">
+                <input class="editPackageInputSearch" style="width:250px" type="text" id="search" placeholder="جستجوی نام پکیج" ng-keyup="keyUpImageList()" />
+                @*<a class="editPackageBtnSearch" ng-click="keyUpImageList()"><span class="icon" data-icon="&#xe0b7;"></span></a>*@
             </div>
         </div>
-    </div>
 
+        <div class="rowSelectA">
+            <div id="itemList" class="rowSelectContent">
+                <div ng-repeat="x in liveResultList" data-id="{{x.id}}" data-channel="{{x.channel}}" data-title="{{x.title}}" ng-click="clearSelectPackageInf()" class="packageItem serach-result">
+                    <div class="packageItemPreview">
+                        <img src="/data/icon_tv/{{x.nameId}}.gif" />
+                    </div>
+                    <div class="packageItemDivider">
+                        <a class="packageItemBtnAdd" ng-click="addOrRemAdsInLiveList(x , 'add')"><span class="icon" data-icon="&#xe05b;"></span></a>
+                        <div class="packageItemTitle">
+                            {{x.title}}
+                        </div>
 
-    <div class="rowSelectHeader">
-        <div class="editPackageTitle">
-            2.
-            پکیج های انتخاب شده جهت پخش
-        </div>
-    </div>
-    <div class="rowSelectB">
-        <div id="itemSelect" class="rowSelectContent">
-            <div ng-repeat="x in resultAdsContentList" data-id="{{x.id}}" data-title="{{x.title}}" class="packageItem" ng-click="selectPackageInf(x)">
-                <div class="packageItemPreview">
-                    <img ng-repeat="detail in x.itemList" ng-if="x.type == '1'" src="{{packageImageSource}}{{detail.file_name}}" alt="">
-                    <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
-                    <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
-                </div>
-                <div class="packageItemDivider">
-                    @*<a class="btnToggleTime packageItemBtnSetting"  ng-click="showAdsInf()"><span class="icon" data-icon="&#xe019;"></span></a>*@
-                    <a class="packageItemBtnDelete" ng-click="addOrRemAdsInList(x , 'remove')"><span class="icon" data-icon="&#xe0da;"></span></a>
-                    <div class="packageItemTitle">
-                        <span class="icon" data-icon="&#xe256;"></span>&nbsp;
-                        {{x.title}} - 0 دقیقه از {{x.max_minutes}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="panelToggle rowSelectHeader">
-        <div class="editPackageTitle">
-            3.
-            تنظیم مدت زمان نمایش
-        </div>
-        <div class="editPackageName">
-            نام پکیج
-        </div>
-        <div class="editPackageDesc">
-            <input class="inputTxt" type="number" placeholder="زمان بر حسب دقیقه" ng-model="selectedPackage.interval">
-        </div>
-        <div class="editPackageBtnPlaceSmall">
-            @*<a class="editPackageBtnSmall" ng-click="editPackageTime()"><span class="icon" data-icon="&#xe042;"></span></a>*@
-        </div>
-    </div>
 
 
-</div>
-<div class="editPackageContent">
-    <div class="modalBtnPlace">
-        <a class="btnTVCAEditOk" ng-click="saveAdsItemPackage()"><span class="icon" data-icon="&#xe042;"></span></a>
-        <a class="btnTVCAEditCancel" ng-click="cancelSaveAds()" ui-sref="tvcaEdit"><span class="icon" data-icon="&#xe036;"></span></a>
-    </div>
+        <div class="rowSelectHeader">
+            <div class="editPackageTitle">
+                2.
+                پکیج های انتخاب شده جهت پخش
+            </div>
+        </div>
+        <div class="rowSelectB">
+            <div id="itemSelect" class="rowSelectContent">
+                <div ng-repeat="x in liveResultAdsContentList" data-id="{{x.id}}" data-channel="{{x.channel}}" data-title="{{x.title}}" class="packageItem" ng-click="selectPackageInf(x)">
+                    <div class="packageItemPreview">
+                        <img src="/data/icon_tv/{{x.nameId}}.gif" />
+                    </div>
+                    <div class="packageItemDivider">
 
-</div>
+                        <a class="packageItemBtnDelete" ng-click="addOrRemAdsInLiveList(x , 'remove')"><span class="icon" data-icon="&#xe0da;"></span></a>
+                        <div class="packageItemTitle">
+                            <span class="icon" data-icon="&#xe256;"></span>&nbsp;
+                            {{x.title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panelToggle rowSelectHeader">
+            <div class="editPackageTitle">
+                3.
+                تنظیم مدت زمان نمایش
+            </div>
+            <div class="editPackageName">
+                نام پکیج
+            </div>
+            <div class="editPackageDesc">
+                <input class="inputTxt" type="number" placeholder="زمان بر حسب دقیقه" ng-model="selectedPackage.interval">
+            </div>
+            <div class="editPackageBtnPlaceSmall">
+                @*<a class="editPackageBtnSmall" ng-click="editPackageTime()"><span class="icon" data-icon="&#xe042;"></span></a>*@
+            </div>
+        </div>
+
+
+    </div>
+    <div class="editPackageContent">
+        <div class="modalBtnPlace">
+            <a class="btnTVCAEditOk" ng-click="saveAdsItemPackage('lives')"><span class="icon" data-icon="&#xe042;"></span></a>
+            <a class="btnTVCAEditCancel" ng-click="cancelSaveAds()" ui-sref="tvcaEdit"><span class="icon" data-icon="&#xe036;"></span></a>
+        </div>
+
+    </div>
 </div>
 

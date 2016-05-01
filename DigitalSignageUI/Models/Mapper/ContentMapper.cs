@@ -61,16 +61,19 @@ namespace DigitalSignageUI.Models.Mapper
             AutoMapper.Mapper.CreateMap<ContentOptionInfo, ContentOptionInfoWTO>();
 
             List<AdsInfoWTO> listItem = new List<AdsInfoWTO>();
-
-
-            foreach (AdsInfo c in content.adsItemList)
+            if (content.adsItemList != null)
             {
-                listItem.Add(MapTo(c));
+
+                foreach (AdsInfo c in content.adsItemList)
+                {
+                    listItem.Add(MapTo(c));
+                }
             }
-
             ContentOptionInfoWTO wto = AutoMapper.Mapper.Map<ContentOptionInfo, ContentOptionInfoWTO>(content);
-            wto.adsItemList = listItem.ToArray();
-
+            if (content.adsItemList != null)
+            {
+                wto.adsItemList = listItem.ToArray();
+            }
             return wto;
 
         }
@@ -106,12 +109,18 @@ namespace DigitalSignageUI.Models.Mapper
             AutoMapper.Mapper.CreateMap<AdsInfoWTO, AdsInfo>();
             List<AdsIemInfo> listItem = new List<AdsIemInfo>();
 
-            foreach (AdsIemInfoWTO c in ads.itemList)
+            if (ads.itemList != null)
             {
-                listItem.Add(MapFrom(c));
+                foreach (AdsIemInfoWTO c in ads.itemList)
+                {
+                    listItem.Add(MapFrom(c));
+                }
             }
             AdsInfo wto = AutoMapper.Mapper.Map<AdsInfoWTO, AdsInfo>(ads);
-            wto.itemList = listItem;
+            if (ads.itemList != null)
+            {
+                wto.itemList = listItem;
+            }
             return wto;
         }
 
@@ -128,14 +137,18 @@ namespace DigitalSignageUI.Models.Mapper
 
 
             List<AdsIemInfoWTO> listItem = new List<AdsIemInfoWTO>();
-
-            foreach (AdsIemInfo c in ads.itemList)
+            if (ads.itemList != null)
             {
-                listItem.Add(MapTo(c));
+                foreach (AdsIemInfo c in ads.itemList)
+                {
+                    listItem.Add(MapTo(c));
+                }
             }
-
             AdsInfoWTO wto = AutoMapper.Mapper.Map<AdsInfo, AdsInfoWTO>(ads);
-            wto.itemList = listItem.ToArray();
+            if (ads.itemList != null)
+            {
+                wto.itemList = listItem.ToArray();
+            }
             return wto;
         }
 

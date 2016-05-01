@@ -83,6 +83,9 @@ namespace DigitalSignageUI.Controllers
             return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = contentOptionInfo.content_id.ToString() }));
         }
 
+
+        
+
         [HttpPost]
         public ActionResult deleteContentAds(long content_id, int position)
         {
@@ -93,5 +96,42 @@ namespace DigitalSignageUI.Controllers
                 return RedirectToAction("Error", "Error");
             return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = content_id.ToString() }));
         }
+
+
+        #region Live
+
+        [HttpPost]
+        public ActionResult loadContentLiveVedio(long contentId, int position)
+        {
+            LiveServiceProxy serviceProxy = new LiveServiceProxy();
+            ResultMessage<List<LiveTVInfo>> adsList = serviceProxy.loadLiveVedioContent(contentId ,1, position);
+
+            if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                //Redirect To Error Page
+                return RedirectToAction("Error", "Error");
+
+            JsonResult result = new JsonResult();
+            result.Data = adsList;
+            return result;
+        }
+      
+
+        [HttpPost]
+        public ActionResult loadLiveVedioContentWithPosition(long contentId, int position)
+        {
+            LiveServiceProxy serviceProxy = new LiveServiceProxy();
+            ResultMessage<List<LiveTVInfo>> adsList = serviceProxy.loadContentLiveVedioWithPosition( contentId, position);
+
+            if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                //Redirect To Error Page
+                return RedirectToAction("Error", "Error");
+
+            JsonResult result = new JsonResult();
+            result.Data = adsList;
+            return result;
+        }
+
+
+        #endregion
     }
 }

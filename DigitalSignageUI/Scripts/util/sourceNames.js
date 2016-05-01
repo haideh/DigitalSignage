@@ -4,6 +4,12 @@ service_loadContentAdsListWithPoition = "/edit/loadContentAdsListWithPoition";
 service_loadWidgetAdsItemListWithType = "/edit/loadWidgetAdsItemListWithType";
 service_editContentAds = "/edit/editContentAds";
 service_deleteContentAds = "/edit/deleteContentAds";
+service_editContentLives = "/edit/editContentLives";
+
+service_loadLiveVedio = "/edit/loadLiveVedio";
+service_loadLiveVedioContentWithPosition = "/edit/loadLiveVedioContentWithPosition";
+service_loadContentLiveVedio = "/edit/loadContentLiveVedio";
+
 
 videoSource = 'http://192.168.88.233/Modules/DigitalSignage/data/ads/movies/';
 imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';

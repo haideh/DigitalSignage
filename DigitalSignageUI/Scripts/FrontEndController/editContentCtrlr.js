@@ -46,7 +46,7 @@
         obj.position = position;
         obj.content_id = contentId;
 
-        debugger
+      
         httpRequest.post(service_deleteContentAds, obj, function (data) {
           
         });

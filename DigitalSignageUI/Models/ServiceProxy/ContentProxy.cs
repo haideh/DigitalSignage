@@ -13,13 +13,13 @@ namespace DigitalSignageUI.Models.ServiceProxy
     {
         public ResultMessage<List<AdsInfo>> loadContent(long content_id)
         {
-            
+
             List<AdsInfo> listContentInfo = new List<AdsInfo>();
             using (IcontentsClient clientProxy = new IcontentsClient())
             {
                 ResultMessage<AdsInfoWTO[]> serviceResult;
 
-                serviceResult = clientProxy.loadContentsWithAdsItemDetail( content_id);
+                serviceResult = clientProxy.loadContentsWithAdsItemDetail(content_id);
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:
@@ -28,9 +28,9 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             resultSet = null,
                             result = new Result()
                             {
-                                    status = Aryaban.Engine.Core.WebService.Result.state.error,
-                                    message = serviceResult.result.message
-                                }
+                                status = Aryaban.Engine.Core.WebService.Result.state.error,
+                                message = serviceResult.result.message
+                            }
                         };
                         break;
                     case Result.state.success:
@@ -40,8 +40,8 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             resultSet = listContentInfo,
                             result = new Result()
                             {
-                                    status = Aryaban.Engine.Core.WebService.Result.state.success,
-                                }
+                                status = Aryaban.Engine.Core.WebService.Result.state.success,
+                            }
                         };
                         break;
                     default:
@@ -50,8 +50,8 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             resultSet = null,
                             result = new Result()
                             {
-                                    status = Aryaban.Engine.Core.WebService.Result.state.warning,
-                                }
+                                status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                            }
                         };
                         break;
                 }
@@ -77,9 +77,9 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             resultSet = null,
                             result = new Result()
                             {
-                                    status = Aryaban.Engine.Core.WebService.Result.state.error,
-                                    message = serviceResult.result.message
-                                }
+                                status = Aryaban.Engine.Core.WebService.Result.state.error,
+                                message = serviceResult.result.message
+                            }
                         };
                         break;
                     case Result.state.success:
@@ -117,7 +117,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             {
                 ResultMessage<ContentInfoWTO[]> serviceResult;
 
-                
+
                 serviceResult = clientProxy.searchDataContent(filter, page);
                 switch (serviceResult.result.status)
                 {
@@ -167,7 +167,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             {
                 ResultMessage<AdsInfoWTO[]> serviceResult;
 
-                serviceResult = clientProxy.searchContentsWithAdsItemDetail(type,Convert.ToInt64( content_id),Convert.ToInt32(position));
+                serviceResult = clientProxy.searchContentsWithAdsItemDetail(type, Convert.ToInt64(content_id), Convert.ToInt32(position));
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:
@@ -255,7 +255,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             }
         }
 
-        public ResultMessage<string> deleteContentAds(long contentId, int position)
+        public ResultMessage<string> editContentLive(ContentOptionInfo contentOptionInfo)
         {
             List<ContentOptionInfo> listContentInfo = new List<ContentOptionInfo>();
             using (IcontentsClient clientProxy = new IcontentsClient())
@@ -263,7 +263,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                 ResultMessage<string> serviceResult;
 
 
-                serviceResult = clientProxy.deleteContentsAsdWithPosition( contentId,  position);
+                serviceResult = clientProxy.editContentOptionLive(ContentMapper.MapTo(contentOptionInfo));
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:
@@ -301,6 +301,52 @@ namespace DigitalSignageUI.Models.ServiceProxy
 
             }
         }
-        
+        public ResultMessage<string> deleteContentAds(long contentId, int position)
+        {
+            List<ContentOptionInfo> listContentInfo = new List<ContentOptionInfo>();
+            using (IcontentsClient clientProxy = new IcontentsClient())
+            {
+                ResultMessage<string> serviceResult;
+
+
+                serviceResult = clientProxy.deleteContentsAsdWithPosition(contentId, position);
+                switch (serviceResult.result.status)
+                {
+                    case Result.state.error:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.error,
+                                message = serviceResult.result.message
+                            }
+                        };
+                        break;
+                    case Result.state.success:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.success,
+                            }
+                        };
+                        break;
+                    default:
+                        return new ResultMessage<string>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                            }
+                        };
+                        break;
+                }
+
+            }
+        }
+
     }
 }

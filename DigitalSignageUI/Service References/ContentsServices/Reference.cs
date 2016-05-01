@@ -333,6 +333,9 @@ namespace DigitalSignageUI.ContentsServices {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int shuffleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int typeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -521,6 +524,19 @@ namespace DigitalSignageUI.ContentsServices {
                 if ((this.shuffleField.Equals(value) != true)) {
                     this.shuffleField = value;
                     this.RaisePropertyChanged("shuffle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((this.typeField.Equals(value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
                 }
             }
         }
@@ -1075,227 +1091,6 @@ namespace DigitalSignageUI.ContentsServices {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LiveTVInfoWTO", Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model")]
-    [System.SerializableAttribute()]
-    public partial class LiveTVInfoWTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string channelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long companyIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string companyNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long content_ad_idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string descriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int intervalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int positionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int statusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string titleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int typeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string urlField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string channel {
-            get {
-                return this.channelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.channelField, value) != true)) {
-                    this.channelField = value;
-                    this.RaisePropertyChanged("channel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long companyId {
-            get {
-                return this.companyIdField;
-            }
-            set {
-                if ((this.companyIdField.Equals(value) != true)) {
-                    this.companyIdField = value;
-                    this.RaisePropertyChanged("companyId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string companyName {
-            get {
-                return this.companyNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.companyNameField, value) != true)) {
-                    this.companyNameField = value;
-                    this.RaisePropertyChanged("companyName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long content_ad_id {
-            get {
-                return this.content_ad_idField;
-            }
-            set {
-                if ((this.content_ad_idField.Equals(value) != true)) {
-                    this.content_ad_idField = value;
-                    this.RaisePropertyChanged("content_ad_id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
-                    this.descriptionField = value;
-                    this.RaisePropertyChanged("description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int interval {
-            get {
-                return this.intervalField;
-            }
-            set {
-                if ((this.intervalField.Equals(value) != true)) {
-                    this.intervalField = value;
-                    this.RaisePropertyChanged("interval");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int position {
-            get {
-                return this.positionField;
-            }
-            set {
-                if ((this.positionField.Equals(value) != true)) {
-                    this.positionField = value;
-                    this.RaisePropertyChanged("position");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int status {
-            get {
-                return this.statusField;
-            }
-            set {
-                if ((this.statusField.Equals(value) != true)) {
-                    this.statusField = value;
-                    this.RaisePropertyChanged("status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string title {
-            get {
-                return this.titleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.titleField, value) != true)) {
-                    this.titleField = value;
-                    this.RaisePropertyChanged("title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int type {
-            get {
-                return this.typeField;
-            }
-            set {
-                if ((this.typeField.Equals(value) != true)) {
-                    this.typeField = value;
-                    this.RaisePropertyChanged("type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string url {
-            get {
-                return this.urlField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.urlField, value) != true)) {
-                    this.urlField = value;
-                    this.RaisePropertyChanged("url");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PagingInfo", Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model")]
     [System.SerializableAttribute()]
     public partial class PagingInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1647,12 +1442,6 @@ namespace DigitalSignageUI.ContentsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail", ReplyAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetailResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetailAsync(long content_id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadLiveContentsAds", ReplyAction="http://tempuri.org/Icontents/loadLiveContentsAdsResponse")]
-        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.LiveTVInfoWTO[]> loadLiveContentsAds(long content_id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadLiveContentsAds", ReplyAction="http://tempuri.org/Icontents/loadLiveContentsAdsResponse")]
-        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.LiveTVInfoWTO[]>> loadLiveContentsAdsAsync(long content_id);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/getContentList", ReplyAction="http://tempuri.org/Icontents/getContentListResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.ContentInfoWTO[]> getContentList(DigitalSignageUI.ContentsServices.ContentInfoWTO filter, DigitalSignageUI.ContentsServices.PagingInfo paging);
         
@@ -1775,14 +1564,6 @@ namespace DigitalSignageUI.ContentsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetailAsync(long content_id) {
             return base.Channel.loadContentsWithAdsItemDetailAsync(content_id);
-        }
-        
-        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.LiveTVInfoWTO[]> loadLiveContentsAds(long content_id) {
-            return base.Channel.loadLiveContentsAds(content_id);
-        }
-        
-        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.LiveTVInfoWTO[]>> loadLiveContentsAdsAsync(long content_id) {
-            return base.Channel.loadLiveContentsAdsAsync(content_id);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.ContentInfoWTO[]> getContentList(DigitalSignageUI.ContentsServices.ContentInfoWTO filter, DigitalSignageUI.ContentsServices.PagingInfo paging) {
