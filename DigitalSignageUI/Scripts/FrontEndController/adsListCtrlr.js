@@ -6,8 +6,8 @@ function adsListCtrlr($scope, httpRequest) {
         $scope.loadAdsList();
     };
     $scope.loadAdsList = function () {
-    
- 
+
+
         httpRequest.post(service_adsList, "", function (data) {
             debugger
             var viewData = new Object();
@@ -37,4 +37,7 @@ function adsListCtrlr($scope, httpRequest) {
     };
     $scope.load();
 
+    $scope.keyUpImageList = function () {
+        sinageAutocomplte('_adsListCls', 'search');
+    }
 }

@@ -2,25 +2,134 @@
 <html ng-app="application" ng-controller="mainCtrlr">
 <head>
 
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <!-- tvShow styles-->
+    <link href="~/Skins/CSS_tvShow/css/uicon.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/screen.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/print.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/ie.css" rel="stylesheet" />
 
+    <script src="~/Skins/CSS_tvShow/js/jquery.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.catslider.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.countdown.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.keynavigator.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.maskedinput.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.nanoscroller.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.remodal.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.scrollbox.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/jquery.tinycarousel.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/modernizr.custom.63321.js"></script>
+    <script src="~/Skins/CSS_tvShow/script/jquery.simpleWeather.js"></script>
 
+    <script src="~/Skins/CSS_tvShow/js/angular.min.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/angular-route.js"></script>
+
+    <link href="~/Skins/CSS_tvShow/css/coin-slider-styles.css" rel="stylesheet" type="text/css">
+    <script src="~/Skins/CSS_tvShow/script/coin-slider.js"></script>
+    <script src="~/Skins/CSS_tvShow/slide/flux.min.js"></script>
+    <script src="~/Skins/CSS_tvShow/script/datePersian.js"></script>
+    <script src="~/Skins/CSS_tvShow/script/pdate.min.js"></script>
+
+    <!-- tvShow styles-->
+    <!--flowPlayer-->
+    <script src="~/Skins/CSS_tvShow/flowPlayer/flowplayer-3.2.13.min.js"></script>
+    <script src="~/Skins/CSS_tvShow/flowPlayer/flowplayer.ipad-3.2.12.min.js"></script>
+    <script src="~/Skins/CSS_tvShow/flowPlayer/flowplayer.controls-3.2.11.min.js"></script>
+
+    <!--flowPlayer-->
     <!-- Front-End-->
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/util/forms.js"></script>
-    <script src="~/Scripts/util/utils.js"></script>
+    <script src="~/Scripts/util/toolTipAction.js"></script>
     <script src="~/Scripts/util/sourceNames.js"></script>
+    <script src="~/Scripts/util/forms.js"></script>
+    <script src="~/Scripts/util/player.js"></script>
+    <script src="~/Scripts/util/utils.js"></script>
     <script src="~/Scripts/util/sourceFactories.js"></script>
     <script src="~/Scripts/FrontEndController/mainCtrlr.js"></script>
 
+
     <!-- Front-End-->
 </head>
-<body>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-       Powered By Isatis 
+
+<body class="tvc">
+    <notify>
+        <!-- notify place show -->
+    </notify> <!-- /notify place show -->
+
+    <notify-fix>
+        <!-- notify-fix place show -->
+    </notify-fix> <!-- /notify-fix place show -->
+    <div class="limit">
+        <div class="row block">
+
+            <div class="col12 blockHeaderType">
+
+                <div class="blockHeaderPlace">
+                    <div class="blockHeaderTitle">
+                        سامانه مدیریت و پخش دی وی تال
+                    </div>
+                    <div class="blockHeaderDesc">
+                        لیست بسته های نمایشی ساخته شده
+                    </div>
+                    <div class="blockHeaderTitle">
+
+                        <div class="row itemSpace">
+                            <div class="col2">
+                            </div>
+                            <div class="col2">
+                                <a href="@Url.Action("AdsList", "Ads")" class="btnMenuMode _menueBtn" data-type="adsLists">
+                                    <span class="icon" data-icon="&#xe0b3;"></span>
+                                    <span class="txt">لیست بسته ها</span>
+                                </a>
+                            </div>
+                            <div class="col2">
+                                <a href="@Url.Action("AdsManagement", "Ads")" class="btnMenuMode _menueBtn">
+                                    <span class="icon" data-icon="&#xe05b;"></span>
+                                    <span class="txt">ساخت بسته جدید</span>
+                                </a>
+                            </div>
+                            <div class="col2">
+                                <a class="btnMenuMode _menueBtn" ng-click="selectTab($event)">
+                                    <span class="icon" data-icon="&#xe02e;"></span>
+                                    <span class="txt">ویرایش قالب</span>
+                                </a>
+                            </div>
+                            <div class="col2">
+                                <a class="btnMenuMode _menueBtn" ng-click="selectTab($event)">
+                                    <span class="icon" data-icon="&#xe007;"></span>
+                                    <span class="txt">خروج از سیستم</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockContentType">
+                <div class="blockContentPlace">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="limit">
+        <div class="row block">
+            <div class="col12 blockLFooterType">
+                تمامی حقوق محفوظ میباشد و متعلق به دی وی تال است.
+            </div>
+        </div>
     </div>
 </body>
+
+
 </html>
+
+
+
+
+

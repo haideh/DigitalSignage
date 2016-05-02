@@ -611,9 +611,10 @@ function checkNullStrIngModel(example) {
 	return example;
 }
 
-sinageAutocomplte = function (containerCls , inputID) {
+sinageAutocomplte = function (containerCls, inputID) {
+    debugger
     $("." + containerCls).hide();
-    var keyword = $("#"+inputID).val();
+    var keyword = ($("#"+inputID).val());
     if (keyword != "") {
         $("."+containerCls+"[data-title*='" + keyword + "']").show();
     }

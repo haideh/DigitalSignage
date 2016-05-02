@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "uicon";
+  font-family: uicon;
   src:url("../fonts/uicon.eot");
   src:url("../fonts/uicon.eot?#iefix") format("embedded-opentype"),
     url("../fonts/uicon.woff") format("woff"),
@@ -13,7 +13,7 @@
 }
 
 [data-icon]:before {
-  font-family: "uicon" !important;
+  font-family: uicon !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -27,7 +27,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "uicon" !important;
+  font-family: uicon !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;

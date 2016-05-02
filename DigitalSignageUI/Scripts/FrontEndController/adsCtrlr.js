@@ -19,11 +19,17 @@ function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
         return '<video style="height:36px; width:40px;" ><source src="' + file + '"></video>'
     }
     var getTextTemplate = function (text) {
-        return '<lable style="height:36px; width:40px;" >' + text + '</lable><br/>';
+        var template = '<div class="row itemSpace _textTemplate">' +
+                        '<div class="col11">' +
+                            '<input class="formInputDefault" type="text" disabled="disabled" value=' + text + '>' +
+                        '</div>' +
+                    '</div>';
+
+        return template;
     }
     //Upload Image
     $(myFile).bind("change", function (changeEvent) {
-        
+
         $scope.$apply(function () {
             var adsObj = new Object();
             $scope.fileread = changeEvent.target.files[0];
@@ -31,7 +37,7 @@ function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
             fileReader.onload = function (e) {
                 var el = $compile(getImageTemplate(e.target.result))($scope);
                 $("#fileContainet").append(el);
-                UploadFile.upload(service_addAds2, 'myFile', '.jpg', function (data, fileName) {
+                UploadFile.upload(service_uploadFile, 'myFile', '.jpg', function (data, fileName) {
                     var fileNameObj = new Object();
                     fileNameObj.file_name = fileName;
                     $scope.adsIemList.push(fileNameObj);
@@ -65,7 +71,11 @@ function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
         $scope.adsIemList = [];
         $("#fileContainet").html('');
         $("#fileVideoContainet").html('');
-        $("#showText").html('');
+        //   $("#_showText").html('');
+        $('._textTemplate').each(function () {
+
+            $(this).html("");
+        })
         angular.element("input[type='file']").val(null);
         $scope.adsInfo.type = result;
 
@@ -74,6 +84,7 @@ function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
 
 
     $scope.saveAds = function () {
+        debugger
         $scope.adsInfo.itemList = $scope.adsIemList;
         if ($scope.adsInfo.itemList.length > 0) {
             httpRequest.post(service_addAds, $scope.adsInfo, function (data) {
@@ -83,11 +94,12 @@ function adsCtrlr($scope, $compile, httpRequest, UploadFile) {
     };
 
     $scope.addText = function (text) {
-        debugger
+        
         var fileNameObj = new Object();
         fileNameObj.title = text;
         $scope.adsIemList.push(fileNameObj);
         $scope.adsInfo.adItemTitle = '';
-        $("#showText").append(getTextTemplate(text));
+        $("#_showText").after(getTextTemplate(text));
     }
+
 }
