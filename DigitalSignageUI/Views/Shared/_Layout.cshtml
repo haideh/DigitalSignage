@@ -43,6 +43,7 @@
     <script src="~/Scripts/util/player.js"></script>
     <script src="~/Scripts/util/utils.js"></script>
     <script src="~/Scripts/util/sourceFactories.js"></script>
+    <script src="~/Scripts/util/factories.js"></script>
     <script src="~/Scripts/FrontEndController/mainCtrlr.js"></script>
 
 
@@ -75,25 +76,25 @@
                             <div class="col2">
                             </div>
                             <div class="col2">
-                                <a href="@Url.Action("AdsList", "Ads")" class="btnMenuMode _menueBtn" data-type="adsLists">
+                                <a ng-click="selectAdsMenue('packageList')" data-ng-href="{{locationHref}}" class="btnMenuMode {{SelectMenu.packageList}}" data-type="adsLists">
                                     <span class="icon" data-icon="&#xe0b3;"></span>
                                     <span class="txt">لیست بسته ها</span>
                                 </a>
                             </div>
                             <div class="col2">
-                                <a href="@Url.Action("AdsManagement", "Ads")" class="btnMenuMode _menueBtn">
+                                <a ng-click="selectAdsMenue('addNewPackage')" data-ng-href="{{locationHref}}"  class="btnMenuMode {{SelectMenu.addNewPackage}}" >
                                     <span class="icon" data-icon="&#xe05b;"></span>
                                     <span class="txt">ساخت بسته جدید</span>
                                 </a>
                             </div>
                             <div class="col2">
-                                <a class="btnMenuMode _menueBtn" ng-click="selectTab($event)">
+                                <a ng-click="selectAdsMenue('editPackage')" data-ng-href="{{locationHref}}" class="btnMenuMode {{SelectMenu.editPackage}}">
                                     <span class="icon" data-icon="&#xe02e;"></span>
                                     <span class="txt">ویرایش قالب</span>
                                 </a>
                             </div>
                             <div class="col2">
-                                <a class="btnMenuMode _menueBtn" ng-click="logOutFunction()">
+                                <a class="btnMenuMode" ng-click="logOutFunction()">
                                     <span class="icon" data-icon="&#xe007;"></span>
                                     <span class="txt">خروج از سیستم</span>
                                 </a>

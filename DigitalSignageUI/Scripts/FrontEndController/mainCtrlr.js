@@ -1,11 +1,31 @@
 ﻿//------------------------------------mainCtrlr-----------------------------//
 application.controller('mainCtrlr', httpRequest, mainCtrlr);
-function mainCtrlr($scope, httpRequest) {
+function mainCtrlr($scope, httpRequest, SelectMenu) {
     $scope.load = function () {
         $scope.imageSource = imageSource;
         $scope.videoSource = videoSource;
+        $scope.SelectMenu = SelectMenu;
         $scope.packageImageSource = packageImageSource;
         
+        var proLocaion = ((window.location.href).split('/', 5))[4];
+        switch (proLocaion) {
+            case 'AdsList': {
+                $scope.SelectMenu.selectPackageList();
+                break;
+            }
+            case 'AdsManagement': {
+                $scope.SelectMenu.selectAddNewPackage();
+                break;
+            }
+            case 'EditPackage': {
+                $scope.SelectMenu.selectEditPackage();
+                break;
+            }
+            case ':LogOut': {
+                $scope.SelectMenu.selectLogOut();
+                break;
+            }
+        }
     };
 
 
@@ -46,7 +66,30 @@ function mainCtrlr($scope, httpRequest) {
             }
         });
     };
-    
+    $scope.selectAdsMenue = function (mode) {
+        switch (mode) {
+            case 'packageList': {
+                $scope.locationHref = '/Ads/AdsList';
+                break;
+            }
+            case 'addNewPackage': {
+                $scope.locationHref = '/Ads/AdsManagement';
+                break;
+            }
+            case 'editPackage': {
+                //$scope.locationHref = '/Ads/EditPackage';
+                break;
+            }
+            case 'logOut': {
+                //$scope.locationHref = '/Ads/LogOut';
+                break;
+            }
+            default: {
+                $scope.SelectMenu.resetAll();
+                break;
+            };
+        }
+    }
     $scope.logOutFunction = function () {
     debugger
         httpRequest.post(service_logOut, "", function (data) {
