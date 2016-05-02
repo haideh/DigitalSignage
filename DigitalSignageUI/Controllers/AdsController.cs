@@ -1,4 +1,5 @@
 ﻿using Aryaban.Engine.Core.WebService;
+using DigitalSignageUI.Models;
 using DigitalSignageUI.Models.Entity;
 using DigitalSignageUI.Models.ServiceProxy;
 using System;
@@ -12,15 +13,13 @@ namespace DigitalSignageUI.Controllers
 {
     public class AdsController : Controller
     {
-        // GET: Ads
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+
+       // [Authorize]
         public ActionResult AdsManagement()
         {
             return View();
         }
+       // [Authorize]
         public ActionResult AdsList()
         {
             return View();
@@ -33,7 +32,10 @@ namespace DigitalSignageUI.Controllers
             ResultMessage<string> contentAds = serviceProxy.saveAds(adsInfo);
 
             if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             return View();
         }
@@ -59,10 +61,13 @@ namespace DigitalSignageUI.Controllers
 
         {
             AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<List<AdsInfo>> adsList = serviceProxy.getAdsList(1);
+            ResultMessage<List<AdsInfo>> adsList = serviceProxy.getAdsList(SessionManage.getUserSession().companyId);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = adsList;

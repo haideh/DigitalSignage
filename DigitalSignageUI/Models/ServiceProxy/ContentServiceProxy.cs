@@ -9,7 +9,7 @@ using Aryaban.Engine.Core.WebService;
 
 namespace DigitalSignageUI.Models.ServiceProxy
 {
-    public class ContentProxy
+    public class ContentServiceProxy
     {
         public ResultMessage<List<AdsInfo>> loadContent(long content_id)
         {

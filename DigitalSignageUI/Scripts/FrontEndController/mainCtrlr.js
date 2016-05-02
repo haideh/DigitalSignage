@@ -1,6 +1,6 @@
 ﻿//------------------------------------mainCtrlr-----------------------------//
-application.controller('mainCtrlr',  mainCtrlr);
-function mainCtrlr($scope) {
+application.controller('mainCtrlr', httpRequest, mainCtrlr);
+function mainCtrlr($scope, httpRequest) {
     $scope.load = function () {
         $scope.imageSource = imageSource;
         $scope.videoSource = videoSource;
@@ -47,7 +47,14 @@ function mainCtrlr($scope) {
         });
     };
     
+    $scope.logOutFunction = function () {
+    debugger
+        httpRequest.post(service_logOut, "", function (data) {
 
+            window.location.href = data.Url;
+
+        });
+    };
 
     $scope.load();
 };

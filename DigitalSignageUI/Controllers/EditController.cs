@@ -1,4 +1,5 @@
 ﻿using Aryaban.Engine.Core.WebService;
+using DigitalSignageUI.Models;
 using DigitalSignageUI.Models.Entity;
 using DigitalSignageUI.Models.ServiceProxy;
 using System;
@@ -32,11 +33,13 @@ namespace DigitalSignageUI.Controllers
         public ActionResult loadAdsListWithType(long type, string contentId, string position)
         {
             AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadAdsItemListWithType(type, 1, contentId, position);
+            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadAdsItemListWithType(type, SessionManage.getUserSession().companyId, contentId, position);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = adsList;
@@ -46,11 +49,13 @@ namespace DigitalSignageUI.Controllers
         public ActionResult loadWidgetAdsItemListWithType()
         {
             AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadWidgetAdsItemListWithCompanyId(1);
+            ResultMessage<List<AdsInfo>> adsList = serviceProxy.loadWidgetAdsItemListWithCompanyId(SessionManage.getUserSession().companyId);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = adsList;
@@ -60,12 +65,14 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult loadContentAdsListWithPoition(string type, string contentId, string position)
         {
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<List<AdsInfo>> adsList = serviceProxy.searchContentPositionAdsItem(type, contentId, position);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = adsList;
@@ -75,11 +82,14 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult editContentAds(ContentOptionInfo contentOptionInfo)
         {
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<string> contentAds = serviceProxy.editContentAds(contentOptionInfo);
 
             if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
             return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = contentOptionInfo.content_id.ToString() }));
         }
 
@@ -89,11 +99,14 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult deleteContentAds(long content_id, int position)
         {
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<string> contentAds = serviceProxy.deleteContentAds(content_id, position);
 
             if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
             return RedirectToAction("EditContent", new RouteValueDictionary(new { contentId = content_id.ToString() }));
         }
 
@@ -104,11 +117,13 @@ namespace DigitalSignageUI.Controllers
         public ActionResult loadContentLiveVedio(long contentId, int position)
         {
             LiveServiceProxy serviceProxy = new LiveServiceProxy();
-            ResultMessage<List<LiveTVInfo>> adsList = serviceProxy.loadLiveVedioContent(contentId ,1, position);
+            ResultMessage<List<LiveTVInfo>> adsList = serviceProxy.loadLiveVedioContent(contentId , SessionManage.getUserSession().companyId, position);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = adsList;
@@ -123,8 +138,10 @@ namespace DigitalSignageUI.Controllers
             ResultMessage<List<LiveTVInfo>> adsList = serviceProxy.loadContentLiveVedioWithPosition( contentId, position);
 
             if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            };
 
             JsonResult result = new JsonResult();
             result.Data = adsList;

@@ -40,7 +40,10 @@ namespace DigitalSignageUI.Controllers
             {
                 ResultMessage<List<ContentInfo>> result = getTvContent(Convert.ToInt64(Id));
                 if (result.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                    return RedirectToAction("Error", "Error");
+                {
+                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                    return Json(new { Url = redirectErrorUrl });
+                }
                 else
                     return View(result.resultSet.FirstOrDefault());
             }
@@ -61,7 +64,7 @@ namespace DigitalSignageUI.Controllers
             string Ip = Request.UserHostAddress.ToString();
             string companyName = configList[1].Replace("CompanyName:", "").Trim().ToLower();
 
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<ContentInfo> contents = serviceProxy.getContentInfoByConfig(Ip, companyName);
 
             return contents;
@@ -70,7 +73,7 @@ namespace DigitalSignageUI.Controllers
 
         private ResultMessage<List<ContentInfo>> getTvContent(long tvId)
         {
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ContentsServices.ContentInfoWTO filter = new ContentsServices.ContentInfoWTO();
             filter.tv_id = tvId;
             ResultMessage<List<ContentInfo>> contentList = serviceProxy.getContentInfoBytvId(filter, null);
@@ -82,12 +85,14 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult loadContent(long content_id)
         {
-            ContentProxy serviceProxy = new ContentProxy();
+            ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<List<AdsInfo>> contentList = serviceProxy.loadContent(content_id);
 
             if (contentList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //Redirect To Error Page
-                return RedirectToAction("Error", "Error");
+            {
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                return Json(new { Url = redirectErrorUrl });
+            }
 
             JsonResult result = new JsonResult();
             result.Data = contentList;

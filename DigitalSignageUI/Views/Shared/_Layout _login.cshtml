@@ -1,0 +1,77 @@
+﻿
+@model DigitalSignageUI.Models.Entity.UserInfo
+
+<html lang="fa" ng-app="application" ng-controller="loginCtrlr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سامانه مدیریت و پخش دی وی تال</title>
+
+    <!-- tvShow styles-->
+    <link href="~/Skins/CSS_tvShow/css/uicon.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/screen.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/print.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/ie.css" rel="stylesheet" />
+
+
+    <script src="~/Skins/CSS_tvShow/js/jquery.js"></script>
+
+
+
+    <script src="~/Skins/CSS_tvShow/js/jquery.remodal.js"></script>
+
+
+    <script src="~/Skins/CSS_tvShow/js/modernizr.custom.63321.js"></script>
+
+
+    <script src="~/Skins/CSS_tvShow/js/angular-route.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/angular.min.js"></script>
+
+    <link href="~/Skins/CSS_tvShow/css/coin-slider-styles.css" rel="stylesheet" type="text/css">
+    <script src="~/Skins/CSS_tvShow/script/coin-slider.js"></script>
+
+
+    <!-- tvShow styles-->
+    <!-- Front-End-->
+    <script src="~/Scripts/util/sourceNames.js"></script>
+    <script src="~/Scripts/util/forms.js"></script>
+    <script src="~/Scripts/util/utils.js"></script>
+    <script src="~/Scripts/util/sourceFactories.js"></script>
+    <script src="~/Scripts/FrontEndController/loginCtrlr.js"></script>
+
+
+    <!-- Front-End-->
+</head>
+<body class="tvc">
+    <notify>
+        <!-- notify place show -->
+    </notify> <!-- /notify place show -->
+
+    <notify-fix>
+        <!-- notify-fix place show -->
+    </notify-fix> <!-- /notify-fix place show -->
+    <div class="limit">
+        <div class="row block">
+
+            <div class="col3">
+            </div>
+            <div class="col6 blockLloginType">
+
+                @RenderBody()
+
+                
+
+            </div>
+
+        </div>
+        <div class="row block">
+            <div class="col3">
+            </div>
+            <div class="col6 blockLFooterType">
+                تمامی حقوق محفوظ میباشد و متعلق به دی وی تال است.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

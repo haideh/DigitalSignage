@@ -1,0 +1,44 @@
+﻿
+@model DigitalSignageUI.Models.Entity.UserInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout _login.cshtml";
+}
+
+
+<div class="blockLoginPlace" style="min-height:20%">
+    <div class="blockLoginTitle">
+        سامانه مدیریت و پخش دی وی تال
+    </div>
+    <div class="blockHeaderDesc">
+        درج کاربران
+    </div>
+    <div class="row">
+        <div class="col2">
+        </div>
+        <div class="col8">
+            <form>
+                <div class="row itemSpace">
+                    <input class="formInputDefault" type="text" ng-model="userInfo.fName" placeholder="نام ">
+                </div>
+                <div class="row itemSpace">
+                    <input class="formInputDefault" type="text" ng-model="userInfo.lName" placeholder="نام خانوادگی">
+                </div>
+                <div class="row itemSpace">
+                    <input class="formInputDefault" type="text" ng-model="userInfo.username" placeholder="نام کاربری">
+                </div>
+                <div class="row itemSpace">
+                    <input class="formInputDefault" type="password" ng-model="userInfo.password" placeholder="کلمه عبور">
+                </div>
+                <div class="row itemSpace">
+                    <a class="btnMenuMode" ng-click="signUpFunction()">
+                        <span class="icon" data-icon="&#xe05b;"></span>
+                        <span class="txt">ذخیره</span>
+                    </a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+

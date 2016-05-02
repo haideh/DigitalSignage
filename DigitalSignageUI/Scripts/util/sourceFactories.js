@@ -51,7 +51,7 @@ application.factory('httpRequest', ['$http', function ($http) {
 
     };
     service.post = function (url, data, success, error) {
-
+        
         $http({
             url: url,
             method: "POST",
@@ -59,26 +59,27 @@ application.factory('httpRequest', ['$http', function ($http) {
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).success(function (data, status, headers, config) {
-
-            if (status == 200) {
-                if (data.result)
-                    if (data.result.state == "error") {
-                        //	Loader.setLoader(false);
-                        //FoundationApi.publish('main-notifications', { title: Error_Title, content: data.result.message ,autoclose:"3000", color:"warning"});
-                        return;
-                    }
-                if (typeof (data) != 'string' && (data.resultSet != undefined || data.result.state == "success")) {
-                    success(data);
-                    return;
-                }
-                else if (data.indexOf("MOHAJER_MAINPAGE")) {
-                    //freeCatch();
-                    // location.href = "aa.html";
-                    return;
-                } else {
-                    //	Loader.setLoader(false);
-                }
-            }
+            debugger
+            success(data);
+            //if (status == 200) {
+            //    if (data.result)
+            //        if (data.result.state == "error") {
+            //            //	Loader.setLoader(false);
+            //            //FoundationApi.publish('main-notifications', { title: Error_Title, content: data.result.message ,autoclose:"3000", color:"warning"});
+            //            return;
+            //        }
+            //    if (typeof (data) != 'string' && (data.resultSet != undefined || data.result.state == "success")) {
+            //        success(data);
+            //        return;
+            //    }
+            //    else if (data.indexOf("MOHAJER_MAINPAGE")) {
+            //        //freeCatch();
+            //        // location.href = "aa.html";
+            //        return;
+            //    } else {
+            //        //	Loader.setLoader(false);
+            //    }
+            //}
         }).error(function (err, status, headers, config) {
 
             //Loader.setLoader(false);

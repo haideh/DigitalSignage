@@ -14,6 +14,10 @@ service_addAds = "/ads/saveAds";
 service_uploadFile = "/ads/uploadFile";
 service_adsList = "/ads/getAdsList";
 
+service_login="/login/LoginFunction";
+service_signUp = "/login/SignUpFunction";
+service_logOut = "/login/Logout";
+
 
 videoSource = 'http://192.168.88.233/Modules/DigitalSignage/data/ads/movies/';
 imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';

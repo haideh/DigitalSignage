@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fee749ef-d068-4d2a-9f68-78e2ed9d74d0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:14985/Services/permission.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="permission.xsd" MetadataType="Schema" ID="c4438ee1-6802-494a-96b0-7d2c11428601" SourceId="1" SourceUrl="http://localhost:14985/Services/permission.svc?xsd=xsd1" />
+    <MetadataFile FileName="permission.wsdl" MetadataType="Wsdl" ID="ae4eddd9-203c-42f4-b413-684331989626" SourceId="1" SourceUrl="http://localhost:14985/Services/permission.svc?wsdl" />
+    <MetadataFile FileName="permission1.xsd" MetadataType="Schema" ID="ea837d5d-03de-4fb2-9331-395a9844f649" SourceId="1" SourceUrl="http://localhost:14985/Services/permission.svc?xsd=xsd3" />
+    <MetadataFile FileName="permission2.xsd" MetadataType="Schema" ID="a6c71651-76c3-4798-926e-de5ed3e45cb3" SourceId="1" SourceUrl="http://localhost:14985/Services/permission.svc?xsd=xsd2" />
+    <MetadataFile FileName="permission3.xsd" MetadataType="Schema" ID="5318898f-17c8-4e30-90c1-dee8017aed7d" SourceId="1" SourceUrl="http://localhost:14985/Services/permission.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
