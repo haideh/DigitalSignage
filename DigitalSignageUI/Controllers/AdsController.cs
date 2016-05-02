@@ -14,65 +14,99 @@ namespace DigitalSignageUI.Controllers
     public class AdsController : Controller
     {
 
-       // [Authorize]
+        // [Authorize]
         public ActionResult AdsManagement()
         {
-            return View();
+            if (SessionManage.getUserSession() != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
         }
-       // [Authorize]
+
         public ActionResult AdsList()
         {
-            return View();
+            if (SessionManage.getUserSession() != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
         }
 
         [HttpPost]
         public ActionResult saveAds(AdsInfo adsInfo)
         {
-            AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<string> contentAds = serviceProxy.saveAds(adsInfo);
-
-            if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+            if (SessionManage.getUserSession() != null)
             {
-                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
-                return Json(new { Url = redirectErrorUrl });
-            }
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                ResultMessage<string> contentAds = serviceProxy.saveAds(adsInfo);
 
-            return View();
+                if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                {
+                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                    return Json(new { Url = redirectErrorUrl });
+                }
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
         }
 
         [HttpPost]
         public void uploadFile()
         {
-            var httpPostedFile = Request.Files["UploadedFile"];
-            var filename = Request.Params["filename"];
-            byte[] file = ReadToEnd(httpPostedFile.InputStream);
+            if (SessionManage.getUserSession() != null)
+            {
+                var httpPostedFile = Request.Files["UploadedFile"];
+                var filename = Request.Params["filename"];
+                byte[] file = ReadToEnd(httpPostedFile.InputStream);
 
 
-            AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            serviceProxy.uploadFile(file, filename);
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                serviceProxy.uploadFile(file, filename);
 
-            //return View();
-            RedirectToAction("AdsManagement");
+                //return View();
+                RedirectToAction("AdsManagement");
+            }
+            else
+            {
+                RedirectToAction("login", "Login");
+            }
+
         }
 
 
         [HttpPost]
         public ActionResult getAdsList()
-
         {
-            AdsServiceProxy serviceProxy = new AdsServiceProxy();
-            ResultMessage<List<AdsInfo>> adsList = serviceProxy.getAdsList(SessionManage.getUserSession().companyId);
-
-            if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+            if (SessionManage.getUserSession() != null)
             {
-                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
-                return Json(new { Url = redirectErrorUrl });
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                ResultMessage<List<AdsInfo>> adsList = serviceProxy.getAdsList(SessionManage.getUserSession().companyId);
+
+                if (adsList.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                {
+                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                    return Json(new { Url = redirectErrorUrl });
+                }
+
+                JsonResult result = new JsonResult();
+                result.Data = adsList;
+                return result;
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
             }
 
-            JsonResult result = new JsonResult();
-            result.Data = adsList;
-            return result;
-           //  RedirectToAction("AdsList");
         }
 
         private static byte[] ReadToEnd(System.IO.Stream stream)

@@ -71,6 +71,5 @@ namespace DigitalSignageUI.Controllers
            
         }
 
-
     }
 }
