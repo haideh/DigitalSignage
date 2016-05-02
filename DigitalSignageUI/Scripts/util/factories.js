@@ -9,7 +9,7 @@ application.factory('SelectMenu', function () {
     service.addNewPackage = '',
     service.editPackage = '',
     service.logOut = '';
-
+    
     service.resetAll = function () {
         service.packageList = 'select',
         service.addNewPackage = '',
@@ -26,6 +26,7 @@ application.factory('SelectMenu', function () {
         service.logOut = '';
     };
     service.selectEditPackage = function () {
+        
         service.packageList = '',
         service.addNewPackage = '',
         service.editPackage = 'select',
@@ -38,6 +39,15 @@ application.factory('SelectMenu', function () {
         service.logOut = 'select';
     };
     return service;
+});
+
+//-----------------------------------factory for hide and show menubar--------------------//
+application.factory('MenuBar', function () {
+    var MenuBarStatus = false;
+    return {
+        getMenuBarStatus: function () { return MenuBarStatus; },
+        setMenuBarStatus: function (newStatus) { MenuBarStatus = newStatus; }
+    };
 });
 
 //-----------------------------------factory for hide and show menubar--------------------//
@@ -62,7 +72,7 @@ application.factory('SelectMenu', function () {
 
 
 
-//----------------------------------------Nouri change Background ------------------------------------------//
+//---------------------------------------- change Background ------------------------------------------//
 
 //application.factory('changeBackGround', function () {
 //    //	if (! sessionStorage.getItem("backGroundStyle")){
@@ -128,7 +138,7 @@ application.factory('SelectMenu', function () {
 
 
 
-//----------------------------------------Nouri change css ----------------------------------------------//
+//---------------------------------------- change css ----------------------------------------------//
 
 //application.factory('changeBackGroundCSS', function () {
 
@@ -176,7 +186,7 @@ application.factory('SelectMenu', function () {
 //    return service;
 //});
 
-//----------------------------------------Nouri End change css ------------------------------------------//
+//---------------------------------------- End change css ------------------------------------------//
 
 
 //-----------------------------------------paging--------------------------------------//

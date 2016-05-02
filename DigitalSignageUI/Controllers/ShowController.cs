@@ -17,21 +17,7 @@ namespace DigitalSignageUI.Controllers
         {
             ContentInfo c = new ContentInfo();
 
-            if (string.IsNullOrEmpty(Id))//Read From Config
-            {
-
-                c.content_id = 20047;
-                return View(c);
-
-                //ResultMessage<ContentInfo> result =readConfig();
-                //if (result.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                //    return RedirectToAction("Error", "Error");
-                //else
-                //    // ViewData["contentId"] = contentId;
-                //    return View(result.resultSet);
-            }
-
-            else if (type == "c")//See Content
+            if (type == "c")//See Content
             {
                 c.content_id = Convert.ToInt64(Id);
                 return View(c);

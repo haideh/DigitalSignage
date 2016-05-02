@@ -1,24 +1,33 @@
 ﻿//------------------------------------mainCtrlr-----------------------------//
-application.controller('mainCtrlr', httpRequest, mainCtrlr);
-function mainCtrlr($scope, httpRequest, SelectMenu) {
+application.controller('mainCtrlr', mainCtrlr);
+function mainCtrlr($scope, httpRequest, SelectMenu, MenuBar) {
     $scope.load = function () {
         $scope.imageSource = imageSource;
         $scope.videoSource = videoSource;
         $scope.SelectMenu = SelectMenu;
+        $scope.pageHeaderText = '';
+        $scope.MenuBarFlag = MenuBar;
+
+        $scope.MenuBarFlag.setMenuBarStatus(true);
+
         $scope.packageImageSource = packageImageSource;
         
-        var proLocaion = ((window.location.href).split('/', 5))[4];
+        var proLocaion = (((window.location.href).split('/', 5))[4]).split('?')[0];
+        
         switch (proLocaion) {
             case 'AdsList': {
                 $scope.SelectMenu.selectPackageList();
+                $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
                 break;
             }
             case 'AdsManagement': {
                 $scope.SelectMenu.selectAddNewPackage();
+                $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
                 break;
             }
-            case 'EditPackage': {
+            case 'EditContent': {
                 $scope.SelectMenu.selectEditPackage();
+                $scope.pageHeaderText = 'اضافه نمودن و یا ویرایش قالب نمایش تلویزیون';
                 break;
             }
             case ':LogOut': {
@@ -77,7 +86,7 @@ function mainCtrlr($scope, httpRequest, SelectMenu) {
                 break;
             }
             case 'editPackage': {
-                //$scope.locationHref = '/Ads/EditPackage';
+                $scope.locationHref = '/Edit/EditContent?contentId=20049';
                 break;
             }
             case 'logOut': {
@@ -91,14 +100,16 @@ function mainCtrlr($scope, httpRequest, SelectMenu) {
         }
     }
     $scope.logOutFunction = function () {
-    debugger
+    
         httpRequest.post(service_logOut, "", function (data) {
 
             window.location.href = data.Url;
 
         });
     };
-
+    $scope.backToParnet = function () {
+        window.history.back();
+    }
     $scope.load();
 };
 //------------------------------------showContentCtrlr-----------------------------//
@@ -114,8 +125,8 @@ function editContentCtrlr($scope,$rootScope, httpRequest) {
 };
 //------------------------------------editContentSelectorCtrlr-----------------------------//
 application.controller('editContentSelectorCtrlr', editContentSelectorCtrlr);
-function editContentSelectorCtrlr($scope,$rootScope, httpRequest) {
-    editContentSelectorCtrlr($scope, $rootScope,httpRequest);
+function editContentSelectorCtrlr($scope, $rootScope, httpRequest, MenuBar) {
+    editContentSelectorCtrlr($scope, $rootScope, httpRequest, MenuBar);
 };
 //------------------------------------editContentTempCtrlr_1-----------------------------//
 application.controller('editContentTempCtrlr_1', editContentTempCtrlr_1);

@@ -258,7 +258,7 @@
     <Content Include="Scripts\FrontEndController\editContentSelectorCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentTempCtrlr_1.js" />
-    <Content Include="Scripts\util\player.js" />
+    <Content Include="Scripts\util\sliderPlayer.js" />
     <Content Include="Scripts\util\toolTipAction.js" />
     <None Include="Service References\PrmissionServices\configuration91.svcinfo" />
     <None Include="Service References\PrmissionServices\configuration.svcinfo" />
@@ -273,6 +273,7 @@
     <Content Include="Skins\CSS_tvShow\css\ie.css" />
     <Content Include="Skins\CSS_tvShow\css\print.css" />
     <Content Include="Skins\CSS_tvShow\css\screen.css" />
+    <Content Include="Skins\CSS_tvShow\css\wi.css" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.13.min.js" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.16.swf" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer-3.2.18.swf" />
@@ -471,6 +472,7 @@
     </None>
     <Content Include="Skins\CSS_tvShow\css\uicon.css" />
     <Content Include="Skins\CSS_tvShow\flowPlayer\flowplayer.smil-3.2.9.swf" />
+    <Content Include="Skins\CSS_tvShow\fonts\artill_clean_icons-webfont.svg" />
     <Content Include="Skins\CSS_tvShow\fonts\BYEKAN.svg" />
     <Content Include="Skins\CSS_tvShow\fonts\index.html" />
     <Content Include="Skins\CSS_tvShow\fonts\IranianSerif.svg" />
@@ -480,6 +482,7 @@
     <Content Include="Skins\CSS_tvShow\images\bg_pattern_1.png" />
     <Content Include="Skins\CSS_tvShow\images\bg_pattern_2.png" />
     <Content Include="Skins\CSS_tvShow\images\bk.jpg" />
+    <Content Include="Skins\CSS_tvShow\images\bkDefaultBlack.jpg" />
     <Content Include="Skins\CSS_tvShow\images\bkPattern%402.png" />
     <Content Include="Skins\CSS_tvShow\images\bkPattern.png" />
     <Content Include="Skins\CSS_tvShow\images\bkText.png" />
@@ -535,6 +538,7 @@
     <Content Include="Skins\CSS_tvShow\js\jquery.scrollbox.js" />
     <Content Include="Skins\CSS_tvShow\js\jquery.tinycarousel.js" />
     <Content Include="Skins\CSS_tvShow\js\modernizr.custom.63321.js" />
+    <Content Include="Skins\CSS_tvShow\js\Modernizr.js" />
     <Content Include="Skins\CSS_tvShow\script\coin-slider.js" />
     <Content Include="Skins\CSS_tvShow\script\datePersian.js" />
     <Content Include="Skins\CSS_tvShow\script\jquery.simpleWeather.js" />
@@ -572,7 +576,6 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Error\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout_tvShow.cshtml" />
     <Content Include="Views\Show\ShowContent_Type1.cshtml" />
     <Content Include="Skins\CSS_tvShow\fonts\BCompset.eot" />
     <Content Include="Skins\CSS_tvShow\fonts\BCompset.ttf" />
@@ -628,6 +631,10 @@
     <Content Include="Views\Login\login.cshtml" />
     <Content Include="Views\Shared\_Layout _login.cshtml" />
     <Content Include="Views\Login\SignUp.cshtml" />
+    <Content Include="Views\Shared\_Layout_tvShow.cshtml" />
+    <Content Include="Skins\CSS_tvShow\fonts\artill_clean_icons-webfont.eot" />
+    <Content Include="Skins\CSS_tvShow\fonts\artill_clean_icons-webfont.ttf" />
+    <Content Include="Skins\CSS_tvShow\fonts\artill_clean_icons-webfont.woff" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

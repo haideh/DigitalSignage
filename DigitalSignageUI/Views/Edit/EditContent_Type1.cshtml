@@ -11,8 +11,9 @@
 </style>
 
 
-<div class="rowA">
 
+
+<div class="rowA">
     <div class="colAA">
         <section>
             <!--Block Position 1-->
@@ -40,8 +41,7 @@
                 </div>
             </div>
         </section>
-
-
+    
         <section>
             <!--Block Position 3-->
             <div data-position="3" class="colAArowB" ng-if="Posi3 == 1">
@@ -98,37 +98,37 @@
                 </div>
             </div>
         </section>
-    </div>
+ </div>
 
     <section>
-        <!--Block Position 5-->
-        <div data-position="5" class="colAB" ng-if="Posi5 == 1">
-            @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
-        </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 2">
-            @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, type = 2, content_ad_id = Model.content_id })
-        </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 6">
-            @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, type = 6, content_ad_id = Model.content_id })
-        </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 3">
-            @Html.Partial("~/Views/ContentPart/TextPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
-        </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 4">
-            @Html.Partial("~/Views/ContentPart/WeatherPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
-        </div>
-        <div data-position="5" class="colAB" ng-if="Posi5 == 5">
-            @Html.Partial("~/Views/ContentPart/TimePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
-        </div>
-        <div class="colAB" ng-if="Posi5 == 0" data-position="5">
-            <div class="colABEdit">
-                @Html.Partial("~/Views/ContentPart/DefaultPartEdit.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
+            <!--Block Position 5-->
+            <div data-position="5" class="colAB" ng-if="Posi5 == 1">
+                @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
             </div>
-        </div>
-    </section>
-</div>
-<!--Block Position 4-->
+            <div data-position="5" class="colAB" ng-if="Posi5 == 2">
+                @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, type = 2, content_ad_id = Model.content_id })
+            </div>
+            <div data-position="5" class="colAB" ng-if="Posi5 == 6">
+                @Html.Partial("~/Views/ContentPart/VideoPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, type = 6, content_ad_id = Model.content_id })
+            </div>
+            <div data-position="5" class="colAB" ng-if="Posi5 == 3">
+                @Html.Partial("~/Views/ContentPart/TextPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
+            </div>
+            <div data-position="5" class="colAB" ng-if="Posi5 == 4">
+                @Html.Partial("~/Views/ContentPart/WeatherPart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
+            </div>
+            <div data-position="5" class="colAB" ng-if="Posi5 == 5">
+                @Html.Partial("~/Views/ContentPart/TimePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
+            </div>
+            <div class="colAB" ng-if="Posi5 == 0" data-position="5">
+                <div class="colABEdit">
+                    @Html.Partial("~/Views/ContentPart/DefaultPartEdit.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 5, content_ad_id = Model.content_id })
+                </div>
+            </div>
+        </section>
 
+
+</div>
 <div class="rowB" data-position="4" ng-if="Posi4 == 1">
     @Html.Partial("~/Views/ContentPart/ImagePart.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 4, content_ad_id = Model.content_id })
 </div>
@@ -153,6 +153,9 @@
         @Html.Partial("~/Views/ContentPart/DefaultPartEdit.cshtml", new DigitalSignageUI.Models.Entity.EditContentTemplateInfo { position = 4, content_ad_id = Model.content_id })
     </div>
 </div>
+
+
+
 
 
 

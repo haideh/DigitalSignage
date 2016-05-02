@@ -91,7 +91,7 @@
             $scope.viewData = data.resultSet;
             for (var posi = 0; posi < $scope.viewData.length; posi++) {
                 $scope.posi = $scope.viewData[posi].position;
- debugger
+ 
                 for (var img_i = 0; img_i < $scope.viewData[posi].itemList.length; img_i++) {
                     var contentObj = new Object();
 
@@ -180,23 +180,7 @@
 
     $scope.slider = function (imageList) {
         $scope.sliderImageList = imageList;
-        var transitionsArray = new Array();
-        //transitionsArray.push('bars','blinds','blocks','blocks2','concentric','slide','warp','zip','bars3d','blinds3d','cube','tiles3d','turn');
-        transitionsArray.push('bars', 'blinds', 'blocks', 'blocks2', 'concentric', 'slide', 'warp', 'zip', 'bars3d', 'blinds3d', 'cube', 'tiles3d', 'turn');
-        var dlayArr = new Array();
-        dlayArr.push(1000, 2000, 3000, 4000, 1000);
-        if (!flux.browser.supportsTransitions)
-            alert("Flux Slider requires a browser that supports CSS3 transitions");
-        window.f = new flux.slider('.coin-slider', {
-            pagination: false,
-            //controls: true,
-            captions: false,
-            transitions: transitionsArray,
-            width: 320,
-            height: 300
-            //   delay: 2000
-        });
-       // $('.coin-slider').coinslider({ width: 280, height: 187, navigation: false, delay: 3000, spw: 4, sph: 4 });
+        runSlider();
     }
 
 

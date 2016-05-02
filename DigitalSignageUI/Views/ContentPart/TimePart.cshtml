@@ -1,20 +1,41 @@
 ﻿
 @model DigitalSignageUI.Models.Entity.EditContentTemplateInfo
 
- @if (Model.content_ad_id != 0)
- {
-        <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 5, position = Model.position })">Edit</a>
-        <a ng-click="deleteContentAds(@Model.content_ad_id,@Model.position)">del</a>
- }
+@if (Model.content_ad_id != 0)
+{
+
+    <div class="blockEditModeOver">
+        <div class="blockEditModeOverlay">
+            <a href="@Url.Action("EditContentSelector", "Edit", new { contentId = Model.content_ad_id, type = 5, position = Model.position })" class="btnTVCAEditOk">
+                <span class="icon" data-icon="&#xe1cf;"></span>
+            </a>
+            <a ng-click="deleteContentAds(@Model.content_ad_id,@Model.position)" class="btnTVCAEditCancel">
+                <span class="icon" data-icon="&#xe0da;"></span>
+            </a>
+        </div>
 
 
+        <div class="widgetTimeDate">
+            <div class="txtTime show_time_1">
 
+            </div>
+            <div class="txtDate date">
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+else{ 
 <div class="widgetTimeDate">
     <div class="txtTime show_time_1">
 
     </div>
-    <div  class="txtDate date">
+    <div class="txtDate date">
 
     </div>
 
 </div>
+}

@@ -16,13 +16,11 @@
                 <!--                <a class="editPackageBtnSearch"><span class="icon" data-icon="&#xe0b7;"></span></a>-->
             </div>
         </div>
-
         <div class="rowSelectDefault">
-
-            <div class="packageItem _adsListCls" ng-repeat="x in resultAdsList" data-id="{{x.id}}" data-title="{{x.title}}">
+            <div class="packageItem packageItemModel _adsListCls" ng-repeat="x in resultAdsList" data-id="{{x.id}}" data-title="{{x.title}}">
                 <div class="packageItemPreview">
                     <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
-                    <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
+                    <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
                     <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                 </div>
                 <div class="packageItemDivider">
@@ -39,25 +37,28 @@
                         </div>
                         <div class="packageItemTime">
                             <span class="icon" data-icon="&#xe019;"></span>&nbsp;
-                             0 دقیقه از {{x.max_minutes}}
+                            0 دقیقه از {{x.max_minutes}}
                         </div>
                     </div>
 
                 </div>
-            </div>
 
+            </div>
         </div>
+
+
+
     </div>
 </div>
 <script>
 
     $("._menueBtn").click(function () {
-       
+
         $("._menueBtn").each(function () {
             $(this).removeClass("select");
         })
         $("a[data-type='adsList']").addClass("select");
-       
+
     });
 
 </script>

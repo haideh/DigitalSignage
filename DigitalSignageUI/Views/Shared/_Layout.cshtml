@@ -7,6 +7,7 @@
     <link href="~/Skins/CSS_tvShow/css/screen.css" rel="stylesheet" />
     <link href="~/Skins/CSS_tvShow/css/print.css" rel="stylesheet" />
     <link href="~/Skins/CSS_tvShow/css/ie.css" rel="stylesheet" />
+    <link href="~/Skins/CSS_tvShow/css/wi.css" rel="stylesheet" />
 
     <script src="~/Skins/CSS_tvShow/js/jquery.js"></script>
     <script src="~/Skins/CSS_tvShow/js/jquery.catslider.js"></script>
@@ -17,6 +18,7 @@
     <script src="~/Skins/CSS_tvShow/js/jquery.remodal.js"></script>
     <script src="~/Skins/CSS_tvShow/js/jquery.scrollbox.js"></script>
     <script src="~/Skins/CSS_tvShow/js/jquery.tinycarousel.js"></script>
+    <script src="~/Skins/CSS_tvShow/js/Modernizr.js"></script>
     <script src="~/Skins/CSS_tvShow/js/modernizr.custom.63321.js"></script>
     <script src="~/Skins/CSS_tvShow/script/jquery.simpleWeather.js"></script>
 
@@ -40,7 +42,7 @@
     <script src="~/Scripts/util/toolTipAction.js"></script>
     <script src="~/Scripts/util/sourceNames.js"></script>
     <script src="~/Scripts/util/forms.js"></script>
-    <script src="~/Scripts/util/player.js"></script>
+    <script src="~/Scripts/util/sliderPlayer.js"></script>
     <script src="~/Scripts/util/utils.js"></script>
     <script src="~/Scripts/util/sourceFactories.js"></script>
     <script src="~/Scripts/util/factories.js"></script>
@@ -68,9 +70,9 @@
                         سامانه مدیریت و پخش دی وی تال
                     </div>
                     <div class="blockHeaderDesc">
-                        لیست بسته های نمایشی ساخته شده
+                        {{pageHeaderText}}
                     </div>
-                    <div class="blockHeaderTitle">
+                    <div class="blockHeaderTitle" ng-show="MenuBarFlag.getMenuBarStatus()">
 
                         <div class="row itemSpace">
                             <div class="col2">
@@ -97,6 +99,21 @@
                                 <a class="btnMenuMode" ng-click="logOutFunction()">
                                     <span class="icon" data-icon="&#xe007;"></span>
                                     <span class="txt">خروج از سیستم</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="blockHeaderTitle" ng-show="!MenuBarFlag.getMenuBarStatus()">
+
+                        <div class="row itemSpace">
+                            <div class="col5">
+                            </div>
+                            <div class="col2">
+                                <a ng-click="backToParnet()" class="btnMenuMode">
+                                    <span class="icon" data-icon="&#xe052;"></span>
+                                    <span class="txt">بازگشت</span>
                                 </a>
                             </div>
                         </div>

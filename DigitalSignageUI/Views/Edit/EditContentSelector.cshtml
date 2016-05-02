@@ -14,7 +14,7 @@
         <input type="hidden" class="AdsTypeLoad" data-type="2" />
         Html.RenderPartial("~/Views/Edit/SliderSelectorEdit.cshtml");
     }
-    @if ((string)ViewBag.type == "4")
+    @if ((string)ViewBag.type == "4" || (string)ViewBag.type == "5")
     {
         <input type="hidden" class="AdsTypeLoad" data-type="4" />
         Html.RenderPartial("~/Views/Edit/WidgetSelectorEdit.cshtml");

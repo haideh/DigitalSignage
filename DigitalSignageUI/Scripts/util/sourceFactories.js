@@ -59,7 +59,7 @@ application.factory('httpRequest', ['$http', function ($http) {
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).success(function (data, status, headers, config) {
-            debugger
+            
             success(data);
             //if (status == 200) {
             //    if (data.result)

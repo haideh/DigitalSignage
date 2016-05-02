@@ -14,36 +14,35 @@
         </div>
 
         <div class="rowSelectA">
-            <div id="itemList" class="rowSelectContent">
 
-                <div ng-repeat="x in resultList" data-id="{{x.id}}" data-title="{{x.title}}" ng-click="clearSelectPackageInf()" class="packageItem serach-result">
-                    <div class="packageItemPreview">
-                        <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
-                        <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
-                        <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
-                    </div>
-                    <div class="packageItemDivider">
 
-                        <div class="row">
-                            <a class="packageItemBtnAdd" ng-click="addOrRemAdsInList(x , 'add')"><span class="icon" data-icon="&#xe05b;"></span></a>
-                        </div>
-
-                        <div class="row">
-                            <div class="packageItemTitle">
-                                <span class="icon" data-icon="&#xe256;"></span>&nbsp;
-                                {{x.title}}
-                            </div>
-                            <div class="packageItemTime">
-                                <span class="icon" data-icon="&#xe019;"></span>&nbsp;
-                                 0 دقیقه از {{x.max_minutes}}
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="packageItem packageItemModel serach-result" ng-repeat="x in resultList" data-id="{{x.id}}" data-title="{{x.title}}" ng-click="clearSelectPackageInf()">
+                <div class="packageItemPreview">
+                    <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
+                    <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
+                    <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                 </div>
-                
+                <div class="packageItemDivider">
+
+                    <div class="row">
+                        <a class="packageItemBtnAdd" ng-click="addOrRemAdsInList(x , 'add')"><span class="icon" data-icon="&#xe05b;"></span></a>
+                    </div>
+
+                    <div class="row">
+                        <div class="packageItemTitle">
+                            <span class="icon" data-icon="&#xe256;"></span>&nbsp;
+                            {{x.title}}
+                        </div>
+                        <div class="packageItemTime">
+                            <span class="icon" data-icon="&#xe019;"></span>&nbsp;
+                            0 دقیقه از {{x.max_minutes}}
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
+
         </div>
         <div class="rowSelectHeader">
             <div class="editPackageTitle">
@@ -52,11 +51,13 @@
             </div>
         </div>
         <div class="rowSelectB">
-            <div id="itemSelect" class="rowSelectContent" >
-                <div ng-repeat="x in resultAdsContentList" data-id="{{x.id}}" data-title="{{x.title}}" class="packageItem" ng-click="selectPackageInf(x)" >
+
+
+            <div id="itemSelect" class="rowSelectContent">
+                <div class="packageItem packageItemModel serach-result" ng-repeat="x in resultAdsContentList" data-id="{{x.id}}" data-title="{{x.title}}" ng-click="selectPackageInf(x)">
                     <div class="packageItemPreview">
-                        <img ng-repeat="detail in x.itemList" ng-if="x.type == '1'" src="{{packageImageSource}}{{detail.file_name}}" alt="">
-                        <div style="width:180px;margin:2px;padding:5px;background-color:#999;text-align:center;" ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</div>
+                        <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
+                        <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
                         <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                     </div>
                     <div class="packageItemDivider">
@@ -78,8 +79,10 @@
                         </div>
 
                     </div>
+
                 </div>
             </div>
+            
         </div>
         <div class="panelToggle rowSelectHeader">
             <div class="editPackageTitle">
@@ -99,13 +102,7 @@
 
             </div>
         </div>
-        <script>
-            $(document).ready(function () {
-                $(".btnToggleTime").click(function () {
-                    $(".panelToggle").slideToggle("fast");
-                });
-            });
-        </script>
+        
 
         <div class="row rowSelectHeader">
             <div class="col4">
@@ -119,7 +116,7 @@
                 </div>
                 <div class="col6">
                     <a class="btnPageNOk" ng-click="cancelSaveAds()">
-                       
+
                         <span class="icon" data-icon="&#xe036;"></span>
                         <span class="txt">انصراف</span>
                     </a>

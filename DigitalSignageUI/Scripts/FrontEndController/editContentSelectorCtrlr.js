@@ -1,4 +1,4 @@
-﻿function editContentSelectorCtrlr($scope, $rootScope, httpRequest) {
+﻿function editContentSelectorCtrlr($scope, $rootScope, httpRequest, MenuBar) {
 
     $scope.adsItemDetailListCreator = function (serviceName, dataObj, type) {
         $scope.viewData = [];
@@ -26,9 +26,10 @@
 
                     contenDetailObjList.push(contenDetailObj);
                 }
-
+                
                 if (contentObj.type == '2') {
-                    $scope.runPlayer(contenDetailObjList);
+                    if (contenDetailObjList.length > 0)
+                        $scope.runPlayer(contenDetailObjList);
                 }
 
                 contentObj.itemList = contenDetailObjList;
@@ -114,31 +115,32 @@
     };
 
 
-
-    //Widget
     $scope.selectWidget = function (packageInfo, mode) {
 
-        switch (mode) {
-            case 'timeMode': {
-                $scope.timeSelect = 'select';
-                $scope.weatherSelect = '';
+        //switch (mode) {
+        //    case 'timeMode': {
+        //        $scope.timeSelect = 'select';
+        //        $scope.weatherSelect = '';
 
-                break;
-            }
-            case 'weatherMode': {
-                $scope.timeSelect = '';
-                $scope.weatherSelect = 'select';
-                break;
-            }
-            default: {
-                break;
-            }
+        //        break;
+        //    }
+        //    case 'weatherMode': {
+        //        $scope.timeSelect = '';
+        //        $scope.weatherSelect = 'select';
+        //        break;
+        //    }
+        //    default: {
+        //        break;
+        //    }
 
-        }
+        //}
         $scope.selectedWidgetPackage = packageInfo;
     };
+
+
     $scope.saveWidget = function (packageInfo) {
 
+        debugger
         var obj = new Object();
         obj.position = $(".positionInp").val();
         obj.content_id = $(".contentIdInp").val();
@@ -275,7 +277,7 @@
         obj.content_id = $(".contentIdInp").val();
         obj.interval = $scope.selectedPackage.interval;
         obj.adsItemList = new Array();
-       debugger
+        debugger
         if (type == 'lives') {
             obj.type = 1;
             obj.adsItemList = $scope.liveResultAdsContentList;
@@ -303,11 +305,12 @@
         $scope.type = $(".typeInp").val();
         $scope.position = $(".positionInp").val();
         $scope.selectedPackage = [];
+        $scope.selectedWidgetPackage = [];
         $scope.adsList = [];
+        MenuBar.setMenuBarStatus(false);
 
         $scope.loadAdsList();
         $scope.loadContentAdsList();
-        debugger
 
         if ($(".AdsTypeLoad").attr("data-type") == '6') {
 
