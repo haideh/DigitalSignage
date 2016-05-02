@@ -20,8 +20,10 @@ service_logOut = "/login/Logout";
 
 
 videoSource = 'http://192.168.88.233/Modules/DigitalSignage/data/ads/movies/';
-imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';
-packageImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=45&file=/Modules/DigitalSignage/data/ads/images/';
+imageSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/';
+//imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';
+//packageImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=45&file=/Modules/DigitalSignage/data/ads/images/';
+packageImageSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/';
 packageLiveImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/';
 
 

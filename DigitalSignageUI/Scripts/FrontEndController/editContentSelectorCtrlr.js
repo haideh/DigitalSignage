@@ -277,7 +277,7 @@
         obj.content_id = $(".contentIdInp").val();
         obj.interval = $scope.selectedPackage.interval;
         obj.adsItemList = new Array();
-        debugger
+        
         if (type == 'lives') {
             obj.type = 1;
             obj.adsItemList = $scope.liveResultAdsContentList;
