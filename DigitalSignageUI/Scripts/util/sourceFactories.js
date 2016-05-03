@@ -59,33 +59,37 @@ application.factory('httpRequest', ['$http', function ($http) {
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).success(function (data, status, headers, config) {
-            
-            success(data);
-            //if (status == 200) {
-            //    if (data.result)
-            //        if (data.result.state == "error") {
-            //            //	Loader.setLoader(false);
-            //            //FoundationApi.publish('main-notifications', { title: Error_Title, content: data.result.message ,autoclose:"3000", color:"warning"});
-            //            return;
-            //        }
-            //    if (typeof (data) != 'string' && (data.resultSet != undefined || data.result.state == "success")) {
-            //        success(data);
-            //        return;
-            //    }
-            //    else if (data.indexOf("MOHAJER_MAINPAGE")) {
-            //        //freeCatch();
-            //        // location.href = "aa.html";
-            //        return;
-            //    } else {
-            //        //	Loader.setLoader(false);
-            //    }
-            //}
+            if (data.result == undefined && (data.Url == "/Ads/AdsList" || data.Url == "/")) {
+                
+                notifyInfo(_infoMsg);
+                success(data);
+            }
+           else if (data.result.status == 1) {
+                if (data.result.message)
+                    notifyInfo(data.result.message);
+                else
+                    notifyInfo(_infoMsg);
+                success(data);
+            }
+            else if (data.result.status == 0) {
+                if (data.result.message)
+                    notifyAlert(data.result.message);
+                else
+                    notifyAlert(_errorMsg);
+                return;
+            }
+            else if (data.result.status == 2) {
+                if (data.result.message)
+                    notifyWarning(data.result.message);
+                else
+                    notifyWarning(_noFileWarn);
+                return;
+            }
         }).error(function (err, status, headers, config) {
-             
+            notifyAlert(_errorMsg);
             error(err);
 
             //Loader.setLoader(false);
-            //FoundationApi.publish('main-notifications', { title: Error_Title, content: "Ø®Ø·Ø§ Ø¯Ø± Ø³Ù…Øª Ø³Ø±ÙˆØ±"+'  status: '+status ,autoclose:"3000", color:"warning"});
         });
     },
 	service.postForm = function (url, data, UIform, success, error) {
@@ -171,13 +175,13 @@ application.factory('UploadFile', function () {
                         },
                         error: function (msg) {
 
-                            alert(msg.statusText);
+                            notifyAlert(_errorMsg);
                         }
                     });
 
                     $(".alert-box").remove();
                 } else {
-                    alert("فایلی انتخاب نشده است");
+                    notifyWarning(_noFileWarn);
 
                 }
             }

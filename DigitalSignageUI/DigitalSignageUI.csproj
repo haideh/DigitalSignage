@@ -258,7 +258,9 @@
     <Content Include="Scripts\FrontEndController\editContentSelectorCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentCtrlr.js" />
     <Content Include="Scripts\FrontEndController\editContentTempCtrlr_1.js" />
+    <Content Include="Scripts\util\notification.js" />
     <Content Include="Scripts\util\sliderPlayer.js" />
+    <Content Include="Scripts\util\systemMessages.js" />
     <Content Include="Scripts\util\toolTipAction.js" />
     <None Include="Service References\PrmissionServices\configuration91.svcinfo" />
     <None Include="Service References\PrmissionServices\configuration.svcinfo" />

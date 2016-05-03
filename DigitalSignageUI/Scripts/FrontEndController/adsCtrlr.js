@@ -45,21 +45,21 @@
     $scope.load();
     var getImageTemplate = function (file, fileName) {
 
-        return '<div class="col" id="' + fileName + '.jpg' + '"><img src="' + file + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '.jpg' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+        return '<div class="col" id="' + fileName + '.jpg' + '"><img src="' + file + '" style="height:36px; width:40px;" /><a class="btnTVCAEditCancel" ng-click="delFile(\'' + fileName + '.jpg' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
     var getVideoTemplate = function (file, fileName) {
         
-        return '<div class="col" id="' + fileName + '.mp4' + '"><video style="height:36px; width:40px;" ><source src="' + file + '"></video><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '.mp4' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+        return '<div class="col" id="' + fileName + '.mp4' + '"><video style="height:36px; width:40px;" ><source src="' + file + '"></video><a class="btnTVCAEditCancel" ng-click="delFile(\'' + fileName + '.mp4' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
 
     //For Edit
     var getImageTemplateEdit = function (fileName) {
 
-        return '<div class="col" id="' + fileName + '"><img src="' + imageSource + fileName + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+        return '<div class="col" id="' + fileName + '"><img src="' + imageSource + fileName + '" style="height:36px; width:40px;" /><a class="btnTVCAEditCancel" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
     var getVideoTemplateEdit = function (fileName) {
         
-        return '<div class="col" id="' + fileName + '"><img src="' + defaultVideoSource + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+        return '<div class="col" id="' + fileName + '"><img src="' + defaultVideoSource + '" style="height:36px; width:40px;" /><a class="btnTVCAEditCancel" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
 
     var getTextTemplate = function (text) {
@@ -139,25 +139,26 @@
         if ($scope.adsInfo.itemList.length > 0) {
 
             httpRequest.post(service_addAds, $scope.adsInfo, function (data) {
-                alert('اطلاعات با موفقیت درج شد.');
                 $scope.adsInfo = [];
                 $scope.adsIemList = [];
                 $("#fileContainet").html('');
                 $("#fileVideoContainet").html('');
                 $(".showText").each(function () { $(this).html(''); });
 
-            }, function () { alert('خطا در درج اطلاعات.'); });
+            }, function () {});
 
 
         }
     };
 
     $scope.cancelAds = function () {
-        $scope.adsInfo = [];
-        $scope.adsIemList = [];
-        $("#fileContainet").html('');
-        $("#fileVideoContainet").html('');
-        $(".showText").each(function () { $(this).html(''); });
+        
+        //$scope.adsInfo = [];
+        //$scope.adsIemList = [];
+        //$("#fileContainet").html('');
+        //$("#fileVideoContainet").html('');
+        //$(".showText").each(function () { $(this).html(''); });
+        window.location.href = "../Ads/AdsList";
     };
 
 
@@ -172,13 +173,13 @@
     }
 
     $scope.delFile = function (fileName) {
-       debugger
+        
         //Delete From Hard
         var obj = new Object();
         obj.fileName = fileName;
         httpRequest.post(service_deladsFile, obj, function (data) {
 
-        }, function () { alert('خطا در حذف فایل.'); });
+        }, function () {});
    
             //Delete Html
             $('div[id$="' + fileName  + '"]').html('');

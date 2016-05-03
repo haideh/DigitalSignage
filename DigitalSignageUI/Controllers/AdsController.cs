@@ -52,6 +52,7 @@ namespace DigitalSignageUI.Controllers
                 if (contentAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 {
                     var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                   // contentAds.result.redirectUrl = redirectErrorUrl;
                     return Json(new { Url = redirectErrorUrl });
                 }
                 // return View();
@@ -191,9 +192,13 @@ namespace DigitalSignageUI.Controllers
             {
                 AdsServiceProxy serviceProxy = new AdsServiceProxy();
                 ResultMessage<string> delAds = serviceProxy.deleteAdsWithdetail(id);
-
                 var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("AdsList", "Ads");
-                return Json(new { Url = redirectErrorUrl });
+                delAds.result.redirectUrl = redirectErrorUrl;
+
+                JsonResult result = new JsonResult();
+                result.Data = delAds;
+                return result;
+               // return Json(new { Url = redirectErrorUrl });
             }
             else
             {
@@ -212,6 +217,7 @@ namespace DigitalSignageUI.Controllers
                 if (editAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
                 {
                     var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+
                     return Json(new { Url = redirectErrorUrl });
                 }
                 // return View();

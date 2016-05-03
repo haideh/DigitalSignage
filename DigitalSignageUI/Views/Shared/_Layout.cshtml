@@ -39,6 +39,8 @@
 
     <!--flowPlayer-->
     <!-- Front-End-->
+    <script src="~/Scripts/util/systemMessages.js"></script>
+    <script src="~/Scripts/util/notification.js"></script>
     <script src="~/Scripts/util/toolTipAction.js"></script>
     <script src="~/Scripts/util/sourceNames.js"></script>
     <script src="~/Scripts/util/forms.js"></script>
@@ -84,7 +86,7 @@
                                 </a>
                             </div>
                             <div class="col2">
-                                <a ng-click="selectAdsMenue('addNewPackage')" data-ng-href="{{locationHref}}"  class="btnMenuMode {{SelectMenu.addNewPackage}}" >
+                                <a ng-click="selectAdsMenue('addNewPackage')" data-ng-href="{{locationHref}}" class="btnMenuMode {{SelectMenu.addNewPackage}}">
                                     <span class="icon" data-icon="&#xe05b;"></span>
                                     <span class="txt">ساخت بسته جدید</span>
                                 </a>
@@ -142,6 +144,39 @@
             </div>
         </div>
     </div>
+    @*<div class="row block itemSpaceSmall">
+            <div class="col3">
+            </div>
+            <div class="col6">
+                <div class="row">
+                    <div class="col2">
+                        <a onClick="notifyAlert('alert')" class="btnIcon btnNotify">
+                            <span class="icon" data-icon="&#xe034;"></span>
+                        </a>
+                    </div>
+                    <div class="col2">
+                        <a onClick="notifySuccess('success')" class="btnIcon btnNotify">
+                            <span class="icon" data-icon="&#xe042;"></span>
+                        </a>
+                    </div>
+                    <div class="col2">
+                        <a onClick="notifyWarning('warning')" class="btnIcon btnNotify">
+                            <span class="icon" data-icon="&#xe015;"></span>
+                        </a>
+                    </div>
+                    <div class="col2">
+                        <a onClick="notifyInfo('info')" class="btnIcon btnNotify">
+                            <span class="icon" data-icon="&#xe07a;"></span>
+                        </a>
+                    </div>
+                    <div class="col3">
+                        <a onClick="notifyFix('notify')" class="btnIcon btnNotify">
+                            <span class="icon" data-icon="&#xe398;"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>*@
 </body>
 
 

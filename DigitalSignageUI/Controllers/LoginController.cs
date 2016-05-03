@@ -32,15 +32,20 @@ namespace DigitalSignageUI.Controllers
                 PermissionServiceProxy serviceProxy = new PermissionServiceProxy();
                 ResultMessage<string> security = serviceProxy.login(model);
 
-                if (security.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-                {
-                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
-                    return Json(new { Url = redirectErrorUrl });
-                }
+                //if (security.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                //{
+                //    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                //    return Json(new { Url = redirectErrorUrl });
+                //}
                 FormsAuthentication.SetAuthCookie(model.username, false);
 
                 var redirectUrl = new UrlHelper(Request.RequestContext).Action("AdsList", "Ads");
-                return Json(new { Url = redirectUrl });
+                security.result.redirectUrl = redirectUrl;
+                JsonResult result = new JsonResult();
+                result.Data = security;
+                return result;
+               
+                // return Json(new { Url = redirectUrl });
             }
             return View();
         }
@@ -51,15 +56,21 @@ namespace DigitalSignageUI.Controllers
             PermissionServiceProxy serviceProxy = new PermissionServiceProxy();
             ResultMessage<string> security = serviceProxy.signUp(model);
 
-            if (security.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
-            {
-                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
-                return Json(new { Url = redirectErrorUrl });
-            }
+            //if (security.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+            //{
+            //    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+            //    return Json(new { Url = redirectErrorUrl });
+            //}
             FormsAuthentication.SetAuthCookie(model.username, false);
 
             var redirectUrl = new UrlHelper(Request.RequestContext).Action("AdsList", "Ads");
-            return Json(new { Url = redirectUrl });
+
+            security.result.redirectUrl = redirectUrl;
+            JsonResult result = new JsonResult();
+            result.Data = security;
+            return result;
+
+          
 
         }
         public ActionResult Logout()

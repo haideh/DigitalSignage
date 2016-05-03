@@ -26,8 +26,9 @@
 
                     contenDetailObjList.push(contenDetailObj);
                 }
-                
+              
                 if (contentObj.type == '2') {
+                   
                     if (contenDetailObjList.length > 0)
                         $scope.runPlayer(contenDetailObjList);
                 }
@@ -307,6 +308,10 @@
         $scope.selectedPackage = [];
         $scope.selectedWidgetPackage = [];
         $scope.adsList = [];
+        $scope.showIntervalFlag = true;
+        if (RequestQueryString("type") == "2") {
+            $scope.showIntervalFlag = false;
+        }
         MenuBar.setMenuBarStatus(false);
 
         $scope.loadAdsList();

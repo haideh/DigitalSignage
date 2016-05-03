@@ -82,6 +82,15 @@
                     </div>
                 </div>
             </div>
+            @*<div class="row rowContentDefault rowSelectDefault" ng-show="showImage == '1'">
+                <div class="itemPreviewPlace">
+                    <div class="itemPreviewThumb" id="fileContainet">
+                    </div>
+                </div>
+            </div>*@
+
+
+
             <div class="row rowContentDefault" id="fileContainet" ng-show="showImage == '1'"></div>
 
             <div class="row rowSelectHeader" ng-show="showImage == '2'">
@@ -100,6 +109,15 @@
                     </div>
                 </div>
             </div>
+
+            @*<div class="row rowContentDefault rowSelectDefault" ng-show="showImage == '2'">
+                <div class="itemPreviewPlace">
+                    <div class="itemPreviewThumb" id="fileVideoContainet">
+                    </div>
+                </div>
+            </div>*@
+
+
             <div class="row rowContentDefault" id="fileVideoContainet" ng-show="showImage == '2'"></div>
 
 
@@ -130,8 +148,8 @@
                         </a>
                     </div>
                     <div class="col6">
-                        <a class="btnPageNOk">
-                            <span class="icon" data-icon="&#xe036;" ng-click="cancelAds();"></span>
+                        <a class="btnPageNOk" ng-click="cancelAds();">
+                            <span class="icon" data-icon="&#xe036;"></span>
                             <span class="txt">انصراف</span>
                         </a>
                     </div>

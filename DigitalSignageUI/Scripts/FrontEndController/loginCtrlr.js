@@ -7,15 +7,17 @@ function loginCtrlr($scope, httpRequest) {
     $scope.userInfo = [];
 
     $scope.load = function () {
+        
     };
     $scope.load();
 
 
     $scope.loginFun = function () {
-      
+       
         httpRequest.post(service_login, $scope.userInfo, function (data) {
-           
-            window.location.href = data.Url;
+            setTimeout(function () {
+                window.location.href = data.result.redirectUrl;
+            }, 1000);
            
             });
     };

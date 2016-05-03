@@ -41,6 +41,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -51,6 +52,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -90,6 +92,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -100,6 +103,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -140,6 +144,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -150,6 +155,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -189,6 +195,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -199,6 +206,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -237,6 +245,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -247,6 +256,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -284,6 +294,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -294,6 +305,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -330,6 +342,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.success,
+                                message = serviceResult.result.message
                             }
                         };
                         break;
@@ -340,6 +353,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
                             result = new Result()
                             {
                                 status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                                message = serviceResult.result.message
                             }
                         };
                         break;

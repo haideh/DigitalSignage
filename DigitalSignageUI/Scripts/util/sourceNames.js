@@ -30,7 +30,7 @@ defaultVideoSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads
 packageImageSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/';
 packageLiveImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/';
 
-
+//------------------------------------------------vod--------------------------------------//
 androidUrlSource = "http://192.168.88.20:1935/mediacache/mp4:http/sample.mp4";//vod
 androidStreamName = "/manifest.f4m";
 
@@ -45,6 +45,15 @@ rtmpSource = "rtmp://192.168.88.20:1935/vod";
 rtmpSourceVod = "rtmp://192.168.88.20:1935/mediacache";
 rtmpStreamNameVod = "/mp4:http/sample.mp4";
 
+//------------------------------------live----------------------------------------//
+//androidUrlSource = 'http://192.168.88.20:1935/live/myStream'
+//androidStreamName = '/manifest.f4m';
+
+//iosUrlSource = 'http://192.168.88.20:1935/live/ch1.stream_360p';
+//iosStreamName = '/playlist.m3u8';
+
+//rtmpSource = 'rtmp://192.168.88.20:1935/live';
+//rtmpStreamName = '/ch1.stream';
 flowPlayerSWF = "/Skins/CSS_tvShow/flowPlayer/flowplayer-3.2.18.swf";
 bwChkSource = "/Skins/CSS_tvShow/flowPlayer/flowplayer.bwcheck-3.2.13.swf";
 rtmpFlowSwf = "/Skins/CSS_tvShow/flowPlayer/flowplayer.rtmp-3.2.12.swf";

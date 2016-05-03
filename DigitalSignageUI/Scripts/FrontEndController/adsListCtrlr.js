@@ -44,9 +44,10 @@ function adsListCtrlr($scope, httpRequest) {
         
         var obj = new Object();
         obj.id = data;
+        debugger
         httpRequest.post(service_deladsWithDetail, obj, function (data) {
-
-            window.location.href = data.Url;
+            debugger
+            window.location.href = data.result.redirectUrl;
         });
     };
 }
