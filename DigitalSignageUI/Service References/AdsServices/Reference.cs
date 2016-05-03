@@ -1016,6 +1016,12 @@ namespace DigitalSignageUI.AdsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/saveAds", ReplyAction="http://tempuri.org/Iads/saveAdsResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> saveAdsAsync(DigitalSignageUI.AdsServices.AdsInfoWTO AdsInfo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAds", ReplyAction="http://tempuri.org/Iads/editAdsResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> editAds(string title, string time, long ad_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAds", ReplyAction="http://tempuri.org/Iads/editAdsResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAds", ReplyAction="http://tempuri.org/Iads/deleteAdsResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAds(long id);
         
@@ -1028,11 +1034,17 @@ namespace DigitalSignageUI.AdsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAdsItem", ReplyAction="http://tempuri.org/Iads/deleteAdsItemResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteAdsItemAsync(long id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAds", ReplyAction="http://tempuri.org/Iads/editAdsResponse")]
-        Aryaban.Engine.Core.WebService.ResultMessage<string> editAds(string title, string time, long ad_id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAdsFile", ReplyAction="http://tempuri.org/Iads/deleteAdsFileResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAdsFile(string fileName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAds", ReplyAction="http://tempuri.org/Iads/editAdsResponse")]
-        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAdsFile", ReplyAction="http://tempuri.org/Iads/deleteAdsFileResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteAdsFileAsync(string fileName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAdsWithDetail", ReplyAction="http://tempuri.org/Iads/deleteAdsWithDetailResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAdsWithDetail(long id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAdsWithDetail", ReplyAction="http://tempuri.org/Iads/deleteAdsWithDetailResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteAdsWithDetailAsync(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/searchDataOnAds", ReplyAction="http://tempuri.org/Iads/searchDataOnAdsResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]> searchDataOnAds(DigitalSignageUI.AdsServices.AdsInfoWTO filter, DigitalSignageUI.AdsServices.PagingInfo paging);
@@ -1112,6 +1124,14 @@ namespace DigitalSignageUI.AdsServices {
             return base.Channel.saveAdsAsync(AdsInfo);
         }
         
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> editAds(string title, string time, long ad_id) {
+            return base.Channel.editAds(title, time, ad_id);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id) {
+            return base.Channel.editAdsAsync(title, time, ad_id);
+        }
+        
         public Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAds(long id) {
             return base.Channel.deleteAds(id);
         }
@@ -1128,12 +1148,20 @@ namespace DigitalSignageUI.AdsServices {
             return base.Channel.deleteAdsItemAsync(id);
         }
         
-        public Aryaban.Engine.Core.WebService.ResultMessage<string> editAds(string title, string time, long ad_id) {
-            return base.Channel.editAds(title, time, ad_id);
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAdsFile(string fileName) {
+            return base.Channel.deleteAdsFile(fileName);
         }
         
-        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id) {
-            return base.Channel.editAdsAsync(title, time, ad_id);
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteAdsFileAsync(string fileName) {
+            return base.Channel.deleteAdsFileAsync(fileName);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAdsWithDetail(long id) {
+            return base.Channel.deleteAdsWithDetail(id);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteAdsWithDetailAsync(long id) {
+            return base.Channel.deleteAdsWithDetailAsync(id);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO[]> searchDataOnAds(DigitalSignageUI.AdsServices.AdsInfoWTO filter, DigitalSignageUI.AdsServices.PagingInfo paging) {

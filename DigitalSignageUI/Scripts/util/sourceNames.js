@@ -13,6 +13,9 @@ service_loadContentLiveVedio = "/edit/loadContentLiveVedio";
 service_addAds = "/ads/saveAds";
 service_uploadFile = "/ads/uploadFile";
 service_adsList = "/ads/getAdsList";
+service_deladsFile = "/ads/deleteFile";
+service_deladsWithDetail = "/ads/deleteAdsWithdetail";
+service_editadsWithDetail = "/ads/editadsWithDetail";
 
 service_login="/login/LoginFunction";
 service_signUp = "/login/SignUpFunction";

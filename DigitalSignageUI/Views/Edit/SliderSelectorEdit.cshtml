@@ -20,6 +20,7 @@
                 <div class="packageItemPreview">
                     <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
                     <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
+                    @*<video style="width:100%;height:100%" ng-if="x.type == '2'"><source src="{{videoSource}}{{detail.file_name}}"></video>*@
                     <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                 </div>
                 <div class="packageItemDivider">
@@ -58,6 +59,7 @@
                     <div class="packageItemPreview">
                         <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
                         <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
+                        @*<video style="width:100%;height:100%" ng-if="x.type == '2'"><source src="{{videoSource}}{{detail.file_name}}"></video>*@
                         <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                     </div>
                     <div class="packageItemDivider">

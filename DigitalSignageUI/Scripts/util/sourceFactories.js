@@ -81,6 +81,8 @@ application.factory('httpRequest', ['$http', function ($http) {
             //    }
             //}
         }).error(function (err, status, headers, config) {
+            debugger
+            error(err);
 
             //Loader.setLoader(false);
             //FoundationApi.publish('main-notifications', { title: Error_Title, content: "Ø®Ø·Ø§ Ø¯Ø± Ø³Ù…Øª Ø³Ø±ÙˆØ±"+'  status: '+status ,autoclose:"3000", color:"warning"});
@@ -146,12 +148,12 @@ application.factory('httpRequest', ['$http', function ($http) {
 //----------------------------------factory for upload file-------------------------------------//
 application.factory('UploadFile', function () {
     return {
-        upload: function (url, container, type, callback) {
+        upload: function (url, container, type, fileName, callback) {
 
             var request = new FormData();
             var adsObj = new Object();
             var file_data = $("#" + container).get(0).files[0];
-            var fileName = guid();
+            // var fileName = guid();
             if (file_data != undefined) {
                 if (file_data.name != '') {
                     request.append("UploadedFile", file_data);

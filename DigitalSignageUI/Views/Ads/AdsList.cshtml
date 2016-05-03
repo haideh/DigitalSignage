@@ -19,15 +19,15 @@
         <div class="rowSelectDefault">
             <div class="packageItem packageItemModel _adsListCls" ng-repeat="x in resultAdsList" data-id="{{x.id}}" data-title="{{x.title}}">
                 <div class="packageItemPreview">
-                    <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}">
+                    <img ng-if="x.type == '1'" ng-repeat="detail in x.itemList" src="{{packageImageSource}}{{detail.file_name}}"/>
                     <p ng-if="x.type == '3'" ng-repeat="detail in x.itemList">{{detail.adsItemTitle}}</p>
                     <div style="width:100%;height:100%" ng-if="x.type == '2'" class="flowplayerVideo widgetVideo" id="player"></div>
                 </div>
                 <div class="packageItemDivider">
 
                     <div class="row">
-                        <a class="packageItemBtnSetting"><span class="icon" data-icon="&#xe1cf;"></span></a>
-                        <a class="packageItemBtnDelete"><span class="icon" data-icon="&#xe0da;"></span></a>
+                        <a class="packageItemBtnSetting" ng-click="editAdsWithAdsItem(x.id)"><span class="icon" data-icon="&#xe1cf;"></span></a>
+                        <a class="packageItemBtnDelete" ng-click="deleteAdsWithAdsItem(x.id)"><span class="icon" data-icon="&#xe0da;"></span></a>
                     </div>
 
                     <div class="row">

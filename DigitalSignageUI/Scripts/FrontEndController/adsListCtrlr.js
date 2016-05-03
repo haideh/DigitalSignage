@@ -40,4 +40,21 @@ function adsListCtrlr($scope, httpRequest) {
     $scope.keyUpImageList = function () {
         sinageAutocomplte('_adsListCls', 'search');
     }
+    $scope.deleteAdsWithAdsItem = function (data) {
+        debugger
+        var obj = new Object();
+        obj.id = data;
+        httpRequest.post(service_deladsWithDetail, obj, function (data) {
+
+            window.location.href = data.Url;
+        });
+    };
+    $scope.editAdsWithAdsItem = function (data) {
+        var obj = new Object();
+        obj.id = data;
+        httpRequest.post(service_editadsWithDetail, obj, function (data) {
+
+            window.location.href = data.Url;
+        });
+    };
 }

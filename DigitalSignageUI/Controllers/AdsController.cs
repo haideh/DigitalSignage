@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace DigitalSignageUI.Controllers
 {
@@ -15,7 +16,7 @@ namespace DigitalSignageUI.Controllers
     {
 
         // [Authorize]
-        public ActionResult AdsManagement()
+        public ActionResult AdsManagement(string adId)
         {
             if (SessionManage.getUserSession() != null)
             {
@@ -44,6 +45,7 @@ namespace DigitalSignageUI.Controllers
         {
             if (SessionManage.getUserSession() != null)
             {
+                adsInfo.companyId = SessionManage.getUserSession().companyId;
                 AdsServiceProxy serviceProxy = new AdsServiceProxy();
                 ResultMessage<string> contentAds = serviceProxy.saveAds(adsInfo);
 
@@ -52,7 +54,10 @@ namespace DigitalSignageUI.Controllers
                     var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
                     return Json(new { Url = redirectErrorUrl });
                 }
-                return View();
+                // return View();
+                JsonResult result = new JsonResult();
+                result.Data = contentAds;
+                return result;
             }
             else
             {
@@ -61,7 +66,7 @@ namespace DigitalSignageUI.Controllers
         }
 
         [HttpPost]
-        public void uploadFile()
+        public ActionResult uploadFile()
         {
             if (SessionManage.getUserSession() != null)
             {
@@ -73,12 +78,11 @@ namespace DigitalSignageUI.Controllers
                 AdsServiceProxy serviceProxy = new AdsServiceProxy();
                 serviceProxy.uploadFile(file, filename);
 
-                //return View();
-                RedirectToAction("AdsManagement");
+                return RedirectToAction("AdsManagement");
             }
             else
             {
-                RedirectToAction("login", "Login");
+               return RedirectToAction("login", "Login");
             }
 
         }
@@ -159,6 +163,49 @@ namespace DigitalSignageUI.Controllers
                     stream.Position = originalPosition;
                 }
             }
+        }
+
+        [HttpPost]
+        public ActionResult deleteFile(string fileName)
+        {
+            if (SessionManage.getUserSession() != null)
+            {
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                ResultMessage<bool> delFile = serviceProxy.deleteFile(fileName);
+
+                JsonResult result = new JsonResult();
+                result.Data = delFile;
+                return result;
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult deleteAdsWithdetail(long id)
+        {
+            if (SessionManage.getUserSession() != null)
+            {
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                ResultMessage<string> delAds = serviceProxy.deleteAdsWithdetail(id);
+
+                var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("AdsList", "Ads");
+                return Json(new { Url = redirectErrorUrl });
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult editadsWithDetail(long id)
+        {
+            return RedirectToAction("AdsManagement", new RouteValueDictionary(new { adId = id.ToString() }));
         }
 
     }

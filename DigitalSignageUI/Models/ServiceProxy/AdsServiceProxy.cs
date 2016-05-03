@@ -12,7 +12,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
 {
     public class AdsServiceProxy
     {
-        public ResultMessage<List<AdsInfo>> loadAdsItemListWithType(long AdsType,long companyId, string contentId, string position)
+        public ResultMessage<List<AdsInfo>> loadAdsItemListWithType(long AdsType, long companyId, string contentId, string position)
         {
 
             List<AdsInfo> listContentInfo = new List<AdsInfo>();
@@ -20,7 +20,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             {
                 ResultMessage<AdsInfoWTO[]> serviceResult;
 
-                serviceResult = clientProxy.getAdsWithItemDetail(AdsType.ToString(),companyId ,Convert.ToInt64( contentId), Convert.ToInt32(position));
+                serviceResult = clientProxy.getAdsWithItemDetail(AdsType.ToString(), companyId, Convert.ToInt64(contentId), Convert.ToInt32(position));
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:
@@ -208,6 +208,71 @@ namespace DigitalSignageUI.Models.ServiceProxy
                 }
 
             }
+        }
+
+
+        public ResultMessage<bool> deleteFile(string filename)
+        {
+            try
+            {
+                using (IadsClient clientProxy = new IadsClient())
+                {
+                    clientProxy.deleteAdsFile(filename);
+                }
+                return new ResultMessage<bool>
+                {
+                    resultSet = true,
+                    result = new Result()
+                    {
+                        status = Aryaban.Engine.Core.WebService.Result.state.error
+                    }
+                };
+            }
+            catch (Exception)
+            {
+                return new ResultMessage<bool>
+                {
+                    resultSet = false,
+                    result = new Result()
+                    {
+                        status = Aryaban.Engine.Core.WebService.Result.state.error
+                    }
+                };
+
+            }
+
+        }
+
+        public ResultMessage<string> deleteAdsWithdetail(long id)
+        {
+            try
+            {
+                using (IadsClient clientProxy = new IadsClient())
+                {
+                    clientProxy.deleteAdsWithDetail(id);
+                }
+                return new ResultMessage<string>
+                {
+                    resultSet = "success",
+                    result = new Result()
+                    {
+                        status = Aryaban.Engine.Core.WebService.Result.state.error
+                    }
+                };
+            }
+            catch (Exception ex)
+            {
+                return new ResultMessage<string>
+                {
+                    resultSet = ex.Message,
+                    result = new Result()
+                    {
+                        status = Aryaban.Engine.Core.WebService.Result.state.error
+                    }
+                };
+
+            }
+
         }
 
     }

@@ -47,15 +47,15 @@
             <div class="row itemSpace">
                 <div class="col3"></div>
                 <div class="col2">
-                    <input id="Radio1" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="1" checked="checked">
+                    <input id="Radio1" name="switch-x" ng-model="showImage" ng-click="selectItem(1);" type="radio" ng-value="1" checked="checked">
                     <label for="Radio1" onclick="">عکس</label>
                 </div>
                 <div class="col2">
-                    <input id="Radio2" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="2">
+                    <input id="Radio2" name="switch-x" ng-model="showImage" ng-click="selectItem(2);" type="radio" ng-value="2">
                     <label for="Radio2" onclick="">فیلم</label>
                 </div>
                 <div class="col2">
-                    <input id="Radio3" name="switch-x" ng-model="showImage" ng-click="selectItem(showImage);" type="radio" ng-value="3">
+                    <input id="Radio3" name="switch-x" ng-model="showImage" ng-click="selectItem(3);" type="radio" ng-value="3">
                     <label for="Radio3" onclick="">متن</label>
                 </div>
             </div>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="col6">
                         <a class="btnPageNOk">
-                            <span class="icon" data-icon="&#xe036;"></span>
+                            <span class="icon" data-icon="&#xe036;" ng-click="cancelAds();"></span>
                             <span class="txt">انصراف</span>
                         </a>
                     </div>
