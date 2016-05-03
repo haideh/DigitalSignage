@@ -612,7 +612,7 @@ function checkNullStrIngModel(example) {
 }
 
 sinageAutocomplte = function (containerCls, inputID) {
-    debugger
+     
     $("." + containerCls).hide();
     var keyword = ($("#"+inputID).val());
     if (keyword != "") {
@@ -648,7 +648,7 @@ function guid() {
 //        link: function (scope, element, attrs) {
 //            element.bind("change", function (changeEvent) {
 //                scope.$apply(function () {
-//                    debugger
+//                     
 //                    scope.fileread = changeEvent.target.files[0];
 //                    var fileReader = new FileReader();
 //                    fileReader.onload = function (e) {

@@ -20,6 +20,12 @@
   <wsdl:message name="Iads_editAds_OutputMessage">
     <wsdl:part name="parameters" element="tns:editAdsResponse" />
   </wsdl:message>
+  <wsdl:message name="Iads_editAdsWithDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:editAdsWithDetail" />
+  </wsdl:message>
+  <wsdl:message name="Iads_editAdsWithDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:editAdsWithDetailResponse" />
+  </wsdl:message>
   <wsdl:message name="Iads_deleteAds_InputMessage">
     <wsdl:part name="parameters" element="tns:deleteAds" />
   </wsdl:message>
@@ -95,6 +101,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/Iads/editAds" message="tns:Iads_editAds_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Iads/editAdsResponse" message="tns:Iads_editAds_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="editAdsWithDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/Iads/editAdsWithDetail" message="tns:Iads_editAdsWithDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Iads/editAdsWithDetailResponse" message="tns:Iads_editAdsWithDetail_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="deleteAds">
       <wsdl:input wsaw:Action="http://tempuri.org/Iads/deleteAds" message="tns:Iads_deleteAds_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Iads/deleteAdsResponse" message="tns:Iads_deleteAds_OutputMessage" />
@@ -153,6 +163,15 @@
     </wsdl:operation>
     <wsdl:operation name="editAds">
       <soap:operation soapAction="http://tempuri.org/Iads/editAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editAdsWithDetail">
+      <soap:operation soapAction="http://tempuri.org/Iads/editAdsWithDetail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

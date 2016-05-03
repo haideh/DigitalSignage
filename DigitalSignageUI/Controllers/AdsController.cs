@@ -205,7 +205,25 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult editadsWithDetail(long id)
         {
-            return RedirectToAction("AdsManagement", new RouteValueDictionary(new { adId = id.ToString() }));
+            if (SessionManage.getUserSession() != null)
+            {
+                AdsServiceProxy serviceProxy = new AdsServiceProxy();
+                ResultMessage<AdsInfo> editAds = serviceProxy.editAdsWithDetail(id);
+                if (editAds.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                {
+                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                    return Json(new { Url = redirectErrorUrl });
+                }
+                // return View();
+                JsonResult result = new JsonResult();
+                result.Data = editAds;
+                return result;
+
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
+            }
         }
 
     }

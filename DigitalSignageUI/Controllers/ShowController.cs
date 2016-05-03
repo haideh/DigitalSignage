@@ -1,4 +1,5 @@
 ﻿using Aryaban.Engine.Core.WebService;
+using DigitalSignageUI.Models;
 using DigitalSignageUI.Models.Entity;
 using DigitalSignageUI.Models.ServiceProxy;
 using System;
@@ -15,29 +16,37 @@ namespace DigitalSignageUI.Controllers
 
         public ActionResult ShowContent(string Id, string type)
         {
-            ContentInfo c = new ContentInfo();
+            if (SessionManage.getUserSession() != null)
+            {
+                ContentInfo c = new ContentInfo();
 
-            if (type == "c")//See Content
-            {
-                c.content_id = Convert.ToInt64(Id);
-                return View(c);
-            }
-            else //See Tv
-            {
-                ResultMessage<List<ContentInfo>> result = getTvContent(Convert.ToInt64(Id));
-                if (result.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                if (type == "c")//See Content
                 {
-                    var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
-                    return Json(new { Url = redirectErrorUrl });
+                    c.content_id = Convert.ToInt64(Id);
+                    return View(c);
                 }
-                else
-                    return View(result.resultSet.FirstOrDefault());
+                else //See Tv
+                {
+                    ResultMessage<List<ContentInfo>> result = getTvContent(Convert.ToInt64(Id));
+                    if (result.result.status == Aryaban.Engine.Core.WebService.Result.state.error)
+                    {
+                        var redirectErrorUrl = new UrlHelper(Request.RequestContext).Action("Error", "Error");
+                        return Json(new { Url = redirectErrorUrl });
+                    }
+                    else
+                        return View(result.resultSet.FirstOrDefault());
+                }
+            }
+            else
+            {
+                return RedirectToAction("login", "Login");
             }
         }
 
 
         private ResultMessage<ContentInfo> readConfig()
         {
+
             string path = (System.Web.HttpContext.Current.Request.PhysicalApplicationPath + "/data/config.txt");
             string sText = "";
             using (StreamReader reader = new StreamReader(path))
@@ -55,10 +64,13 @@ namespace DigitalSignageUI.Controllers
 
             return contents;
 
+
+
         }
 
         private ResultMessage<List<ContentInfo>> getTvContent(long tvId)
         {
+
             ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ContentsServices.ContentInfoWTO filter = new ContentsServices.ContentInfoWTO();
             filter.tv_id = tvId;
@@ -71,6 +83,7 @@ namespace DigitalSignageUI.Controllers
         [HttpPost]
         public ActionResult loadContent(long content_id)
         {
+
             ContentServiceProxy serviceProxy = new ContentServiceProxy();
             ResultMessage<List<AdsInfo>> contentList = serviceProxy.loadContent(content_id);
 
@@ -83,6 +96,7 @@ namespace DigitalSignageUI.Controllers
             JsonResult result = new JsonResult();
             result.Data = contentList;
             return result;
+
         }
     }
 }

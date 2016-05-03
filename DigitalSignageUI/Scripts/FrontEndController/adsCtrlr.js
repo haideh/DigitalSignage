@@ -9,6 +9,38 @@
 
 
     $scope.load = function () {
+        if (RequestQueryString("adId") != "") {
+            var obj = new Object();
+            obj.id = RequestQueryString("adId");
+            httpRequest.post(service_editadsWithDetail, obj, function (data) {
+                
+                $scope.adsInfo = data.resultSet;
+                $scope.adsInfo.itemList = data.resultSet.itemList;
+                $scope.adsIemList = $scope.adsInfo.itemList;
+                $scope.showImage = $scope.adsInfo.type;
+
+                angular.forEach($scope.adsIemList, function (value, key) {
+                    if ($scope.adsInfo.type == 3) {
+                        var t = $compile(getTextTemplate(value.title))($scope);
+                        $("#_showText").after(t);
+                    }
+                    if ($scope.adsInfo.type == 2) {
+                        var el = $compile(getVideoTemplateEdit(value.file_name))($scope);
+                        $("#fileVideoContainet").append(el);
+                    }
+                    if ($scope.adsInfo.type == 1) {
+                        
+                        var el = $compile(getImageTemplateEdit(value.file_name))($scope);
+                        $("#fileContainet").append(el);
+                    }
+                });
+
+
+
+            });
+
+
+        }
     };
     $scope.load();
     var getImageTemplate = function (file, fileName) {
@@ -16,17 +48,28 @@
         return '<div class="col" id="' + fileName + '.jpg' + '"><img src="' + file + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '.jpg' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
     var getVideoTemplate = function (file, fileName) {
-        debugger
+        
         return '<div class="col" id="' + fileName + '.mp4' + '"><video style="height:36px; width:40px;" ><source src="' + file + '"></video><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '.mp4' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
     }
-    var getTextTemplate = function (text) {
+
+    //For Edit
+    var getImageTemplateEdit = function (fileName) {
+
+        return '<div class="col" id="' + fileName + '"><img src="' + imageSource + fileName + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+    }
+    var getVideoTemplateEdit = function (fileName) {
         
+        return '<div class="col" id="' + fileName + '"><img src="' + defaultVideoSource + '" style="height:36px; width:40px;" /><a class="packageItemBtnDelete" ng-click="delFile(\'' + fileName + '' + '\')"><span class="icon" data-icon="&#xe0da;"></span></a></div>'
+    }
+
+    var getTextTemplate = function (text) {
+
 
         var template = '<div class="row itemSpace _textTemplate showText">'
             + '<div class="col11" id="' + text + '" >'
             + '<input class="formInputDefault" type="text"  value=' + text + '>'
-            + '</div>' 
-            +'<div></div>'
+            + '</div>'
+            + '<div></div>'
             + '<div  class="col1 itemSpace"> <a class="btnSmallOk" ng-click="delText(' + "'" + text + "'" + ')"><span class="icon" data-icon="&#xe0da;"></span></a> </div>'
             + '</div>';
 
@@ -129,32 +172,61 @@
     }
 
     $scope.delFile = function (fileName) {
-        debugger
+       debugger
         //Delete From Hard
         var obj = new Object();
         obj.fileName = fileName;
         httpRequest.post(service_deladsFile, obj, function (data) {
 
         }, function () { alert('خطا در حذف فایل.'); });
-        debugger
-        //Delete Html
-        $('div[id$="' + fileName + '"]').html('');
+   
+            //Delete Html
+            $('div[id$="' + fileName  + '"]').html('');
+      
 
         //Delete From  $scope.adsInfo
         if ($scope.adsIemList.length > 0) {
             angular.forEach($scope.adsIemList, function (value, key) {
-                if (value.file_name + ".jpg" == fileName) {
-                    debugger
-                    var index = $scope.adsIemList.indexOf(value);
-                    $scope.adsIemList.splice(index, 1);
+                if (value.file_name.indexOf(".jpg") > -1)
+                {
+                    if (value.file_name == fileName) {
+                        var index = $scope.adsIemList.indexOf(value);
+                        $scope.adsIemList.splice(index, 1);
+                    }
+                    
                 }
+                else {
+                    
+                    if (value.file_name + ".jpg" == fileName) {
+                        var index = $scope.adsIemList.indexOf(value);
+                        $scope.adsIemList.splice(index, 1);
+                    }
+                }
+                if (value.file_name.indexOf(".mp4") > -1) {
+                    
+                    if (value.file_name == fileName) {
+                        
+                        var index = $scope.adsIemList.indexOf(value);
+                        $scope.adsIemList.splice(index, 1);
+                    }
+
+                }
+                else {
+
+                    if (value.file_name + ".mp4" == fileName) {
+                        
+                        var index = $scope.adsIemList.indexOf(value);
+                        $scope.adsIemList.splice(index, 1);
+                    }
+                }
+                
             });
         }
 
 
     }
     $scope.delText = function (text) {
-        debugger
+        
         //Delete Html
         $('div[id$="' + text + '"]').html('');
 

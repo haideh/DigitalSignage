@@ -1,6 +1,6 @@
 ﻿
 function adsListCtrlr($scope, httpRequest) {
-
+  
     $scope.load = function () {
         $scope.resultAdsList = [];
         $scope.loadAdsList();
@@ -9,7 +9,7 @@ function adsListCtrlr($scope, httpRequest) {
 
 
         httpRequest.post(service_adsList, "", function (data) {
-            debugger
+            
             var viewData = new Object();
             viewData = data.resultSet;
             for (var adsIndex = 0; adsIndex < viewData.length; adsIndex++) {
@@ -41,18 +41,10 @@ function adsListCtrlr($scope, httpRequest) {
         sinageAutocomplte('_adsListCls', 'search');
     }
     $scope.deleteAdsWithAdsItem = function (data) {
-        debugger
+        
         var obj = new Object();
         obj.id = data;
         httpRequest.post(service_deladsWithDetail, obj, function (data) {
-
-            window.location.href = data.Url;
-        });
-    };
-    $scope.editAdsWithAdsItem = function (data) {
-        var obj = new Object();
-        obj.id = data;
-        httpRequest.post(service_editadsWithDetail, obj, function (data) {
 
             window.location.href = data.Url;
         });

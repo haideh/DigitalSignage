@@ -140,7 +140,7 @@
 
     $scope.saveWidget = function (packageInfo) {
 
-        debugger
+         
         var obj = new Object();
         obj.position = $(".positionInp").val();
         obj.content_id = $(".contentIdInp").val();

@@ -4,6 +4,7 @@ function mainCtrlr($scope, httpRequest, SelectMenu, MenuBar) {
     $scope.load = function () {
         $scope.imageSource = imageSource;
         $scope.videoSource = videoSource;
+        $scope.defaultVideoSource = defaultVideoSource;
         $scope.SelectMenu = SelectMenu;
         $scope.pageHeaderText = '';
         $scope.MenuBarFlag = MenuBar;

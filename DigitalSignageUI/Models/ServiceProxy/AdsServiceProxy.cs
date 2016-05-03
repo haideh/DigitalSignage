@@ -275,5 +275,51 @@ namespace DigitalSignageUI.Models.ServiceProxy
 
         }
 
+        public ResultMessage<AdsInfo> editAdsWithDetail(long id)
+        {
+            using (IadsClient clientProxy = new IadsClient())
+            {
+                ResultMessage<AdsInfoWTO> serviceResult;
+
+
+                serviceResult = clientProxy.editAdsWithDetail(id);
+                switch (serviceResult.result.status)
+                {
+                    case Result.state.error:
+                        return new ResultMessage<AdsInfo>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.error,
+                                message = serviceResult.result.message
+                            }
+                        };
+                        break;
+                    case Result.state.success:
+                        return new ResultMessage<AdsInfo>
+                        {
+                            resultSet = AdsMapper.MapFrom(serviceResult.resultSet),
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.success,
+                            }
+                        };
+                        break;
+                    default:
+                        return new ResultMessage<AdsInfo>
+                        {
+                            resultSet = null,
+                            result = new Result()
+                            {
+                                status = Aryaban.Engine.Core.WebService.Result.state.warning,
+                            }
+                        };
+                        break;
+                }
+
+            }
+        }
+
     }
 }

@@ -81,7 +81,7 @@ application.factory('httpRequest', ['$http', function ($http) {
             //    }
             //}
         }).error(function (err, status, headers, config) {
-            debugger
+             
             error(err);
 
             //Loader.setLoader(false);

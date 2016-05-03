@@ -1022,6 +1022,12 @@ namespace DigitalSignageUI.AdsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAds", ReplyAction="http://tempuri.org/Iads/editAdsResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAdsWithDetail", ReplyAction="http://tempuri.org/Iads/editAdsWithDetailResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO> editAdsWithDetail(long id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/editAdsWithDetail", ReplyAction="http://tempuri.org/Iads/editAdsWithDetailResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO>> editAdsWithDetailAsync(long id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Iads/deleteAds", ReplyAction="http://tempuri.org/Iads/deleteAdsResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAds(long id);
         
@@ -1130,6 +1136,14 @@ namespace DigitalSignageUI.AdsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> editAdsAsync(string title, string time, long ad_id) {
             return base.Channel.editAdsAsync(title, time, ad_id);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO> editAdsWithDetail(long id) {
+            return base.Channel.editAdsWithDetail(id);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.AdsServices.AdsInfoWTO>> editAdsWithDetailAsync(long id) {
+            return base.Channel.editAdsWithDetailAsync(id);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<string> deleteAds(long id) {
