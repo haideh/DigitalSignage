@@ -9,6 +9,8 @@
       <xs:element minOccurs="0" name="content_id" type="xs:int" />
       <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="identifyKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="identifyShortKey" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="isDirty" type="xs:int" />
       <xs:element minOccurs="0" name="lastAlive" type="xs:long" />
@@ -65,4 +67,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTvsInfoWTO" nillable="true" type="tns:ArrayOfTvsInfoWTO" />
+  <xs:complexType name="ArrayOfTvContentsInfoWTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TvContentsInfoWTO" nillable="true" type="tns:TvContentsInfoWTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTvContentsInfoWTO" nillable="true" type="tns:ArrayOfTvContentsInfoWTO" />
+  <xs:complexType name="TvContentsInfoWTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyId" type="xs:long" />
+      <xs:element minOccurs="0" name="content_id" type="xs:long" />
+      <xs:element minOccurs="0" name="duration" type="xs:int" />
+      <xs:element minOccurs="0" name="endTime" type="xs:long" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isDirty" type="xs:int" />
+      <xs:element minOccurs="0" name="lastAlive" type="xs:long" />
+      <xs:element minOccurs="0" name="lastViewed" type="xs:long" />
+      <xs:element minOccurs="0" name="startTime" type="xs:long" />
+      <xs:element minOccurs="0" name="status" type="xs:short" />
+      <xs:element minOccurs="0" name="tv_id" type="xs:long" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="x" type="xs:int" />
+      <xs:element minOccurs="0" name="y" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TvContentsInfoWTO" nillable="true" type="tns:TvContentsInfoWTO" />
 </xs:schema>

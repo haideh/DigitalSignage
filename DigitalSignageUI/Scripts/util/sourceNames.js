@@ -10,6 +10,8 @@ service_loadLiveVedio = "/edit/loadLiveVedio";
 service_loadLiveVedioContentWithPosition = "/edit/loadLiveVedioContentWithPosition";
 service_loadContentLiveVedio = "/edit/loadContentLiveVedio";
 
+service_isDirty="/show/isDirty"
+
 service_addAds = "/ads/saveAds";
 service_uploadFile = "/ads/uploadFile";
 service_adsList = "/ads/getAdsList";
@@ -21,14 +23,20 @@ service_login="/login/LoginFunction";
 service_signUp = "/login/SignUpFunction";
 service_logOut = "/login/Logout";
 
+service_getTvInfo = "/show/getTvInfo"
 
-videoSource = 'http://192.168.88.233/Modules/DigitalSignage/data/ads/movies/';
-imageSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/';
-defaultVideoSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/video.jpg';
-//imageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=390&file=/Modules/DigitalSignage/data/ads/images/';
-//packageImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=45&file=/Modules/DigitalSignage/data/ads/images/';
-packageImageSource = 'http://192.168.88.233:8082/modules/DigitalSignage/data/ads/images/';
-packageLiveImageSource = 'http://192.168.88.233/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/';
+
+//videoSource = 'http://localhost:14985/Modules/DigitalSignage/data/ads/movies/';
+//imageSource = 'http://localhost:14985/modules/DigitalSignage/data/ads/images/';
+
+adsSource = 'data/ads/';
+
+
+defaultVideoSource = 'http://192.168.88.233:8080/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/video.jpg';
+
+
+packageImageSource = 'http://localhost:14985/modules/general/thumbnail_width.aspx?width=45&file=/Modules/DigitalSignage/data/ads/images/';
+packageLiveImageSource = 'http://localhost:14985/modules/general/thumbnail_width.aspx?width=100&file=/Modules/DigitalSignage/data/ads/images/';
 
 //------------------------------------------------vod--------------------------------------//
 androidUrlSource = "http://192.168.88.20:1935/mediacache/mp4:http/sample.mp4";//vod
@@ -54,7 +62,7 @@ rtmpStreamNameVod = "/mp4:http/sample.mp4";
 
 //rtmpSource = 'rtmp://192.168.88.20:1935/live';
 //rtmpStreamName = '/ch1.stream';
-flowPlayerSWF = "/Skins/CSS_tvShow/flowPlayer/flowplayer-3.2.18.swf";
+flowPlayerSWF = "/Skins/CSS_tvShow/flowPlayer/flowplayer-3.2.16.swf";
 bwChkSource = "/Skins/CSS_tvShow/flowPlayer/flowplayer.bwcheck-3.2.13.swf";
 rtmpFlowSwf = "/Skins/CSS_tvShow/flowPlayer/flowplayer.rtmp-3.2.12.swf";
 httpstreamingLive = "/Skins/CSS_tvShow/flowPlayer/flowplayer.httpstreaminghls-live-3.2.15.swf";

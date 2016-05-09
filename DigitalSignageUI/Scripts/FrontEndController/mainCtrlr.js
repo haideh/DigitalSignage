@@ -2,8 +2,7 @@
 application.controller('mainCtrlr', mainCtrlr);
 function mainCtrlr($scope, httpRequest, SelectMenu, MenuBar) {
     $scope.load = function () {
-        $scope.imageSource = imageSource;
-        $scope.videoSource = videoSource;
+
         $scope.defaultVideoSource = defaultVideoSource;
         $scope.SelectMenu = SelectMenu;
         $scope.pageHeaderText = '';
@@ -13,29 +12,29 @@ function mainCtrlr($scope, httpRequest, SelectMenu, MenuBar) {
 
         $scope.packageImageSource = packageImageSource;
         
-        var proLocaion = (((window.location.href).split('/', 5))[4]).split('?')[0];
+        //var proLocaion = (((window.location.href).split('/', 5))[4]).split('?')[0];
         
-        switch (proLocaion) {
-            case 'AdsList': {
-                $scope.SelectMenu.selectPackageList();
-                $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
-                break;
-            }
-            case 'AdsManagement': {
-                $scope.SelectMenu.selectAddNewPackage();
-                $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
-                break;
-            }
-            case 'EditContent': {
-                $scope.SelectMenu.selectEditPackage();
-                $scope.pageHeaderText = 'اضافه نمودن و یا ویرایش قالب نمایش تلویزیون';
-                break;
-            }
-            case ':LogOut': {
-                $scope.SelectMenu.selectLogOut();
-                break;
-            }
-        }
+        //switch (proLocaion) {
+        //    case 'AdsList': {
+        //        $scope.SelectMenu.selectPackageList();
+        //        $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
+        //        break;
+        //    }
+        //    case 'AdsManagement': {
+        //        $scope.SelectMenu.selectAddNewPackage();
+        //        $scope.pageHeaderText = ' لیست بسته های نمایشی ساخته شده';
+        //        break;
+        //    }
+        //    case 'EditContent': {
+        //        $scope.SelectMenu.selectEditPackage();
+        //        $scope.pageHeaderText = 'اضافه نمودن و یا ویرایش قالب نمایش تلویزیون';
+        //        break;
+        //    }
+        //    case ':LogOut': {
+        //        $scope.SelectMenu.selectLogOut();
+        //        break;
+        //    }
+        //}
     };
 
 

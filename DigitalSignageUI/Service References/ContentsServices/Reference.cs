@@ -579,6 +579,9 @@ namespace DigitalSignageUI.ContentsServices {
         private string adItemVedioFileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string channelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long companyIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -588,7 +591,13 @@ namespace DigitalSignageUI.ContentsServices {
         private long content_ad_idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string descriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] inputStreamField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int intervalField;
@@ -598,6 +607,9 @@ namespace DigitalSignageUI.ContentsServices {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int max_minutesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int nameIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int passed_minutesField;
@@ -616,6 +628,9 @@ namespace DigitalSignageUI.ContentsServices {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string urlField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -706,6 +721,19 @@ namespace DigitalSignageUI.ContentsServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string channel {
+            get {
+                return this.channelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.channelField, value) != true)) {
+                    this.channelField = value;
+                    this.RaisePropertyChanged("channel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long companyId {
             get {
                 return this.companyIdField;
@@ -745,6 +773,19 @@ namespace DigitalSignageUI.ContentsServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.descriptionField, value) != true)) {
+                    this.descriptionField = value;
+                    this.RaisePropertyChanged("description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long id {
             get {
                 return this.idField;
@@ -753,6 +794,19 @@ namespace DigitalSignageUI.ContentsServices {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] inputStream {
+            get {
+                return this.inputStreamField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.inputStreamField, value) != true)) {
+                    this.inputStreamField = value;
+                    this.RaisePropertyChanged("inputStream");
                 }
             }
         }
@@ -792,6 +846,19 @@ namespace DigitalSignageUI.ContentsServices {
                 if ((this.max_minutesField.Equals(value) != true)) {
                     this.max_minutesField = value;
                     this.RaisePropertyChanged("max_minutes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int nameId {
+            get {
+                return this.nameIdField;
+            }
+            set {
+                if ((this.nameIdField.Equals(value) != true)) {
+                    this.nameIdField = value;
+                    this.RaisePropertyChanged("nameId");
                 }
             }
         }
@@ -870,6 +937,19 @@ namespace DigitalSignageUI.ContentsServices {
                 if ((this.typeField.Equals(value) != true)) {
                     this.typeField = value;
                     this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.urlField, value) != true)) {
+                    this.urlField = value;
+                    this.RaisePropertyChanged("url");
                 }
             }
         }
@@ -1442,6 +1522,12 @@ namespace DigitalSignageUI.ContentsServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail", ReplyAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetailResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetailAsync(long content_id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail_Viewer", ReplyAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail_ViewerResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]> loadContentsWithAdsItemDetail_Viewer(long content_id, long lastAlive);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail_Viewer", ReplyAction="http://tempuri.org/Icontents/loadContentsWithAdsItemDetail_ViewerResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetail_ViewerAsync(long content_id, long lastAlive);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Icontents/getContentList", ReplyAction="http://tempuri.org/Icontents/getContentListResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.ContentInfoWTO[]> getContentList(DigitalSignageUI.ContentsServices.ContentInfoWTO filter, DigitalSignageUI.ContentsServices.PagingInfo paging);
         
@@ -1564,6 +1650,14 @@ namespace DigitalSignageUI.ContentsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetailAsync(long content_id) {
             return base.Channel.loadContentsWithAdsItemDetailAsync(content_id);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]> loadContentsWithAdsItemDetail_Viewer(long content_id, long lastAlive) {
+            return base.Channel.loadContentsWithAdsItemDetail_Viewer(content_id, lastAlive);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.AdsInfoWTO[]>> loadContentsWithAdsItemDetail_ViewerAsync(long content_id, long lastAlive) {
+            return base.Channel.loadContentsWithAdsItemDetail_ViewerAsync(content_id, lastAlive);
         }
         
         public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.ContentsServices.ContentInfoWTO[]> getContentList(DigitalSignageUI.ContentsServices.ContentInfoWTO filter, DigitalSignageUI.ContentsServices.PagingInfo paging) {

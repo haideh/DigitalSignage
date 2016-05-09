@@ -54,19 +54,24 @@
       <xs:element minOccurs="0" name="adItemImageFileName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="adItemTitle" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="adItemVedioFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="channel" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="companyId" type="xs:long" />
       <xs:element minOccurs="0" name="companyName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="content_ad_id" type="xs:long" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
+      <xs:element minOccurs="0" name="inputStream" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="interval" type="xs:int" />
       <xs:element minOccurs="0" name="itemList" nillable="true" type="tns:ArrayOfAdsIemInfoWTO" />
       <xs:element minOccurs="0" name="max_minutes" type="xs:int" />
+      <xs:element minOccurs="0" name="nameId" type="xs:int" />
       <xs:element minOccurs="0" name="passed_minutes" type="xs:int" />
       <xs:element minOccurs="0" name="position" type="xs:int" />
       <xs:element minOccurs="0" name="shuffle" type="xs:int" />
       <xs:element minOccurs="0" name="status" type="xs:int" />
       <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdsInfoWTO" nillable="true" type="tns:AdsInfoWTO" />

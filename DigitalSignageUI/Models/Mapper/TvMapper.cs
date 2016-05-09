@@ -35,5 +35,48 @@ namespace DigitalSignageUI.Models.Mapper
 
             return wto;
         }
+
+
+
+        internal static List<TvContentsInfo> MapFrom(TvContentsInfoWTO[] wtos)
+        {
+            List<TvContentsInfo> contentList = new List<TvContentsInfo>();
+
+            if (wtos != null)
+                foreach (TvContentsInfoWTO c in wtos)
+                {
+                    contentList.Add(MapFrom(c));
+                }
+
+            return contentList;
+        }
+        internal static TvContentsInfo MapFrom(TvContentsInfoWTO tv)
+        {
+            AutoMapper.Mapper.CreateMap<TvContentsInfoWTO, TvContentsInfo>();
+            TvContentsInfo wto = AutoMapper.Mapper.Map<TvContentsInfoWTO, TvContentsInfo>(tv);
+            wto.rootAddress = System.Web.HttpContext.Current.Request.PhysicalApplicationPath;
+            return wto;
+        }
+
+
+        internal static TvContentsInfoWTO[] MapTo(List<TvContentsInfo> content)
+        {
+            List<TvContentsInfoWTO> wtos = new List<TvContentsInfoWTO>();
+
+            foreach (var item in content)
+            {
+                wtos.Add((MapTo(item)));
+            }
+
+            return wtos.ToArray();
+
+        }
+        internal static TvContentsInfoWTO MapTo(TvContentsInfo tv)
+        {
+            AutoMapper.Mapper.CreateMap<TvContentsInfo, TvContentsInfoWTO>();
+            TvContentsInfoWTO wto = AutoMapper.Mapper.Map<TvContentsInfo, TvContentsInfoWTO>(tv);
+
+            return wto;
+        }
     }
 }

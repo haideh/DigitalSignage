@@ -16,9 +16,9 @@ namespace DigitalSignageUI
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                //defaults: new { controller = "Show", action = "ShowContent", id = UrlParameter.Optional }
+                defaults: new { controller = "Show", action = "ShowContent", id = UrlParameter.Optional }
                // defaults: new { controller = "Ads", action = "AdsList", id = UrlParameter.Optional }
-                defaults: new { controller = "Login", action = "login", id = UrlParameter.Optional }
+               // defaults: new { controller = "Login", action = "login", id = UrlParameter.Optional }
             );
         }
     }

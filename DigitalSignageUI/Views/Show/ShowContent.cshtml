@@ -1,4 +1,4 @@
-﻿@model DigitalSignageUI.Models.Entity.ContentInfo
+﻿
 
 <script src="~/Scripts/FrontEndController/showContentCtrlr.js"></script>
 @{
@@ -7,7 +7,7 @@
 
 <div class="fullHD" id="ShowContent" ng-controller="showContentCtrlr">
    
-    <input class="contentIdInp" type="hidden" value="@Model.content_id" />
+
     @Html.Partial("~/Views/Show/ShowContent_Type1.cshtml")
 
     @*<a  data-id="0" href="@Url.Action("EditContent", "Edit", new {contentId= Model.content_id })">Edit</a>*@ 

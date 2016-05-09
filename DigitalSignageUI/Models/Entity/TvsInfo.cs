@@ -22,5 +22,7 @@ namespace DigitalSignageUI.Models.Entity
         public int y { get; set; }
         public long companyId { get; set; }
         public string companyName { get; set; }
+        public string identifyKey { get; set; }
+        public string identifyShortKey { get; set; }
     }
 }

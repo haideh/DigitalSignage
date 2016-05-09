@@ -82,7 +82,7 @@
   <xs:element name="isDirtyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="isDirtyResult" nillable="true" type="q9:ResultMessageOfboolean" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="isDirtyResult" nillable="true" type="q9:ResultMessageOfTvsInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -143,6 +143,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getTvContentWithIpResult" nillable="true" type="q17:ResultMessageOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTvInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="key" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTvInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" minOccurs="0" name="getTvInfoResult" nillable="true" type="q18:ResultMessageOfArrayOfTvContentsInfoWTONurSmnnE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

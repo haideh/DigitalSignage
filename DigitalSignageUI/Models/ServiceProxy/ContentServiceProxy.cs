@@ -11,7 +11,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
 {
     public class ContentServiceProxy
     {
-        public ResultMessage<List<AdsInfo>> loadContent(long content_id)
+        public ResultMessage<List<AdsInfo>> loadContent(long content_id, long lastAlive)
         {
 
             List<AdsInfo> listContentInfo = new List<AdsInfo>();
@@ -19,7 +19,7 @@ namespace DigitalSignageUI.Models.ServiceProxy
             {
                 ResultMessage<AdsInfoWTO[]> serviceResult;
 
-                serviceResult = clientProxy.loadContentsWithAdsItemDetail(content_id);
+                serviceResult = clientProxy.loadContentsWithAdsItemDetail_Viewer(content_id,lastAlive);
                 switch (serviceResult.result.status)
                 {
                     case Result.state.error:

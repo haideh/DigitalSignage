@@ -32,6 +32,20 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Result.state" nillable="true" type="tns:Result.state" />
+  <xs:complexType name="ResultMessageOfTvsInfoWTONurSmnnE">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TvsInfoWTO" Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q1:TvsInfoWTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultMessageOfTvsInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfTvsInfoWTONurSmnnE" />
   <xs:complexType name="ResultMessageOfboolean">
     <xs:annotation>
       <xs:appinfo>
@@ -56,7 +70,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q1:ArrayOfTvCategoreisInfoWTO" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q2:ArrayOfTvCategoreisInfoWTO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfArrayOfTvCategoreisInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfTvCategoreisInfoWTONurSmnnE" />
@@ -70,8 +84,22 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q2:ArrayOfTvsInfoWTO" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q3:ArrayOfTvsInfoWTO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ResultMessageOfArrayOfTvsInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfTvsInfoWTONurSmnnE" />
+  <xs:complexType name="ResultMessageOfArrayOfTvContentsInfoWTONurSmnnE">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResultMessageOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Aryaban.Engine.Core.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTvContentsInfoWTO" Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="result" nillable="true" type="tns:Result" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DigitalServices.Model" minOccurs="0" name="resultSet" nillable="true" type="q4:ArrayOfTvContentsInfoWTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultMessageOfArrayOfTvContentsInfoWTONurSmnnE" nillable="true" type="tns:ResultMessageOfArrayOfTvContentsInfoWTONurSmnnE" />
 </xs:schema>

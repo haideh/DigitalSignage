@@ -15,9 +15,10 @@
 
         <div class="widgetSlider">
             <div class="coin-slider">
-                <img ng-repeat="x in sliderImageList" id="{{x.id}}"
+                <img ng-repeat="x in sliderImageList" id="{{x.id}}" style="display:none"
                      data-id="{{x.id}}" data-interval="{{x.interval}}" data-content_ad_id="{{x.content_ad_id}}" data-ad_title="{{x.title}}"
-                     src="{{imageSource}}{{x.file_name}}">
+                     src="{{x.fileSource}}">
+               
             </div>
            
         </div>
@@ -28,10 +29,12 @@ else
 {
 <div class="widgetSlider">
     <div class="coin-slider">
-        <img ng-repeat="x in sliderImageList" id="{{x.id}}"
+        <img ng-repeat="x in sliderImageList" id="{{x.id}}" style="display:none"
              data-id="{{x.id}}" data-interval="{{x.interval}}" data-content_ad_id="{{x.content_ad_id}}" data-ad_title="{{x.title}}"
-             src="{{imageSource}}{{x.file_name}}">
+             src="{{x.fileSource}}">
+       
     </div>
+   
 </div>
 }
 

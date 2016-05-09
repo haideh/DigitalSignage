@@ -59,7 +59,7 @@ application.factory('httpRequest', ['$http', function ($http) {
             contentType: "application/json; charset=utf-8",
             dataType: "json"
         }).success(function (data, status, headers, config) {
-            if (data.result == undefined && (data.Url == "/Ads/AdsList" || data.Url == "/")) {
+            if (data.result == undefined && (data.Url == "/")) {
                 
                 notifyInfo(_infoMsg);
                 success(data);
@@ -87,6 +87,7 @@ application.factory('httpRequest', ['$http', function ($http) {
             }
         }).error(function (err, status, headers, config) {
             notifyAlert(_errorMsg);
+            if(error)
             error(err);
 
             //Loader.setLoader(false);

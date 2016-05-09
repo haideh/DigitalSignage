@@ -44,6 +44,12 @@ namespace DigitalSignageUI.TvsServices {
         private long idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string identifyKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string identifyShortKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ipField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -164,6 +170,32 @@ namespace DigitalSignageUI.TvsServices {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string identifyKey {
+            get {
+                return this.identifyKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.identifyKeyField, value) != true)) {
+                    this.identifyKeyField = value;
+                    this.RaisePropertyChanged("identifyKey");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string identifyShortKey {
+            get {
+                return this.identifyShortKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.identifyShortKeyField, value) != true)) {
+                    this.identifyShortKeyField = value;
+                    this.RaisePropertyChanged("identifyShortKey");
                 }
             }
         }
@@ -561,6 +593,275 @@ namespace DigitalSignageUI.TvsServices {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TvContentsInfoWTO", Namespace="http://schemas.datacontract.org/2004/07/DigitalServices.Model")]
+    [System.SerializableAttribute()]
+    public partial class TvContentsInfoWTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long companyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long content_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int durationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long endTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ipField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int isDirtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long lastAliveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long lastViewedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long startTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private short statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long tv_idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int xField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int yField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long companyId {
+            get {
+                return this.companyIdField;
+            }
+            set {
+                if ((this.companyIdField.Equals(value) != true)) {
+                    this.companyIdField = value;
+                    this.RaisePropertyChanged("companyId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long content_id {
+            get {
+                return this.content_idField;
+            }
+            set {
+                if ((this.content_idField.Equals(value) != true)) {
+                    this.content_idField = value;
+                    this.RaisePropertyChanged("content_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int duration {
+            get {
+                return this.durationField;
+            }
+            set {
+                if ((this.durationField.Equals(value) != true)) {
+                    this.durationField = value;
+                    this.RaisePropertyChanged("duration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long endTime {
+            get {
+                return this.endTimeField;
+            }
+            set {
+                if ((this.endTimeField.Equals(value) != true)) {
+                    this.endTimeField = value;
+                    this.RaisePropertyChanged("endTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ip {
+            get {
+                return this.ipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ipField, value) != true)) {
+                    this.ipField = value;
+                    this.RaisePropertyChanged("ip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int isDirty {
+            get {
+                return this.isDirtyField;
+            }
+            set {
+                if ((this.isDirtyField.Equals(value) != true)) {
+                    this.isDirtyField = value;
+                    this.RaisePropertyChanged("isDirty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long lastAlive {
+            get {
+                return this.lastAliveField;
+            }
+            set {
+                if ((this.lastAliveField.Equals(value) != true)) {
+                    this.lastAliveField = value;
+                    this.RaisePropertyChanged("lastAlive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long lastViewed {
+            get {
+                return this.lastViewedField;
+            }
+            set {
+                if ((this.lastViewedField.Equals(value) != true)) {
+                    this.lastViewedField = value;
+                    this.RaisePropertyChanged("lastViewed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long startTime {
+            get {
+                return this.startTimeField;
+            }
+            set {
+                if ((this.startTimeField.Equals(value) != true)) {
+                    this.startTimeField = value;
+                    this.RaisePropertyChanged("startTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public short status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((this.statusField.Equals(value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long tv_id {
+            get {
+                return this.tv_idField;
+            }
+            set {
+                if ((this.tv_idField.Equals(value) != true)) {
+                    this.tv_idField = value;
+                    this.RaisePropertyChanged("tv_id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((this.typeField.Equals(value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int x {
+            get {
+                return this.xField;
+            }
+            set {
+                if ((this.xField.Equals(value) != true)) {
+                    this.xField = value;
+                    this.RaisePropertyChanged("x");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int y {
+            get {
+                return this.yField;
+            }
+            set {
+                if ((this.yField.Equals(value) != true)) {
+                    this.yField = value;
+                    this.RaisePropertyChanged("y");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TvsServices.Itvs")]
     public interface Itvs {
@@ -596,10 +897,10 @@ namespace DigitalSignageUI.TvsServices {
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> deleteCategoryAsync(long id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/isDirty", ReplyAction="http://tempuri.org/Itvs/isDirtyResponse")]
-        Aryaban.Engine.Core.WebService.ResultMessage<bool> isDirty(long tv_id);
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvsInfoWTO> isDirty(long tv_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/isDirty", ReplyAction="http://tempuri.org/Itvs/isDirtyResponse")]
-        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<bool>> isDirtyAsync(long tv_id);
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvsInfoWTO>> isDirtyAsync(long tv_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/recordSecondPlayed", ReplyAction="http://tempuri.org/Itvs/recordSecondPlayedResponse")]
         Aryaban.Engine.Core.WebService.ResultMessage<bool> recordSecondPlayed(long content_ad_id, long tv_id);
@@ -624,6 +925,12 @@ namespace DigitalSignageUI.TvsServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/getTvContentWithIp", ReplyAction="http://tempuri.org/Itvs/getTvContentWithIpResponse")]
         System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> getTvContentWithIpAsync(string ip, long companyId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/getTvInfo", ReplyAction="http://tempuri.org/Itvs/getTvInfoResponse")]
+        Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvContentsInfoWTO[]> getTvInfo(string key);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Itvs/getTvInfo", ReplyAction="http://tempuri.org/Itvs/getTvInfoResponse")]
+        System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvContentsInfoWTO[]>> getTvInfoAsync(string key);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -693,11 +1000,11 @@ namespace DigitalSignageUI.TvsServices {
             return base.Channel.deleteCategoryAsync(id);
         }
         
-        public Aryaban.Engine.Core.WebService.ResultMessage<bool> isDirty(long tv_id) {
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvsInfoWTO> isDirty(long tv_id) {
             return base.Channel.isDirty(tv_id);
         }
         
-        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<bool>> isDirtyAsync(long tv_id) {
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvsInfoWTO>> isDirtyAsync(long tv_id) {
             return base.Channel.isDirtyAsync(tv_id);
         }
         
@@ -731,6 +1038,14 @@ namespace DigitalSignageUI.TvsServices {
         
         public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<string>> getTvContentWithIpAsync(string ip, long companyId) {
             return base.Channel.getTvContentWithIpAsync(ip, companyId);
+        }
+        
+        public Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvContentsInfoWTO[]> getTvInfo(string key) {
+            return base.Channel.getTvInfo(key);
+        }
+        
+        public System.Threading.Tasks.Task<Aryaban.Engine.Core.WebService.ResultMessage<DigitalSignageUI.TvsServices.TvContentsInfoWTO[]>> getTvInfoAsync(string key) {
+            return base.Channel.getTvInfoAsync(key);
         }
     }
 }

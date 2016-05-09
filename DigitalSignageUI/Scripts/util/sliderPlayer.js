@@ -1,4 +1,4 @@
-﻿runSlider = function () {
+﻿runSlider = function (delayTime) {
     //var transitionsArray = new Array();
     ////transitionsArray.push('bars','blinds','blocks','blocks2','concentric','slide','warp','zip','bars3d','blinds3d','cube','tiles3d','turn');
     //transitionsArray.push('bars', 'blinds', 'blocks', 'blocks2', 'concentric', 'slide', 'warp', 'zip', 'bars3d', 'blinds3d', 'cube', 'tiles3d', 'turn');
@@ -15,7 +15,9 @@
     //    height: '100%',
     //    delay: 2000
     //});
-    $('.coin-slider').coinslider({ width: '100%', height: '100%', navigation: false, delay: 2000, spw: 4, sph: 4 });
+    if (delayTime == 'undefined')
+        delayTime = 2000;
+    $('.coin-slider').coinslider({ width: '100%', height: '100%', navigation: false, delay: (delayTime * 1000), spw: 4, sph: 4 });
 }
 
 
@@ -23,14 +25,14 @@ runPlayer = function (itemList) {
 
     var videoArr = new Array();
     for (var iVideo = 0 ; iVideo < itemList.length ; iVideo++) {
-        videoArr.push(videoSource + itemList[iVideo].file_name);
+        videoArr.push(itemList[iVideo].fileSource);
     }
 
 
     $f(".flowplayerVideo", flowPlayerSWF, {
 
         clip: {
-            url: videoSource + itemList[0].file_name,
+            url: itemList[0].fileSource,
             scaling: "fit",
             //duration: 10,
             onBeforeFinish: function (clip) {
@@ -40,15 +42,15 @@ runPlayer = function (itemList) {
         },
         playlist: videoArr,
         plugins: {
-            controls: { playlist: true }
+           // controls: { playlist: true }
         }
 
     });
 
 
 
-   // url = videoSource + itemList[0].file_name;
-   // var simulateiDeviceFlag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    // url = videoSource + itemList[0].file_name;
+    // var simulateiDeviceFlag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     //if (simulateiDeviceFlag) {
     //    url = androidUrlSource + androidStreamName;
